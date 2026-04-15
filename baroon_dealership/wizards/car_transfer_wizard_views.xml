@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_car_transfer_wizard_form" model="ir.ui.view">
+        <field name="name">car.transfer.wizard.form</field>
+        <field name="model">car.transfer.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Transfer Car">
+                <group>
+                    <group>
+                        <field name="lot_id"/>
+                        <field name="source_location_id"/>
+                        <field name="destination_location_id"/>
+                    </group>
+                    <group>
+                        <field name="picking_type_id"/>
+                        <field name="scheduled_date"/>
+                        <field name="note"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_create_transfer" type="object" string="Create Transfer" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

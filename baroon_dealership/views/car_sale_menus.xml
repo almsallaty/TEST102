@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_car_sale_root" name="Car Dealership" sequence="35" web_icon="baroon_dealership,static/description/icon.png"/>
+
+    <record id="action_car_dashboard" model="ir.actions.act_window">
+        <field name="name">Executive Overview</field>
+        <field name="res_model">stock.lot</field>
+        <field name="view_mode">kanban,list,form,graph,pivot</field>
+        <field name="view_id" ref="view_stock_lot_kanban_car_management"/>
+        <field name="search_view_id" ref="view_stock_lot_search_car_management"/>
+        <field name="domain">[('is_car_vehicle', '=', True)]</field>
+        <field name="context">{'search_default_filter_active_inventory': 1, 'active_test': False}</field>
+    </record>
+
+    <record id="action_car_inventory" model="ir.actions.act_window">
+        <field name="name">VIN Records</field>
+        <field name="res_model">stock.lot</field>
+        <field name="view_mode">list,form,kanban,graph,pivot</field>
+        <field name="view_id" ref="view_stock_lot_list_car_management"/>
+        <field name="search_view_id" ref="view_stock_lot_search_car_management"/>
+        <field name="domain">[('is_car_vehicle', '=', True)]</field>
+        <field name="context">{'active_test': False}</field>
+    </record>
+
+    <record id="action_car_inventory_analysis" model="ir.actions.act_window">
+        <field name="name">Inventory Analysis</field>
+        <field name="res_model">stock.lot</field>
+        <field name="view_mode">graph,pivot,list,kanban,form</field>
+        <field name="view_id" ref="view_stock_lot_graph_car_management"/>
+        <field name="search_view_id" ref="view_stock_lot_search_car_management"/>
+        <field name="domain">[('is_car_vehicle', '=', True)]</field>
+        <field name="context">{'active_test': False}</field>
+    </record>
+
+    <record id="action_car_cost_analysis" model="ir.actions.act_window">
+        <field name="name">Cost Analysis</field>
+        <field name="res_model">car.expense</field>
+        <field name="view_mode">pivot,graph,list,form</field>
+        <field name="view_id" ref="view_car_expense_pivot"/>
+        <field name="search_view_id" ref="view_car_expense_search"/>
+    </record>
+
+    <record id="action_car_purchase_pipeline" model="ir.actions.act_window">
+        <field name="name">Shipment Pipeline</field>
+        <field name="res_model">purchase.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_car_landed_costs" model="ir.actions.act_window">
+        <field name="name">Landed Costs</field>
+        <field name="res_model">stock.landed.cost</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_car_test_drives" model="ir.actions.act_window">
+        <field name="name">Test Drives</field>
+        <field name="res_model">car.test.drive</field>
+        <field name="view_mode">list,calendar,form</field>
+        <field name="search_view_id" ref="view_car_test_drive_search"/>
+    </record>
+
+    <record id="action_car_crm_pipeline" model="ir.actions.act_window">
+        <field name="name">Opportunities</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">list,form,kanban</field>
+        <field name="domain">[('car_lot_id', '!=', False)]</field>
+    </record>
+
+    <menuitem id="menu_car_sale_dashboard" name="Executive Overview" parent="menu_car_sale_root" action="action_car_dashboard" sequence="5"/>
+    <menuitem id="menu_car_sale_inventory" name="VIN Records" parent="menu_car_sale_root" action="action_car_inventory" sequence="10"/>
+    <menuitem id="menu_car_sale_inventory_analysis" name="Inventory Analysis" parent="menu_car_sale_root" action="action_car_inventory_analysis" sequence="20"/>
+    <menuitem id="menu_car_sale_costs" name="Cost Analysis" parent="menu_car_sale_root" action="action_car_cost_analysis" sequence="30"/>
+    <menuitem id="menu_car_sale_pipeline" name="Shipment Pipeline" parent="menu_car_sale_root" action="action_car_purchase_pipeline" sequence="40"/>
+    <menuitem id="menu_car_sale_landed_costs" name="Landed Costs" parent="menu_car_sale_root" action="action_car_landed_costs" sequence="45"/>
+    <menuitem id="menu_car_sale_test_drives" name="Test Drives" parent="menu_car_sale_root" action="action_car_test_drives" sequence="46"/>
+    <menuitem id="menu_car_sale_crm" name="Opportunities" parent="menu_car_sale_root" action="action_car_crm_pipeline" sequence="47"/>
+    <menuitem id="menu_car_sale_colors" name="Color Tags" parent="menu_car_sale_root" sequence="50"/>
+    <menuitem id="menu_car_sale_exterior_colors" name="Exterior Colors" parent="menu_car_sale_colors" action="action_car_exterior_color" sequence="10"/>
+    <menuitem id="menu_car_sale_interior_colors" name="Interior Colors" parent="menu_car_sale_colors" action="action_car_interior_color" sequence="20"/>
+</odoo>

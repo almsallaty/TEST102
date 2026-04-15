@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_baroon_dealership" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.baroon.dealership</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="45"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Car Dealership" string="Car Dealership" name="baroon_dealership">
+                    <block title="Workflow Control">
+                        <setting help="Prevent website publishing until the car profile is complete.">
+                            <field name="dealership_require_complete_profile"/>
+                        </setting>
+                        <setting help="Require a VIN / serial number on every car quotation line.">
+                            <field name="dealership_require_vin_on_sale"/>
+                        </setting>
+                        <setting help="Allow the manual car workflow buttons inside the car form.">
+                            <field name="dealership_allow_manual_status_change"/>
+                        </setting>
+                        <setting help="Update car workflow automatically when receipts, internal transfers, and deliveries are validated.">
+                            <field name="dealership_auto_update_from_pickings"/>
+                        </setting>
+                        <setting help="Default number of days a draft reservation can hold a car before the nightly release job makes it available again.">
+                            <field name="dealership_reservation_hold_days"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>
