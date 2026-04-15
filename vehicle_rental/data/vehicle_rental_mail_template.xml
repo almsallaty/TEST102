@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="0">
+        <record id="vehicle_rental_booking_confirmation_mail_template" model="mail.template">
+            <field name="name">Vehicle Rental Booking Confirmation Mail Template</field>
+            <field name="model_id" ref="vehicle_rental.model_vehicle_contract"/>
+            <field name="subject">Your Vehicle Rental Booking Confirmation</field>
+            <field name="email_from">{{object.company_id.email}}</field>
+            <field name="partner_to">{{ object.customer_id.id }}</field>
+            <field name="body_html" type="html">
+                <h4>
+                    Dear
+                    <strong>
+                        <t t-out="object.customer_id.name"/>
+                    </strong>
+                    ,
+                </h4>
+                <hr style="margin: 0; padding: 0;"/>
+                <p>
+                    Thank you for booking with
+                    <strong>
+                        <t t-out="object.company_id.name"/>
+                    </strong>
+                    . Below are your rental details:
+                </p>
+                <hr style="margin: 5px;"/>
+                <table class="table table-bordered" style="width:100%; border-collapse:collapse;">
+                    <!-- Reference & Vehicle -->
+                    <tr>
+                        <td style="width: 35%; padding: 5px;">
+                            <strong>Reference No.</strong>
+                        </td>
+                        <td style="width: 65%; padding: 5px;">
+                            <span t-field="object.reference_no"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 35%; padding: 5px;">
+                            <strong>Vehicle</strong>
+                        </td>
+                        <td style="width: 65%; padding: 5px;">
+                            <span t-field="object.vehicle_id.name"/>
+                        </td>
+                    </tr>
+                    <!-- Pickup Section -->
+                    <tr>
+                        <td colspan="2" style="width: 100%; background-color:#f2f2f2; padding: 5px;">
+                            <strong>Pickup Details</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 35%; padding: 5px;">
+                            <strong>Pickup Date</strong>
+                        </td>
+                        <td style="width: 65%; padding: 5px;">
+                            <span t-field="object.start_date"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle; width: 35%; padding: 5px;">
+                            <strong>Pickup Address</strong>
+                        </td>
+                        <td style="width: 65%; padding: 5px;">
+                            <t t-if="object.pick_up_street">
+                                <span t-field="object.pick_up_street"/>
+                                <br/>
+                            </t>
+                            <t t-if="object.pick_up_street2">
+                                <span t-field="object.pick_up_street2"/>
+                                <br/>
+                            </t>
+                            <t t-if="object.pick_up_city">
+                                <span t-field="object.pick_up_city"/>
+                                <span t-field="object.pick_up_state_id.name"/>
+                                <span t-field="object.pick_up_zip"/>
+                                <br/>
+                            </t>
+                        </td>
+                    </tr>
+                    <!-- Return Section -->
+                    <tr>
+                        <td colspan="2" style="width: 100%; background-color:#f2f2f2; padding: 5px;">
+                            <strong>Return Details</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 35%; padding: 5px;">
+                            <strong>Drop-off Date</strong>
+                        </td>
+                        <td style="width: 65%; padding: 5px;">
+                            <span t-field="object.end_date"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle; padding: 5px;">
+                            <strong>Drop-off Address</strong>
+                        </td>
+                        <td style="width: 65%; padding: 5px;">
+                            <t t-if="object.drop_off_street">
+                                <span t-field="object.drop_off_street"/>
+                                <br/>
+                            </t>
+                            <t t-if="object.drop_off_street2">
+                                <span t-field="object.drop_off_street2"/>
+                                <br/>
+                            </t>
+                            <t t-if="object.drop_off_city">
+                                <span t-field="object.drop_off_city"/>
+                                <span t-field="object.drop_off_state_id.name"/>
+                                <span t-field="object.drop_off_zip"/>
+                                <br/>
+                            </t>
+                        </td>
+                    </tr>
+                </table>
+                <hr style="margin: 5px;"/>
+                <p>
+                    Please be available at the pickup location on time and carry your required documents.
+                </p>
+                <p>
+                    For any support or changes, feel free to contact us.
+                </p>
+                <p>
+                    Have a great trip!
+                </p>
+                <hr style="margin: 0; padding: 0;"/>
+                <span>
+                    <strong>
+                        Best regards,
+                        <br/>
+                        <t t-out="object.responsible_id.name"/>
+                    </strong>
+                    <br/>
+                    <t t-out="object.company_id.name"/>
+                    <br/>
+                    <t t-out="object.company_id.phone"/>
+                    <br/>
+                    <t t-out="object.company_id.email"/>
+                    <br/>
+                    <t t-out="object.company_id.website"/>
+                </span>
+            </field>
+            <field name="report_template_ids" eval="[(4, ref('vehicle_rental.action_vehicle_contract_report'))]"/>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

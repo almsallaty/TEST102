@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="0">
+        <record id="upcoming_maintenance_mail_template" model="mail.template">
+            <field name="name">Upcoming Maintenance Mail Template</field>
+            <field name="model_id" ref="vehicle_rental.model_fleet_vehicle"/>
+            <field name="subject">Upcoming Maintenance in {{object.reminder_days}} Days – {{object.name}}</field>
+            <field name="email_from">{{object.company_id.email}}</field>
+            <field name="partner_to">{{object.manager_id.id}}</field>
+            <field name="body_html" type="html">
+                <h4>
+                    Dear
+                    <strong>
+                        <t t-out="object.manager_id.name"/>
+                    </strong>
+                    ,
+                </h4>
+                <hr style="margin: 0; padding: 0;"/>
+                <p>
+                    This is to inform you that the vehicle
+                    <strong>
+                        <t t-out="object.name"/>
+                    </strong>
+                    is scheduled for
+                    maintenance within
+                    <strong>
+                        <t t-out="object.reminder_days"/>
+                    </strong>
+                    days.
+                </p>
+                <hr style="margin: 0; padding: 0;"/>
+                <table class="table table-bordered" style="width:100%; border-collapse:collapse;">
+                    <tr t-if="object.upcoming_maintenance_date">
+                        <td style="padding: 2px;">
+                            <strong>Scheduled Date</strong>
+                        </td>
+                        <td style="padding: 2px;">
+                            <span t-out="object.upcoming_maintenance_date"/>
+                        </td>
+                    </tr>
+                    <tr t-if="object.odometer">
+                        <td style="padding: 2px;">
+                            <strong>Current Odometer Reading</strong>
+                        </td>
+                        <td style="padding: 2px;">
+                            <span t-field="object.odometer" class="me-1"/>
+                            <span t-field="object.odometer_unit"/>
+                        </td>
+                    </tr>
+                </table>
+                <hr style="margin: 0; padding: 0;"/>
+                <p>
+                    As per our maintenance schedule, the vehicle is approaching its service threshold. Kindly arrange
+                    servicing before the due date to avoid operational issues.
+                </p>
+                <hr style="margin: 0; padding: 0;"/>
+                <strong>
+                    Best Regards,
+                    <br/>
+                    <t t-out="object.company_id.name"/>
+                </strong>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>
