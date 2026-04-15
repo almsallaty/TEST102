@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_car_lot_image_list" model="ir.ui.view">
+        <field name="name">car.lot.image.list</field>
+        <field name="model">car.lot.image</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="image_type"/>
+                <field name="avatar" widget="image" options="{'size': [96, 96]}"/>
+                <field name="capture_method" optional="show"/>
+                <field name="capture_date" optional="show"/>
+                <field name="note" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_car_lot_image_form" model="ir.ui.view">
+        <field name="name">car.lot.image.form</field>
+        <field name="model">car.lot.image</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="lot_id"/>
+                            <field name="name"/>
+                            <field name="image_type"/>
+                            <field name="sequence"/>
+                            <field name="capture_method"/>
+                            <field name="capture_date"/>
+                            <field name="note"/>
+                            <field name="image_filename"/>
+                        </group>
+                        <group>
+                            <field name="avatar" widget="image" options="{'size': [320, 320]}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_car_expense_lot_embedded_list" model="ir.ui.view">
+        <field name="name">car.expense.lot.embedded.list</field>
+        <field name="model">car.expense</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="expense_date"/>
+                <field name="expense_type"/>
+                <field name="name"/>
+                <field name="vendor_id" optional="show"/>
+                <field name="reference" optional="show"/>
+                <field name="account_move_id" optional="show"/>
+                <field name="landed_cost_id" optional="show"/>
+                <field name="amount"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_car_location_history_embedded_list" model="ir.ui.view">
+        <field name="name">car.location.history.embedded.list</field>
+        <field name="model">car.location.history</field>
+        <field name="arch" type="xml">
+            <list create="false" delete="false">
+                <field name="move_date"/>
+                <field name="source_location_id"/>
+                <field name="destination_location_id"/>
+                <field name="picking_id" optional="show"/>
+                <field name="user_id" optional="show"/>
+                <field name="reference" optional="show"/>
+                <field name="note" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_car_audit_log_embedded_list" model="ir.ui.view">
+        <field name="name">car.audit.log.embedded.list</field>
+        <field name="model">car.audit.log</field>
+        <field name="arch" type="xml">
+            <list create="false" delete="false">
+                <field name="change_datetime"/>
+                <field name="user_id"/>
+                <field name="field_label"/>
+                <field name="old_value" optional="show"/>
+                <field name="new_value" optional="show"/>
+                <field name="message"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_stock_lot_form_car_management" model="ir.ui.view">
+        <field name="name">stock.lot.form.baroon.dealership</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <div name="button_box" class="oe_button_box" invisible="not is_car_vehicle">
+                    <button type="object" name="action_transfer_car" class="oe_stat_button" icon="fa-exchange">
+                        <span>Transfer Car</span>
+                    </button>
+                    <button type="object" name="action_view_transfers" class="oe_stat_button" icon="fa-truck">
+                        <field name="transfer_count" string="Transfers" widget="statinfo"/>
+                    </button>
+                    <button type="object" name="action_view_opportunities" class="oe_stat_button" icon="fa-handshake-o">
+                        <field name="crm_lead_count" string="Opportunities" widget="statinfo"/>
+                    </button>
+                    <button type="object" name="action_view_sales_documents" class="oe_stat_button" icon="fa-file-text-o">
+                        <field name="quotation_count" string="Sales Docs" widget="statinfo"/>
+                    </button>
+                    <button type="object" name="action_view_expenses" class="oe_stat_button" icon="fa-money">
+                        <field name="expense_count" string="Expenses" widget="statinfo"/>
+                    </button>
+                    <button type="object" name="action_view_location_history" class="oe_stat_button" icon="fa-map-marker">
+                        <field name="location_history_count" string="Location History" widget="statinfo"/>
+                    </button>
+                                        <button type="object" name="action_view_test_drives" class="oe_stat_button" icon="fa-road">
+                        <field name="test_drive_count" string="Test Drives" widget="statinfo"/>
+                    </button>
+                    <button type="object" name="action_view_vendor_bills" class="oe_stat_button" icon="fa-file-text">
+                        <field name="vendor_bill_count" string="Vendor Bills" widget="statinfo"/>
+                    </button>
+                    <button type="object" name="action_print_car_profile" class="oe_stat_button" icon="fa-print">
+                        <span>Profile PDF</span>
+                    </button>
+                    <button type="object" name="action_print_car_profitability" class="oe_stat_button" icon="fa-line-chart">
+                        <span>Profit PDF</span>
+                    </button>
+                    <button type="object" name="action_print_car_accounting" class="oe_stat_button" icon="fa-calculator">
+                        <span>Cost PDF</span>
+                    </button>
+                    <button type="object" name="action_print_handover_sheet" class="oe_stat_button" icon="fa-clipboard">
+                        <span>Delivery Sheet</span>
+                    </button>
+                    <button type="object" name="action_print_executive_summary" class="oe_stat_button" icon="fa-dashboard">
+                        <span>Executive PDF</span>
+                    </button>
+                    <button type="object" name="action_print_car_history" class="oe_stat_button" icon="fa-clock-o">
+                        <span>History PDF</span>
+                    </button>
+                    <button type="object" name="action_open_website" class="oe_stat_button" icon="fa-globe" invisible="not website_published">
+                        <span>Website</span>
+                    </button>
+                </div>
+
+                <group string="Workflow" invisible="not is_car_vehicle" col="2">
+                    <group>
+                        <field name="car_status" widget="statusbar" statusbar_visible="draft,incoming,in_shipment,customs,received,in_preparation,available,reserved,sold,delivered" options="{'clickable': false}"/>
+                        <field name="inventory_state_label" readonly="1"/>
+                        <button type="object" name="action_transfer_car" string="Transfer Car" class="btn-primary" invisible="car_status in ('sold', 'delivered', 'cancelled')"/>
+                        <button type="object" name="action_schedule_test_drive" string="Schedule Test Drive" class="btn-secondary" invisible="car_status not in ('available', 'reserved')"/>
+                    </group>
+                    <group>
+                        <button type="object" name="action_mark_incoming" string="Incoming" class="btn-secondary" invisible="car_status != 'draft'"/>
+                        <button type="object" name="action_mark_in_shipment" string="In Shipment" class="btn-secondary" invisible="car_status != 'incoming'"/>
+                        <button type="object" name="action_mark_customs" string="Customs" class="btn-secondary" invisible="car_status != 'in_shipment'"/>
+                        <button type="object" name="action_mark_received" string="Received" class="btn-secondary" invisible="car_status != 'customs'"/>
+                        <button type="object" name="action_mark_preparation" string="Preparation" class="btn-secondary" invisible="car_status != 'received'"/>
+                        <button type="object" name="action_mark_available" string="Available" class="btn-primary" invisible="car_status not in ('received', 'in_preparation', 'cancelled')"/>
+                        <button type="object" name="action_reserve" string="Reserve" class="btn-secondary" invisible="car_status != 'available'"/>
+                        <button type="object" name="action_mark_sold" string="Sold" class="btn-primary" invisible="car_status not in ('available', 'reserved')"/>
+                        <button type="object" name="action_deliver" string="Delivered" class="btn-primary" invisible="car_status != 'sold'"/>
+                        <button type="object" name="action_restore_to_inventory" string="Restore to Inventory" class="btn-secondary" invisible="active"/>
+                    </group>
+                </group>
+
+                <group string="Car Identity" invisible="not is_car_vehicle">
+                    <group string="Vehicle Profile">
+                        <field name="name" string="VIN / Serial"/>
+                        <field name="product_id" options="{'no_open': False}"/>
+                        <field name="car_brand"/>
+                        <field name="car_model"/>
+                        <field name="car_trim"/>
+                        <field name="year"/>
+                        <field name="condition" string="Vehicle Condition"/>
+                    </group>
+                    <group string="Commercial Snapshot">
+                        <field name="kanban_image" widget="image" options="{'size': [256, 256]}"/>
+                        <field name="car_image" widget="image" options="{'size': [256, 256]}"/>
+                        <field name="sale_price"/>
+                        <field name="minimum_sale_price"/>
+                        <field name="current_location_id" readonly="1" string="Tracked Stock Location"/>
+                        <field name="branch_location"/>
+                        <field name="active"/>
+                    </group>
+                </group>
+
+                <group string="Quick KPIs" invisible="not is_car_vehicle">
+                    <group>
+                        <field name="days_in_stock" readonly="1"/>
+                        <field name="days_to_arrival" readonly="1"/>
+                        <field name="arriving_soon" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="purchase_cost" readonly="1"/>
+                        <field name="total_cost" readonly="1"/>
+                        <field name="gross_margin" readonly="1"/>
+                        <field name="margin_percent" readonly="1"/>
+                    </group>
+                </group>
+
+                <notebook invisible="not is_car_vehicle">
+                    <page string="Overview">
+                        <group>
+                            <group string="Identity &amp; Registration">
+                                <field name="engine_number"/>
+                                <field name="plate_number"/>
+                                <field name="body_style"/>
+                                <field name="doors"/>
+                                <field name="seats"/>
+                                <field name="drivetrain"/>
+                            </group>
+                            <group string="Website &amp; Listing">
+                                <field name="website_published"/>
+                                <field name="website_sequence"/>
+                                <field name="website_url" widget="url" readonly="1"/>
+                                <field name="is_car_profile_complete" readonly="1"/>
+                                <field name="website_short_description" placeholder="Short line for cards and quick listings"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Technical Specs">
+                                <field name="mileage"/>
+                                <field name="horse_power"/>
+                                <field name="engine_size"/>
+                                <field name="fuel_type"/>
+                                <field name="gearbox_type"/>
+                            </group>
+                            <group string="Body &amp; Cabin">
+                                <field name="exterior_color_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <field name="interior_color_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <field name="dashboard_label" readonly="1"/>
+                            </group>
+                        </group>
+                        <group string="Internal Notes">
+                            <field name="notes" widget="text"/>
+                        </group>
+                    </page>
+
+                    <page string="Purchase &amp; Shipment">
+                        <group>
+                            <group string="Procurement">
+                                <field name="purchase_partner_id"/>
+                                <field name="purchase_order_id"/>
+                                <field name="purchase_line_id"/>
+                                <field name="purchase_date"/>
+                                <field name="purchase_cost" readonly="1"/>
+                            </group>
+                            <group string="Shipment Tracking">
+                                <field name="shipping_reference"/>
+                                <field name="shipment_booking_reference"/>
+                                <field name="container_reference"/>
+                                <field name="port_of_loading"/>
+                                <field name="destination_port"/>
+                                <field name="expected_arrival_date"/>
+                                <field name="arrival_date"/>
+                                <field name="customs_release_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="shipping_notes" widget="text"/>
+                        </group>
+                    </page>
+
+                    <page string="Sales">
+                        <group>
+                            <group string="Customer Journey">
+                                <field name="crm_lead_ids" widget="many2many_tags" readonly="1"/>
+                                <field name="test_drive_ids" readonly="1">
+                                    <list create="false" delete="false">
+                                        <field name="scheduled_datetime"/>
+                                        <field name="partner_id"/>
+                                        <field name="state"/>
+                                        <field name="salesperson_id" optional="show"/>
+                                    </list>
+                                </field>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Reservation">
+                                <field name="reservation_order_id" readonly="1"/>
+                                <field name="reservation_partner_id" readonly="1"/>
+                                <field name="reserved_until" readonly="1"/>
+                            </group>
+                            <group string="Completed Sale">
+                                <field name="sale_order_id" readonly="1"/>
+                                <field name="buyer_id" readonly="1"/>
+                                <field name="salesperson_id" readonly="1"/>
+                                <field name="sold_date" readonly="1"/>
+                                <field name="delivered_date" readonly="1"/>
+                            </group>
+                        </group>
+                    </page>
+
+                    <page string="Costs">
+                        <group>
+                            <group string="Cost Summary">
+                                <field name="purchase_cost" readonly="1"/>
+                                <field name="shipping_cost" readonly="1"/>
+                                <field name="customs_cost" readonly="1"/>
+                                <field name="landed_cost" readonly="1"/>
+                                <field name="reconditioning_cost" readonly="1"/>
+                                <field name="extra_expense_total" readonly="1"/>
+                                <field name="total_cost" readonly="1"/>
+                            </group>
+                            <group string="Margin">
+                                <field name="sale_price"/>
+                                <field name="minimum_sale_price"/>
+                                <field name="gross_margin" readonly="1"/>
+                                <field name="margin_percent" readonly="1"/>
+                                <field name="landed_cost_record_ids" widget="many2many_tags" readonly="1"/>
+                                <field name="vendor_bill_ids" widget="many2many_tags" readonly="1"/>
+                            </group>
+                        </group>
+                        <field name="expense_ids" context="{'default_lot_id': id}" mode="list,form"/>
+                    </page>
+
+                    <page string="Location History">
+                        <field name="location_history_ids" mode="list,form" readonly="1"/>
+                    </page>
+
+                    <page string="Gallery">
+                        <field name="car_image_ids" context="{'default_lot_id': id}" widget="car_image_gallery_one2many" mode="list,form"/>
+                    </page>
+
+                    <page string="Audit Trail" invisible="1">
+                        <field name="audit_log_ids" mode="list,form" readonly="1"/>
+                    </page>
+
+                    <page string="Website Description">
+                        <field name="website_description" widget="html"/>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_stock_lot_list_car_management" model="ir.ui.view">
+        <field name="name">stock.lot.list.baroon.dealership</field>
+        <field name="model">stock.lot</field>
+        <field name="arch" type="xml">
+            <list multi_edit="0">
+                <field name="name" string="VIN"/>
+                <field name="product_id"/>
+                <field name="car_brand" optional="show"/>
+                <field name="car_model" optional="show"/>
+                <field name="year" optional="show"/>
+                <field name="car_status" decoration-success="car_status == 'available'" decoration-warning="car_status in ('reserved', 'in_preparation', 'customs')" decoration-danger="car_status in ('sold', 'delivered')"/>
+                <field name="current_location_id" optional="show"/>
+                <field name="purchase_partner_id" optional="hide"/>
+                <field name="sale_price" optional="show"/>
+                <field name="buyer_id" optional="show"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_stock_lot_search_car_management" model="ir.ui.view">
+        <field name="name">stock.lot.search.baroon.dealership</field>
+        <field name="model">stock.lot</field>
+        <field name="arch" type="xml">
+            <search string="Car VIN Search">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="car_brand"/>
+                <field name="car_model"/>
+                <field name="engine_number"/>
+                <field name="plate_number"/>
+                <field name="buyer_id"/>
+                <field name="purchase_partner_id"/>
+                <filter string="Car VINs" name="filter_car_vehicle" domain="[('is_car_vehicle', '=', True)]"/>
+                <separator/>
+                <filter string="Active Inventory" name="filter_active_inventory" domain="[('is_car_vehicle', '=', True), ('active', '=', True), ('car_status', 'not in', ('sold', 'delivered'))]"/>
+                <filter string="Incoming" name="filter_incoming" domain="[('car_status', '=', 'incoming')]"/>
+                <filter string="In Shipment" name="filter_in_shipment" domain="[('car_status', '=', 'in_shipment')]"/>
+                <filter string="Customs" name="filter_customs" domain="[('car_status', '=', 'customs')]"/>
+                <filter string="Received" name="filter_received" domain="[('car_status', '=', 'received')]"/>
+                <filter string="Preparation" name="filter_preparation" domain="[('car_status', '=', 'in_preparation')]"/>
+                <filter string="Available" name="filter_available" domain="[('car_status', '=', 'available')]"/>
+                <filter string="Reserved" name="filter_reserved" domain="[('car_status', '=', 'reserved')]"/>
+                <filter string="Sold" name="filter_sold" domain="[('car_status', '=', 'sold')]"/>
+                <filter string="Delivered" name="filter_delivered" domain="[('car_status', '=', 'delivered')]"/>
+                <filter string="Arriving Soon" name="filter_arriving_soon" domain="[('arriving_soon', '=', True)]"/>
+                <filter string="Incomplete Profile" name="filter_incomplete" domain="[('is_car_profile_complete', '=', False)]"/>
+                <filter string="Published" name="filter_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Group by Status" name="group_car_status" domain="[]" context="{'group_by': 'car_status'}"/>
+                <filter string="Group by Brand" name="group_car_brand" domain="[]" context="{'group_by': 'car_brand'}"/>
+                <filter string="Group by Model" name="group_car_model" domain="[]" context="{'group_by': 'car_model'}"/>
+                <filter string="Group by Year" name="group_year" domain="[]" context="{'group_by': 'year'}"/>
+                <filter string="Group by Buyer" name="group_buyer" domain="[]" context="{'group_by': 'buyer_id'}"/>
+                <filter string="Group by Vendor" name="group_vendor" domain="[]" context="{'group_by': 'purchase_partner_id'}"/>
+                <filter string="Group by Location" name="group_current_location" domain="[]" context="{'group_by': 'current_location_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_stock_lot_kanban_car_management" model="ir.ui.view">
+        <field name="name">stock.lot.kanban.baroon.dealership</field>
+        <field name="model">stock.lot</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" default_group_by="car_status" records_draggable="false">
+                <field name="id"/>
+                <field name="dashboard_label"/>
+                <field name="kanban_image"/>
+                <field name="sale_price"/>
+                <field name="currency_id"/>
+                <field name="year"/>
+                <field name="mileage"/>
+                <field name="current_location_id"/>
+                <field name="inventory_state_label"/>
+                <field name="website_published"/>
+                <field name="car_status"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="o_kanban_record">
+                            <div class="o_kanban_image_fill_left">
+                                <img t-if="record.kanban_image.raw_value" t-att-src="kanban_image('stock.lot', 'kanban_image', record.id.raw_value)" style="width: 96px; height: 96px; object-fit: cover; border-radius: 6px;"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong><field name="dashboard_label"/></strong>
+                                <div><field name="inventory_state_label"/></div>
+                                <div><strong>Price:</strong> <field name="sale_price" widget="monetary" options="{'currency_field': 'currency_id'}"/></div>
+                                <div><strong>Year:</strong> <field name="year"/></div>
+                                <div><strong>Location:</strong> <field name="current_location_id"/></div>
+                                <div><span class="badge text-bg-info" invisible="not website_published">Website</span></div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_stock_lot_graph_car_management" model="ir.ui.view">
+        <field name="name">stock.lot.graph.baroon.dealership</field>
+        <field name="model">stock.lot</field>
+        <field name="arch" type="xml">
+            <graph string="Car Inventory Analysis" type="bar">
+                <field name="car_status" type="row"/>
+                <field name="sale_price" type="measure"/>
+                <field name="total_cost" type="measure"/>
+                <field name="gross_margin" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_stock_lot_pivot_car_management" model="ir.ui.view">
+        <field name="name">stock.lot.pivot.baroon.dealership</field>
+        <field name="model">stock.lot</field>
+        <field name="arch" type="xml">
+            <pivot string="Car Inventory Pivot">
+                <field name="car_brand" type="row"/>
+                <field name="car_status" type="col"/>
+                <field name="sale_price" type="measure"/>
+                <field name="purchase_cost" type="measure"/>
+                <field name="total_cost" type="measure"/>
+                <field name="gross_margin" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>
