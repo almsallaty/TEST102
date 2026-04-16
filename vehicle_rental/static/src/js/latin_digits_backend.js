@@ -1,127 +1,93 @@
-(function () {
-    'use strict';
+/** @odoo-module **/
 
-    const DIGIT_MAP = {
-        '٠': '0',
-        '١': '1',
-        '٢': '2',
-        '٣': '3',
-        '٤': '4',
-        '٥': '5',
-        '٦': '6',
-        '٧': '7',
-        '٨': '8',
-        '٩': '9',
+import { registry } from "@web/core/registry";
+import { DateField } from "@web/views/fields/date/date_field";
+import { DateTimeField } from "@web/views/fields/datetime/datetime_field";
+import { onMounted, onPatched } from "@odoo/owl";
+
+function toLatinDigits(value) {
+    if (typeof value !== "string") {
+        return value;
+    }
+    const map = {
+        "٠": "0",
+        "١": "1",
+        "٢": "2",
+        "٣": "3",
+        "٤": "4",
+        "٥": "5",
+        "٦": "6",
+        "٧": "7",
+        "٨": "8",
+        "٩": "9",
     };
+    return value.replace(/[٠-٩]/g, (d) => map[d] || d);
+}
 
-    const ARABIC_DIGITS_RE = /[٠-٩]/g;
-    const HAS_ARABIC_DIGITS_RE = /[٠-٩]/;
-
-    function toLatinDigits(value) {
-        if (typeof value !== 'string' || !HAS_ARABIC_DIGITS_RE.test(value)) {
-            return value;
-        }
-        return value.replace(ARABIC_DIGITS_RE, function (d) {
-            return DIGIT_MAP[d] || d;
-        });
+function convertNode(node) {
+    if (!node || node.nodeType !== 1) {
+        return;
     }
 
-    function convertElement(el) {
-        if (!el || el.nodeType !== 1) {
-            return;
-        }
-
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            if (el.value) {
-                const newValue = toLatinDigits(el.value);
-                if (newValue !== el.value) {
-                    el.value = newValue;
-                }
-            }
-            if (el.placeholder) {
-                const newPlaceholder = toLatinDigits(el.placeholder);
-                if (newPlaceholder !== el.placeholder) {
-                    el.placeholder = newPlaceholder;
-                }
-            }
-            return;
-        }
-
-        if (el.children.length === 0 && el.textContent) {
-            const newText = toLatinDigits(el.textContent);
-            if (newText !== el.textContent) {
-                el.textContent = newText;
+    if (node.tagName === "INPUT" || node.tagName === "TEXTAREA") {
+        if (node.value) {
+            const newValue = toLatinDigits(node.value);
+            if (newValue !== node.value) {
+                node.value = newValue;
             }
         }
-    }
-
-    function scan(root) {
-        if (!root) {
-            return;
-        }
-
-        convertElement(root);
-
-        const elements = root.querySelectorAll(
-            '.o_form_view input,' +
-            '.o_form_view textarea,' +
-            '.o_form_view span,' +
-            '.o_form_view div,' +
-            '.o_list_view td,' +
-            '.modal input,' +
-            '.modal textarea,' +
-            '.modal span,' +
-            '.modal div'
-        );
-
-        for (let i = 0; i < elements.length; i++) {
-            convertElement(elements[i]);
-        }
-    }
-
-    let scheduled = false;
-
-    function scheduleScan() {
-        if (scheduled) {
-            return;
-        }
-        scheduled = true;
-        window.requestAnimationFrame(function () {
-            scheduled = false;
-            scan(document.body);
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', scheduleScan);
-    window.addEventListener('load', scheduleScan);
-    document.addEventListener('input', scheduleScan, true);
-    document.addEventListener('change', scheduleScan, true);
-    document.addEventListener('click', function () {
-        setTimeout(scheduleScan, 50);
-    }, true);
-
-    const observer = new MutationObserver(function (mutations) {
-        for (let i = 0; i < mutations.length; i++) {
-            if (mutations[i].addedNodes && mutations[i].addedNodes.length) {
-                scheduleScan();
-                return;
+        if (node.placeholder) {
+            const newPlaceholder = toLatinDigits(node.placeholder);
+            if (newPlaceholder !== node.placeholder) {
+                node.placeholder = newPlaceholder;
             }
         }
-    });
+        return;
+    }
 
-    function startObserver() {
-        if (document.body) {
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true,
-            });
-            scheduleScan();
+    if (node.children.length === 0 && node.textContent) {
+        const newText = toLatinDigits(node.textContent);
+        if (newText !== node.textContent) {
+            node.textContent = newText;
         }
     }
+}
 
-    if (document.body) {
-        startObserver();
-    } else {
-        document.addEventListener('DOMContentLoaded', startObserver);
+function patchDigits(root) {
+    if (!root) {
+        return;
     }
-})();
+
+    // IMPORTANT: patch the root itself first
+    convertNode(root);
+
+    const nodes = root.querySelectorAll("*");
+    for (const node of nodes) {
+        convertNode(node);
+    }
+}
+
+class LatinDateField extends DateField {
+    setup() {
+        super.setup();
+        const apply = () => patchDigits(this.el);
+        onMounted(apply);
+        onPatched(apply);
+    }
+}
+LatinDateField.template = DateField.template;
+LatinDateField.supportedTypes = ["date"];
+
+class LatinDateTimeField extends DateTimeField {
+    setup() {
+        super.setup();
+        const apply = () => patchDigits(this.el);
+        onMounted(apply);
+        onPatched(apply);
+    }
+}
+LatinDateTimeField.template = DateTimeField.template;
+LatinDateTimeField.supportedTypes = ["datetime"];
+
+registry.category("fields").add("latin_date", LatinDateField);
+registry.category("fields").add("latin_datetime", LatinDateTimeField);
