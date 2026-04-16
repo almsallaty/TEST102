@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- فورم العميل -->
+    <record id="res_partner_form_inherit_rental" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.rental</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- إضافة رقم الجواز وتاريخ الميلاد في البيانات الأساسية -->
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="nationality_id" options="{'no_create': True, 'no_open': True}"/>
+                <field name="passport_number" placeholder="رقم الجواز / البطاقة الشخصية"/>
+                <field name="date_of_birth" placeholder="تاريخ الميلاد"/>
+            </xpath>
+            
+            <!-- إضافة صفحة بيانات التأجير -->
+            <xpath expr="//notebook" position="inside">
+                <page string="بيانات التأجير" name="rental_info">
+                    <group>
+                        <group string="معلومات الرخصة">
+                            <field name="license_number"/>
+                            <field name="license_issue_date"/>
+                            <field name="license_issue_place"/>
+                            <field name="license_expiry"/>
+                        </group>
+                        <group string="تصنيف العميل">
+                            <field name="rental_category"/>
+                            <field name="customer_rating"/>
+                            <field name="hide_phone"/>
+                            <field name="rental_currency_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="جهة العمل">
+                            <field name="employer_id"/>
+                        </group>
+                        <group string="موقع العميل">
+                            <field name="nearest_landmark"/>
+                            <field name="street"/>
+                            <field name="city"/>
+                            <field name="country_id"/>
+                        </group>
+                    </group>
+                    <group string="ملاحظات">
+                        <field name="notes" nolabel="1" colspan="2"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

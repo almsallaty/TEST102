@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--Fleet Form View-->
+        <record id="renta_fleet_vehicle_inherit_form_view" model="ir.ui.view">
+            <field name="name">renta.fleet.vehicle.inherit.form.view</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='driver_id']" position="attributes">
+                    <attribute name="domain">[('employee_ids', '!=', False)]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='future_driver_id']" position="attributes">
+                    <attribute name="domain">[('employee_ids', '!=', False)]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='state_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//form/header" position="after">
+                    <div class="alert alert-success text-center mt-0 mb-2" role="alert"
+                         invisible="status != 'available'">
+                        Operational
+                    </div>
+                    <div class="alert alert-danger text-center mt-0 mb-2" role="alert"
+                         invisible="status != 'in_maintenance'">
+                        In Maintenance
+                    </div>
+                </xpath>
+                <xpath expr="//button[@name='return_action_to_open']" position='replace'>
+                    <button class="oe_stat_button" type="object" name="action_maintenances_request_view" icon="fa-gears"
+                            invisible="maintenance_request_count == 0">
+                        <field string="M. Requests" name="maintenance_request_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="action_maintenance_bill_views" icon="fa-money"
+                            invisible="maintenance_bill_count == 0">
+                        <field string="Maintenance Bills" name="maintenance_bill_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+                <xpath expr="//button[@name='open_assignation_logs']" position="before">
+                    <button class="oe_stat_button" type="object" name="action_rental_contract_view" icon="fa-taxi">
+                        <field string="Rental Contracts" name="rental_contract_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <field name="status" widget="statusbar"/>
+                    <button string="Under Maintenance" name="available_to_in_maintenance" type="object"
+                            invisible="status == 'in_maintenance'" class="btn btn-danger"/>
+                    <button string="Operational" name="in_maintenance_to_available" type="object"
+                            invisible="status == 'available'" class="btn btn-success"/>
+                    <button string="Create Maintenance Request" name="action_create_maintenance_request"
+                            class="btn btn-warning" type="object"/>
+                </xpath>
+                            <!-- تعديل حقل location ليظهر كـ Many2one مع خيارات -->
+                <xpath expr="//field[@name='location']" position="attributes">
+                    <attribute name="options">{'no_create': True, 'no_open': False}</attribute>
+                    <attribute name="context">{'default_usage': 'internal'}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='location']" position="after">
+                    <field name="access_token" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="features_ids" widget="many2many_tags"
+                           options="{'no_create': True, 'no_create_edit': True}"/>
+                </xpath>
+                <xpath expr="//form/sheet/group" position="inside">
+                    <group string="Rent Details">
+                        <!-- <field name="rent_hour"/> -->
+                        <field name="rent_day"/>
+                        <field name="rent_week"/>
+                        <field name="rent_month"/>
+                        <!-- <field name="rent_year"/> -->
+                        <field name="rent_km"/>
+                        <!-- <field name="rent_mi"/>
+                        <field name="minimum_km_per_day"/> -->
+                    </group>
+                    <group string="Extra Charge Details">
+                        <!-- <field name="extra_charge_hour"/> -->
+                        <field name="extra_charge_day"/>
+                        <field name="extra_charge_week"/>
+                        <field name="extra_charge_month"/>
+                        <!-- <field name="extra_charge_year"/> -->
+                        <field name="extra_charge_km"/>
+                        <!-- <field name="extra_charge_mi"/> -->
+                    </group>
+                </xpath>
+                <xpath expr="//form/sheet/group" position="inside">
+                    <group name="vehicle_maintenance_schedule_details" string="Maintenance Schedule Details">
+                        <field name="maintenance_schedule_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="upcoming_maintenance_date" invisible="1"/>
+                        <field name="reminder_days" invisible="1"/>
+                    </group>
+                    <group name="vehicle_other_details" string="Other Details">
+                        <field name="is_any_vehicle_expense"/>
+                    </group>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <!-- <page string="Rental Policies">
+                        <field name="rental_policy_ids">
+                            <list editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="policy"/>
+                            </list>
+                        </field>
+                    </page>
+                    <page string="Inclusions">
+                        <field name="inclusion_ids">
+                            <list editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="inclusion"/>
+                            </list>
+                        </field>
+                    </page>
+                    <page string="Additional Information">
+                        <field name="additional_info_ids">
+                            <list editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="description"/>
+                            </list>
+                        </field>
+                    </page>  -->
+                    <page string="Images" name="fleet_images">
+                        <field name="fleet_image_ids">
+                            <kanban string="Fleet Images" default_order="sequence">
+                                <field name="id"/>
+                                <field name="title"/>
+                                <field name="image"/>
+                                <field name="sequence" widget="handle"/>
+                                <templates>
+                                    <t t-name="card" class="border border-0 p-0">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div>
+                                                <strong>
+                                                    <field name="title"/>
+                                                </strong>
+                                            </div>
+                                            <div>
+                                                <t t-if="record.image.raw_value.length &lt; 100*1000">
+                                                    <t t-set="size_status"
+                                                       t-value="'text-bg-success'"/>
+                                                    <t t-set="message">Acceptable file
+                                                        size
+                                                    </t>
+                                                </t>
+                                                <!-- below 1000 Kb: decent -->
+                                                <t t-elif="record.image.raw_value.length &lt; 1000*1000">
+                                                    <t t-set="size_status"
+                                                       t-value="'text-bg-warning'"/>
+                                                    <t t-set="message">Huge file size.
+                                                        The image
+                                                        should be optimized/reduced.
+                                                    </t>
+                                                </t>
+                                                <!-- above 1000 Kb: bad -->
+                                                <t t-else="1">
+                                                    <t t-set="size_status"
+                                                       t-value="'text-bg-danger'"/>
+                                                    <t t-set="message">Optimization
+                                                        required!
+                                                        Reduce the image size or
+                                                        increase your
+                                                        compression settings.
+                                                    </t>
+                                                </t>
+                                                <span
+                                                        t-attf-class="badge #{size_status} o_product_image_size"
+                                                        t-esc="record.image.value"
+                                                        t-att-title="message"/>
+                                            </div>
+                                        </div>
+                                        <hr class="mb-1 mt-1"/>
+                                        <div style="height:223px;">
+                                            <field name="image" widget="image" style="height:223px;"
+                                                   options="{'img_class': 'object-fit-cover h-100 w-100'}"/>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </page>
+                </xpath>
+
+                <!--Vehicle Expanses-->
+                <xpath expr="//page[@name='page_model']" position="after">
+                    <page name="fleet_vehicle_expenses" string="Vehicle Expenses"
+                          invisible="not is_any_vehicle_expense">
+                        <field name="fleet_expense_ids" context="{'default_driver_id': driver_id}">
+                            <!--Inherit Form View-->
+                            <form string="Expenses" js_class="hr_expense_form_view">
+                                <header>
+                                    <!-- Without attachments the attach_document comes first-->
+                                    <button name="action_submit" string="Submit" type="object"
+                                            class="oe_highlight o_expense_submit_highlight"
+                                            invisible="nb_attachment == 0 or state != 'draft'" data-hotkey="v"/>
+                                    <button name="action_approve" string="Approve" type="object" data-hotkey="q"
+                                            context="{'validate_analytic': True}"
+                                            invisible="nb_attachment == 0 or not can_approve or state != 'submitted'"
+                                            class="oe_highlight o_expense_approve_highlight"/>
+                                    <button name="action_post" string="Post Journal Entries" type="object"
+                                            data-hotkey="y" class="oe_highlight o_expense_post_highlight"
+                                            invisible="nb_attachment == 0 or state != 'approved'"
+                                            groups="account.group_account_invoice"/>
+
+                                    <!-- With attachments the attach document comes last-->
+                                    <widget name="attach_document" string="Attach Receipt" action="attach_document"
+                                            highlight="1" invisible="nb_attachment &gt;= 1"/>
+                                    <button name="action_submit" string="Submit" type="object" class="o_expense_submit"
+                                            invisible="nb_attachment &gt;= 1 or state != 'draft'" data-hotkey="v"/>
+                                    <button name="action_approve" string="Approve" type="object" data-hotkey="q"
+                                            context="{'validate_analytic': True}"
+                                            invisible="nb_attachment &gt;= 1 or not can_approve or state != 'submitted'"
+                                            class="o_expense_approve"/>
+                                    <button name="action_post" string="Post Journal Entries" type="object"
+                                            data-hotkey="y" class="o_expense_post"
+                                            invisible="nb_attachment  &gt;= 1 or state != 'approved'"
+                                            groups="account.group_account_invoice"/>
+
+                                    <button name="action_refuse" string="Refuse"
+                                            invisible="state not in ('submitted', 'approved')" type="object"
+                                            groups="hr_expense.group_hr_expense_team_approver" class="o_expense_refuse"
+                                            data-hotkey="x"/>
+                                    <button name="action_reset" string="Reset" type="object" data-hotkey="r"
+                                            invisible="not can_reset or state in 'draft'"
+                                            groups="account.group_account_invoice"/>
+                                    <!-- v In the case where the user has no accounting rights, we don't show the button in the post & done states  -->
+                                    <button name="action_reset" string="Reset" type="object" data-hotkey="r"
+                                            invisible="not can_reset or state in ('draft', 'posted', 'in_payment','paid')"
+                                            groups="!account.group_account_invoice"/>
+                                    <button name="action_split_wizard" string="Split Expense" type="object"
+                                            invisible="state != 'draft' or product_has_cost"
+                                            groups="!hr_expense.group_hr_expense_team_approver,!account.group_account_invoice"
+                                            class="o_expense_split_user"/>
+                                    <button name="action_split_wizard" string="Split Expense" type="object"
+                                            class="o_expense_split_manager"
+                                            invisible="state in ('in_payment', 'paid', 'refused', 'posted') or product_has_cost"
+                                            groups="hr_expense.group_hr_expense_team_approver,account.group_account_invoice"/>
+
+                                    <!-- With attachments the attach_document comes last -->
+                                    <widget name="attach_document" string="Attach Receipt" action="attach_document"
+                                            invisible="nb_attachment == 0"/>
+
+                                    <!-- Statusbar -->
+                                    <field name="state" widget="statusbar"
+                                           statusbar_visible="draft,approved,posted,paid"
+                                           invisible="state in ('submitted', 'in_payment', 'refused')"/>
+                                    <field name="state" widget="statusbar"
+                                           statusbar_visible="draft,submitted,approved,posted,paid"
+                                           invisible="state != 'submitted'"/>
+                                    <field name="state" widget="statusbar"
+                                           statusbar_visible="draft,approved,posted,in_payment,paid"
+                                           invisible="state != 'in_payment'"/>
+                                    <field name="state" widget="statusbar"
+                                           statusbar_visible="draft,approved,posted,paid,refused"
+                                           invisible="state != 'refused'"/>
+                                </header>
+                                <sheet>
+                                    <div class="oe_button_box" name="button_box">
+                                        <button name="action_open_split_expense" type="object" class="oe_stat_button"
+                                                icon="fa-file-text-o" invisible="not split_expense_origin_id"
+                                                string="Split"/>
+                                        <button name="action_open_account_move" class="oe_stat_button" icon="fa-bars"
+                                                type="object" invisible="not account_move_id"
+                                                groups="account.group_account_invoice">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_text">Journal Entry</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="oe_title">
+                                        <label for="name"/>
+                                        <h1>
+                                            <field name="name" placeholder="e.g. Lunch with Customer"
+                                                   readonly="not is_editable"/>
+                                        </h1>
+                                    </div>
+                                    <group>
+                                        <group>
+                                            <field name="product_has_cost" invisible="1"/>
+                                            <field name="product_has_tax" invisible="1"/>
+                                            <field name="is_multiple_currency" invisible="1"/>
+                                            <field name="is_editable" invisible="1"/>
+                                            <field name="currency_id" invisible="1"/>
+                                            <field name="company_currency_id" invisible="1"/>
+                                            <field name="tax_amount" invisible="1"/>
+                                            <field name="price_unit" invisible="1"/>
+                                            <field name="nb_attachment" invisible="1"/>
+                                            <field name="total_amount" invisible="1"/>
+                                            <field name="duplicate_expense_ids" invisible="1"/>
+                                            <field name="currency_rate" invisible="1"/>
+                                            <field name="selectable_payment_method_line_ids" invisible="1"/>
+
+                                            <field name="fleet_vehicle_id" invisible="fleet_vehicle_id == False"
+                                                   readonly="1"/>
+
+                                            <label for="product_id"/>
+                                            <div>
+                                                <field name="product_id" required="1" readonly="not is_editable"
+                                                       context="{'default_type': 'service', 'default_can_be_expensed': 1,                                         'list_view_ref': 'hr_expense.product_product_expense_tree_view',                                         'form_view_ref': 'hr_expense.product_product_expense_form_view',                                     }"
+                                                       class="w-100"/>
+                                                <div class="fst-italic"
+                                                     invisible="not is_editable or not product_description or not product_id">
+                                                    <field name="product_description"/>
+                                                </div>
+                                            </div>
+
+                                            <!-- CASE: product has a cost defined -> user input qty (always in company currency) -->
+                                            <field name="price_unit" required="1" widget="monetary"
+                                                   options="{'currency_field': 'currency_id', 'field_digits': True}"
+                                                   invisible="not product_has_cost" readonly="True"/>
+                                            <label for="quantity" invisible="not product_has_cost"/>
+                                            <div invisible="not product_has_cost">
+                                                <div class="o_row">
+                                                    <field name="quantity" class="oe_inline"
+                                                           readonly="not is_editable"/>
+                                                    <field name="product_uom_id" required="1" force_save="1"
+                                                           options="{'no_open': True, 'no_create': True}"
+                                                           groups="uom.group_uom" readonly="not is_editable"
+                                                           widget="many2one_uom"/>
+                                                </div>
+                                            </div>
+
+                                            <!-- CASE: product has no cost defined -> user input amount (in other currency if multi-currency) -->
+                                            <label for="total_amount_currency" string="Total"
+                                                   invisible="product_has_cost" readonly="not is_editable"/>
+                                            <div class="o_row" invisible="product_has_cost">
+                                                <field name="total_amount_currency" widget="monetary"
+                                                       options="{'currency_field': 'currency_id'}"
+                                                       readonly="not is_editable" class="oe_inline mw-50 me-0"/>
+                                                <field name="currency_id" class="mw-25 ms-0"
+                                                       groups="base.group_multi_currency" options="{'no_create': True}"
+                                                       readonly="not is_editable"/>
+                                                <span class="d-flex" invisible="tax_amount == 0">(incl
+                                                    <field name="tax_amount" class="mx-1"/>
+                                                    tax)
+                                                </span>
+                                            </div>
+
+                                            <!-- CASE: converter when currency is different than the company one -->
+                                            <label name="total_amount_product_cost_label" for="total_amount"
+                                                   string="Total"
+                                                   invisible="is_multiple_currency or not product_has_cost"/>
+                                            <label name="total_amount_multicurrency_label" for="total_amount" string=""
+                                                   invisible="not is_multiple_currency"/>
+                                            <div class="o_row"
+                                                 invisible="not is_multiple_currency and not product_has_cost">
+                                                <field name="total_amount" widget="monetary"
+                                                       options="{'currency_field': 'company_currency_id'}"
+                                                       force_save="1" readonly="not is_editable or product_has_cost"
+                                                       class="oe_inline"/>
+                                                <field name="label_currency_rate" class="ps-0"/>
+                                            </div>
+
+                                            <label for="tax_ids"/>
+                                            <div class="o_row">
+                                                <field name="tax_ids" force_save="1" widget="many2many_tax_tags"
+                                                       readonly="not is_editable" options="{'no_create': True}"/>
+                                                <field name="tax_amount_currency"/>
+                                            </div>
+
+                                            <field name="driver_id" widget="many2one_avatar" readonly="1"
+                                                   force_save="1"/>
+                                            <field name="employee_ids" invisible="1"/>
+                                            <field name="employee_id" groups="!hr.group_hr_user"
+                                                   context="{'default_company_id': company_id}"
+                                                   widget="many2one_avatar_employee"
+                                                   options="{'relation': 'hr.employee.public', 'no_create': True}"
+                                                   readonly="not is_editable" domain="[('id', 'in', employee_ids)]"/>
+                                            <field name="employee_id" groups="hr.group_hr_user"
+                                                   context="{'default_company_id': company_id}"
+                                                   widget="many2one_avatar_employee"
+                                                   options="{'relation': 'hr.employee'}" readonly="not is_editable"
+                                                   domain="[('id', 'in', employee_ids)]"/>
+                                        </group>
+
+                                        <group>
+                                            <field name="date" readonly="not is_editable" class="w-50"/>
+                                            <field name="company_id" groups="base.group_multi_company"
+                                                   readonly="state != 'draft'"/>
+                                            <field name="manager_id" widget="many2one_avatar_user"
+                                                   readonly="state != 'draft'" placeholder="Auto-validation"/>
+                                            <field name="department_id" invisible="1" readonly="not is_editable"
+                                                   context="{'default_company_id': company_id}"/>
+                                            <field name="vendor_id" invisible="payment_mode != 'company_account'"/>
+                                            <field name="account_id" options="{'no_create': True}"
+                                                   domain="[('account_type', 'not in', ('asset_receivable','liability_payable','asset_cash','liability_credit_card')), ('company_ids', 'parent_of', company_id)]"
+                                                   groups="account.group_account_readonly" readonly="not is_editable"
+                                                   context="{'default_company_id': company_id}"/>
+                                            <field name="payment_method_line_id"
+                                                   options="{'no_open': True, 'no_create': True}"
+                                                   invisible="payment_mode != 'company_account'"
+                                                   readonly="not is_editable"
+                                                   required="payment_mode == 'company_account'"/>
+                                            <field name="analytic_distribution" widget="analytic_distribution"
+                                                   groups="analytic.group_analytic_accounting"
+                                                   options="{'product_field': 'product_id', 'account_field': 'account_id', 'business_domain': 'expense'}"
+                                                   readonly="not is_editable"/>
+                                        </group>
+                                    </group>
+                                    <div>
+                                        <field name="description" placeholder="Notes..." readonly="not is_editable"/>
+                                    </div>
+                                </sheet>
+                            </form>
+                            <!--Inherit List View-->
+                            <list>
+                                <!--  Always Shown start -->
+                                <field name="employee_id" widget="many2one_avatar_employee" readonly="not is_editable"/>
+                                <field name="name" readonly="not is_editable"/>
+
+                                <!--  Optional -->
+                                <field name="department_id" optional="hide" readonly="True"/>
+                                <field name="date" optional="show" readonly="not is_editable"/>
+                                <field name="product_id" optional="show" readonly="not is_editable" required="1"/>
+                                <field name="analytic_distribution" widget="analytic_distribution"
+                                       optional="show"
+                                       groups="analytic.group_analytic_accounting"
+                                       readonly="not is_editable"
+                                       options="{'product_field': 'product_id', 'business_domain': 'expense'}"/>
+                                <field name="account_id" optional="hide" groups="account.group_account_readonly"
+                                       readonly="not is_editable"/>
+                                <field name="journal_id" optional="hide" groups="account.group_account_readonly"
+                                       readonly="True"/>
+                                <field name="payment_method_line_id" optional="hide"
+                                       groups="account.group_account_readonly"
+                                       readonly="not is_editable"/>
+                                <field name="manager_id" optional="hide" readonly="not is_editable"/>
+                                <field name="price_unit" string="Unit Price" optional="hide" widget="monetary"
+                                       options="{'currency_field': 'company_currency_id', 'field_digits': True}"
+                                       readonly="True"/>
+                                <field name="quantity" optional="hide"
+                                       readonly="not is_editable or not product_has_cost"/>
+                                <field name="tax_ids" optional="hide" widget="many2many_tax_tags"
+                                       groups="account.group_account_invoice,account.group_account_readonly"
+                                       readonly="not is_editable or not product_has_cost"/>
+                                <field name="tax_amount" sum="Total Taxes" readonly="True"
+                                       optional="hide"
+                                       groups="account.group_account_invoice,account.group_account_readonly"/>
+                                <field name="total_amount" sum="Total Amount" widget='monetary'
+                                       readonly="not is_editable or product_has_cost"
+                                       options="{'currency_field': 'company_currency_id'}" decoration-bf="1"/>
+                                <field name="total_amount_currency" widget='monetary'
+                                       readonly="not is_editable or not is_multiple_currency or product_has_cost"
+                                       options="{'currency_field': 'currency_id'}" optional="hide" decoration-bf="1"
+                                       groups="base.group_multi_currency"/>
+                                <field name="currency_id" optional="hide"
+                                       readonly="not is_editable or product_has_cost"
+                                       groups="base.group_multi_currency"/>
+                                <!--  Always Shown end -->
+                                <field name="state" optional="show" readonly="True"
+                                       decoration-info="state == 'draft'"
+                                       decoration-success="state in ['approved', 'posted', 'in_payment', 'paid']"
+                                       decoration-warning="state == 'submitted'"
+                                       decoration-danger="state == 'refused'"
+                                       widget="badge"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Fleet Tree View-->
+        <record id='rental_fleet_vehicle_inherit_tree_view' model='ir.ui.view'>
+            <field name="name">rental.fleet.vehicle.inherit.tree.view</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="status" widget="badge"
+                           decoration-success="status == 'available'"
+                           decoration-danger="status == 'in_maintenance'"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Fleet Kanban View-->
+        <record id='rental_fleet_vehicle_inherit_kanban_view' model='ir.ui.view'>
+            <field name="name">rental.fleet.vehicle.inherit.kanban.view</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="arch" type="xml">
+                <kanban sample="1"
+                        quick_create_view="fleet.fleet_vehicle_view_form_quick_create">
+                    <templates>
+                        <t t-name="card" class="flex-row">
+                            <aside class="d-flex align-items-center me-2">
+                                <field name="image_128" widget="image" options="{'img_class': 'object-fit-cover'}"/>
+                            </aside>
+                            <main>
+                                <div>
+                                    <t t-if="record.license_plate.raw_value">
+                                        <field class="fw-bolder fs-5" name="license_plate"/>:
+                                    </t>
+                                    <field class="fw-bolder fs-5" name="model_id"/>
+                                </div>
+                                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <div class="d-flex gap-1" t-if="record.driver_id.raw_value">
+                                    <field name="driver_id" widget="many2one_avatar"/>
+                                    <field name="driver_id" class="small pt-1 pb-1"/>
+                                </div>
+                                <div class="small">
+                                    <t t-if="record.future_driver_id.raw_value">Future Driver :
+                                        <field name="future_driver_id"/>
+                                    </t>
+                                </div>
+                                <t t-if="record.location.raw_value">
+                                    <small>
+                                        <i class="fa fa-map-marker" title="Location"></i>
+                                        <field name="location"/>
+                                    </small>
+                                </t>
+                                <div class="d-flex justify-content-between align-items-center pt-2">
+                                    <div class="text-muted small d-flex align-items-center flex-wrap">
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                    </div>
+                                    <div class="fw-bold text-end">
+                                        <field name="status" widget="badge"
+                                               decoration-success="status == 'available'"
+                                               decoration-danger="status == 'in_maintenance'"/>
+                                    </div>
+                                </div>
+                            </main>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--Fleet Search View-->
+        <record id='rental_fleet_vehicle_inherit_search_view' model='ir.ui.view'>
+            <field name="name">rental.fleet.vehicle.inherit.search.view</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="arch" type="xml">
+                <search string="All vehicles">
+                    <field string="Vehicle" name="name"
+                           filter_domain="['|', ('name', 'ilike', self), ('license_plate', 'ilike', self)]"/>
+                    <field string="Drivers" name="log_drivers"
+                           filter_domain="['|', '|', ('log_drivers.driver_id', 'ilike', self),('driver_id', 'ilike', self),
+                           ('future_driver_id', 'ilike', self)]"/>
+                    <field string="Model" name="model_id"/>
+                    <field string="License Plate" name="license_plate"/>
+                    <field name="tag_ids"/>
+                    <field string="Status" name="state_id"/>
+                    <field string="Properties" name="vehicle_properties"/>
+                    <filter string="Available" name="available"
+                            domain="['&amp;', ('future_driver_id', '=', False), '|', ('driver_id', '=', False), '|', '&amp;', ('plan_to_change_car', '=', True), ('vehicle_type', '=', 'car'), '&amp;', ('plan_to_change_bike', '=', True), ('vehicle_type', '=', 'bike')]"/>
+                    <filter string="Bikes" name="bikes" domain="[('vehicle_type', '=', 'bike')]"/>
+                    <filter string="Cars" name="cars" domain="[('vehicle_type', '=', 'car')]"/>
+                    <filter string="Trailer Hook" name="trailer_hook" domain="[('trailer_hook', '=', True)]"/>
+                    <filter name="planned" string="Planned for Change"
+                            domain="['|', '&amp;', ('vehicle_type', '=', 'bike'), ('plan_to_change_bike', '=', True), '&amp;', ('vehicle_type', '=', 'car'), ('plan_to_change_car', '=', True)]"/>
+                    <separator/>
+                    <filter string="Need Action" name="alert_true"
+                            domain="['|', ('contract_renewal_due_soon', '=', True), ('contract_renewal_overdue', '=', True)]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <filter invisible="1" string="Late Activities" name="activities_overdue"
+                            domain="[('my_activity_date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                            help="Show all records which has next action date is before today"/>
+                    <filter invisible="1" string="Today Activities" name="activities_today"
+                            domain="[('my_activity_date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter invisible="1" string="Future Activities" name="activities_upcoming_all"
+                            domain="[('my_activity_date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
+                    <group>
+                        <filter string="Status" name="vehicle_status" context="{'group_by': 'status'}"/>
+                        <filter string="Model" name="groupby_model" context="{'group_by': 'model_id'}"/>
+                        <filter string="Brand" name="groupby_make" context="{'group_by': 'brand_id'}"/>
+                        <filter string="Fuel Type" name="groupby_fueltype" context="{'group_by': 'fuel_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!--Fleet vehicle action inherit-->
+        <record id="action_inherit_fleet_vehicle" model="ir.actions.act_window">
+            <field name="name">Vehicles</field>
+            <field name="res_model">fleet.vehicle</field>
+            <field name="view_mode">kanban,list,form,pivot,activity</field>
+            <!-- Attach search view -->
+            <field name="search_view_id" ref="rental_fleet_vehicle_inherit_search_view"/>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                    (0, 0, {'view_mode': 'kanban', 'view_id': ref('rental_fleet_vehicle_inherit_kanban_view')})]"/>
+        </record>
+
+        <!--Fleet Vehicle Log Contract-->
+        <record id="fleet_vehicle_log_contract_form_view_inherit" model="ir.ui.view">
+            <field name="name">fleet.vehicle.log.contract.form.view.inherit</field>
+            <field name="model">fleet.vehicle.log.contract</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_log_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vehicle_id']" position="after">
+                    <field name="license_plate"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

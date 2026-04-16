@@ -1,0 +1,4920 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* vehicle_rental
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-12 13:13+0000\n"
+"PO-Revision-Date: 2026-02-12 13:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__rental_contract_count
+msgid " Contracts"
+msgstr "Contracte"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__currency_id
+msgid " Currency"
+msgstr "Valută"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__deposit_payment_state
+msgid " Payment State"
+msgstr "Statul de plată"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__authorized_sign_by_id
+msgid " Sign By"
+msgstr "Înregistrează-te"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__drop_off_state_id
+msgid " State"
+msgstr "Stat"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"$0 -\n"
+"                                    $50"
+msgstr ""
+"0 USD -\n"
+"                                    50 USD"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "$100+"
+msgstr "100 USD+"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"$50\n"
+"                                    - $100"
+msgstr ""
+"50 USD\n"
+"                                    - 100 USD"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "%1 hidden"
+msgstr "%1 ascuns"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "%1 shown"
+msgstr "%1 afișat"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "(829)-386-3277"
+msgstr "(829)-386-3277"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "(incl"
+msgstr "(inclusiv"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ""
+",\n"
+"                                    hereby declare that:"
+msgstr ""
+",\n"
+"                                    hereby declare that:"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_scratch_customer_sign_template
+msgid ""
+",\n"
+"                    please review the scratch report below and provide your approval by signing."
+msgstr ""
+",\n"
+"                    Vă rugăm să examinați raportul de zgârieturi de mai jos și să vă oferiți aprobarea prin semnare."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Additional Charges &amp; Company Information"
+msgstr ". Taxe suplimentare &amp; Informații despre companie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Cancellation Policy"
+msgstr ". Politica de anulare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Customer Information"
+msgstr ". Informații despre clienți"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Driver Details"
+msgstr ""
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Extra Services"
+msgstr ". Servicii suplimentare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Insurance"
+msgstr ". Asigurare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Rent &amp; Payment Information"
+msgstr ". Închiriere și amp; Informații de plată"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Schedule &amp; Location"
+msgstr ". Programare &amp; Locaţie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Self Declaration"
+msgstr ". Declarație de sine"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Terms &amp; Condition"
+msgstr ". Termeni & amp; Stare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Vehicle Damages"
+msgstr ". Daune la vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Vehicle Details"
+msgstr ". Detalii despre vehicul"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Vehicle Images"
+msgstr ". Imagini cu vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ". Vehicle Payment Details"
+msgstr ". Detalii de plată a vehiculului"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"2+\n"
+"                                    Seats"
+msgstr ""
+"2+\n"
+"                                    Seats"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "2024 Nissan Versa"
+msgstr "2024 Nissan Versa"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"4+\n"
+"                                    Seats"
+msgstr ""
+"4+\n"
+"                                    Scaune"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"5+\n"
+"                                    Seats"
+msgstr ""
+"5+\n"
+"                                    Scaune"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"7+\n"
+"                                    Seats"
+msgstr ""
+"7+\n"
+"                                    Scaune"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_success
+msgid ""
+"<br/>\n"
+"                                        has been successfully submitted."
+msgstr ""
+"<br/>\n"
+"                                        a fost trimis cu succes."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid ""
+"<br/>\n"
+"                                Service Charges:"
+msgstr ""
+"<br/>\n"
+"                                Taxe de servicii:"
+
+#. module: vehicle_rental
+#: model:mail.template,body_html:vehicle_rental.scratch_report_review_signature_required_mail_template
+msgid ""
+"<h4>\n"
+"                    Dear\n"
+"                    <strong>\n"
+"                        <t t-out=\"object.customer_id.name\"/>\n"
+"                    </strong>\n"
+"                    ,\n"
+"                </h4>\n"
+"                <hr style=\"margin: 0; padding: 0;\"/>\n"
+"                <h4>\n"
+"                    Greetings from\n"
+"                    <strong>\n"
+"                        <t t-out=\"object.company_id.name\"/>\n"
+"                    </strong>\n"
+"                </h4>\n"
+"                <p>\n"
+"                    This email is regarding your recently completed rental contract\n"
+"                    <strong>\n"
+"                        <t t-out=\"object.reference_no\"/>\n"
+"                    </strong>\n"
+"                    for the\n"
+"                    <strong>\n"
+"                        <t t-out=\"object.vehicle_id.name\"/>\n"
+"                    </strong>\n"
+"                    .\n"
+"                </p>\n"
+"                <p>\n"
+"                    During the return inspection, our team identified scratch damage on the vehicle. A detailed Scratch\n"
+"                    Report has been prepared.\n"
+"                </p>\n"
+"                <p>\n"
+"                    To review the scratch details and provide your confirmation signature, please click the button\n"
+"                    below:\n"
+"                </p>\n"
+"\n"
+"                <a t-att-href=\"object.get_scratch_report_url()\" target=\"_blank\" class=\"btn btn-primary\">\n"
+"                    View &amp; Sign Scratch Report\n"
+"                </a>\n"
+"                <p>\n"
+"                    Kindly review the report carefully and submit your digital signature to complete the verification\n"
+"                    process. This will allow us to proceed with the final settlement as per the rental agreement terms.\n"
+"                </p>\n"
+"                <p>\n"
+"                    If you have any questions or require clarification regarding the report, please contact us at your\n"
+"                    convenience.\n"
+"                </p>\n"
+"                <p>\n"
+"                    Thank you for your prompt cooperation.\n"
+"                </p>\n"
+"                <hr style=\"margin: 0; padding: 0;\"/>\n"
+"                <div>\n"
+"                    <strong>\n"
+"                        Best regards,\n"
+"                        <br/>\n"
+"                        <t t-out=\"object.responsible_id.name\"/>\n"
+"                    </strong>\n"
+"                    <br/>\n"
+"                    <t t-out=\"object.company_id.name\"/>\n"
+"                    <br/>\n"
+"                    <t t-out=\"object.company_id.phone\"/>\n"
+"                    <br/>\n"
+"                    <t t-out=\"object.company_id.email\"/>\n"
+"                    <br/>\n"
+"                    <t t-out=\"object.company_id.website\"/>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<h4>\n"
+"                    dragă\n"
+"                    <strong>\n"
+"<t t-out=\"object.customer_id.name\"></t>\n"
+"</strong>\n"
+"                    ,\n"
+"                </h4>\n"
+"<hr style=\"margin: 0; padding: 0;\"/>\n"
+"<h4>\n"
+"                    Salutări din\n"
+"                    <strong>\n"
+"<t t-out=\"object.company_id.name\"></t>\n"
+"</strong>\n"
+"</h4>\n"
+"<p>\n"
+"                    Acest e-mail se referă la contractul de închiriere încheiat recent\n"
+"                    <strong>\n"
+"<t t-out=\"object.reference_no\"></t>\n"
+"</strong>\n"
+"                    pentru\n"
+"                    <strong>\n"
+"<t t-out=\"object.vehicle_id.name\"></t>\n"
+"</strong>\n"
+"                    .\n"
+"                </p>\n"
+"<p>\n"
+"                    În timpul inspecției de returnare, echipa noastră a identificat daune cauzate de zgârieturi la vehicul. Un Scratch detaliat\n"
+"                    Raportul a fost pregătit.\n"
+"                </p>\n"
+"<p>\n"
+"                    Pentru a verifica detaliile zgârieturilor și a furniza semnătura de confirmare, vă rugăm să faceți clic pe butonul\n"
+"                    mai jos:\n"
+"                </p>\n"
+"<a class=\"btn btn-primary\" t-att-href=\"object.get_scratch_report_url()\" target=\"_blank\">\n"
+"                    Vizualizați și semnați raportul de zgârietură\n"
+"                </a>\n"
+"<p>\n"
+"                    Vă rugăm să examinați cu atenție raportul și să trimiteți semnătura digitală pentru a finaliza verificarea\n"
+"                    proces. Acest lucru ne va permite să trecem la decontarea finală conform termenilor contractului de închiriere.\n"
+"                </p>\n"
+"<p>\n"
+"                    Dacă aveți întrebări sau aveți nevoie de clarificări cu privire la raport, vă rugăm să ne contactați la adresa dvs\n"
+"                    comoditate.\n"
+"                </p>\n"
+"<p>\n"
+"                    Vă mulțumim pentru cooperarea promptă.\n"
+"                </p>\n"
+"<hr style=\"margin: 0; padding: 0;\"/>\n"
+"<div>\n"
+"<strong>\n"
+"                        Salutări,\n"
+"                        <br/>\n"
+"<t t-out=\"object.responsible_id.name\"></t>\n"
+"</strong>\n"
+"<br/>\n"
+"<t t-out=\"object.company_id.name\"></t>\n"
+"<br/>\n"
+"<t t-out=\"object.company_id.phone\"></t>\n"
+"<br/>\n"
+"<t t-out=\"object.company_id.email\"></t>\n"
+"<br/>\n"
+"<t t-out=\"object.company_id.website\"></t>\n"
+"</div>\n"
+
+#. module: vehicle_rental
+#: model:mail.template,body_html:vehicle_rental.vehicle_rental_booking_confirmation_mail_template
+msgid ""
+"<h4>\n"
+"                    Dear\n"
+"                    <strong>\n"
+"                        <t t-out=\"object.customer_id.name\"/>\n"
+"                    </strong>\n"
+"                    ,\n"
+"                </h4>\n"
+"                <hr style=\"margin: 0; padding: 0;\"/>\n"
+"                <p>\n"
+"                    Thank you for booking with\n"
+"                    <strong>\n"
+"                        <t t-out=\"object.company_id.name\"/>\n"
+"                    </strong>\n"
+"                    . Below are your rental details:\n"
+"                </p>\n"
+"                <hr style=\"margin: 5px;\"/>\n"
+"                <table class=\"table table-bordered\" style=\"width:100%; border-collapse:collapse;\">\n"
+"                    <!-- Reference & Vehicle -->\n"
+"                    <tr>\n"
+"                        <td style=\"width: 35%; padding: 5px;\">\n"
+"                            <strong>Reference No.</strong>\n"
+"                        </td>\n"
+"                        <td style=\"width: 65%; padding: 5px;\">\n"
+"                            <span t-field=\"object.reference_no\"/>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <td style=\"width: 35%; padding: 5px;\">\n"
+"                            <strong>Vehicle</strong>\n"
+"                        </td>\n"
+"                        <td style=\"width: 65%; padding: 5px;\">\n"
+"                            <span t-field=\"object.vehicle_id.name\"/>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <!-- Pickup Section -->\n"
+"                    <tr>\n"
+"                        <td colspan=\"2\" style=\"width: 100%; background-color:#f2f2f2; padding: 5px;\">\n"
+"                            <strong>Pickup Details</strong>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <td style=\"width: 35%; padding: 5px;\">\n"
+"                            <strong>Pickup Date</strong>\n"
+"                        </td>\n"
+"                        <td style=\"width: 65%; padding: 5px;\">\n"
+"                            <span t-field=\"object.start_date\"/>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <td style=\"vertical-align: middle; width: 35%; padding: 5px;\">\n"
+"                            <strong>Pickup Address</strong>\n"
+"                        </td>\n"
+"                        <td style=\"width: 65%; padding: 5px;\">\n"
+"                            <t t-if=\"object.pick_up_street\">\n"
+"                                <span t-field=\"object.pick_up_street\"/>\n"
+"                                <br/>\n"
+"                            </t>\n"
+"                            <t t-if=\"object.pick_up_street2\">\n"
+"                                <span t-field=\"object.pick_up_street2\"/>\n"
+"                                <br/>\n"
+"                            </t>\n"
+"                            <t t-if=\"object.pick_up_city\">\n"
+"                                <span t-field=\"object.pick_up_city\"/>\n"
+"                                <span t-field=\"object.pick_up_state_id.name\"/>\n"
+"                                <span t-field=\"object.pick_up_zip\"/>\n"
+"                                <br/>\n"
+"                            </t>\n"
+"                            <t t-if=\"object.pick_up_country_id\">\n"
+"                                <span t-field=\"object.pick_up_country_id.name\"/>\n"
+"                            </t>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <!-- Return Section -->\n"
+"                    <tr>\n"
+"                        <td colspan=\"2\" style=\"width: 100%; background-color:#f2f2f2; padding: 5px;\">\n"
+"                            <strong>Return Details</strong>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <td style=\"width: 35%; padding: 5px;\">\n"
+"                            <strong>Drop-off Date</strong>\n"
+"                        </td>\n"
+"                        <td style=\"width: 65%; padding: 5px;\">\n"
+"                            <span t-field=\"object.end_date\"/>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <td style=\"vertical-align: middle; padding: 5px;\">\n"
+"                            <strong>Drop-off Address</strong>\n"
+"                        </td>\n"
+"                        <td style=\"width: 65%; padding: 5px;\">\n"
+"                            <t t-if=\"object.drop_off_street\">\n"
+"                                <span t-field=\"object.drop_off_street\"/>\n"
+"                                <br/>\n"
+"                            </t>\n"
+"                            <t t-if=\"object.drop_off_street2\">\n"
+"                                <span t-field=\"object.drop_off_street2\"/>\n"
+"                                <br/>\n"
+"                            </t>\n"
+"                            <t t-if=\"object.drop_off_city\">\n"
+"                                <span t-field=\"object.drop_off_city\"/>\n"
+"                                <span t-field=\"object.drop_off_state_id.name\"/>\n"
+"                                <span t-field=\"object.drop_off_zip\"/>\n"
+"                                <br/>\n"
+"                            </t>\n"
+"                            <t t-if=\"object.drop_off_country_id\">\n"
+"                                <span t-field=\"object.drop_off_country_id.name\"/>\n"
+"                            </t>\n"
+"                        </td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"                <hr style=\"margin: 5px;\"/>\n"
+"                <p>\n"
+"                    Please be available at the pickup location on time and carry your required documents.\n"
+"                </p>\n"
+"                <p>\n"
+"                    For any support or changes, feel free to contact us.\n"
+"                </p>\n"
+"                <p>\n"
+"                    Have a great trip!\n"
+"                </p>\n"
+"                <hr style=\"margin: 0; padding: 0;\"/>\n"
+"                <span>\n"
+"                    <strong>\n"
+"                        Best regards,\n"
+"                        <br/>\n"
+"                        <t t-out=\"object.responsible_id.name\"/>\n"
+"                    </strong>\n"
+"                    <br/>\n"
+"                    <t t-out=\"object.company_id.name\"/>\n"
+"                    <br/>\n"
+"                    <t t-out=\"object.company_id.phone\"/>\n"
+"                    <br/>\n"
+"                    <t t-out=\"object.company_id.email\"/>\n"
+"                    <br/>\n"
+"                    <t t-out=\"object.company_id.website\"/>\n"
+"                </span>\n"
+"            "
+msgstr ""
+"<h4>\n"
+"                    dragă\n"
+"                    <strong>\n"
+"<t t-out=\"object.customer_id.name\"></t>\n"
+"</strong>\n"
+"                    ,\n"
+"                </h4>\n"
+"<hr style=\"margin: 0; padding: 0;\"/>\n"
+"<p>\n"
+"                    Vă mulțumim pentru rezervare cu\n"
+"                    <strong>\n"
+"<t t-out=\"object.company_id.name\"></t>\n"
+"</strong>\n"
+"                    . Mai jos sunt detaliile dvs. de închiriere:\n"
+"                </p>\n"
+"<hr style=\"margin: 5px;\"/>\n"
+"<table class=\"table table-bordered\" style=\"width:100%; border-collapse:collapse;\">\n"
+" Referință și vehicul \n"
+"<tr>\n"
+"<td style=\"width: 35%; padding: 5px;\">\n"
+"<strong>Nr. de referință</strong>\n"
+"</td>\n"
+"<td style=\"width: 65%; padding: 5px;\">\n"
+"<span t-field=\"object.reference_no\"></span>\n"
+"</td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td style=\"width: 35%; padding: 5px;\">\n"
+"<strong>Vehicul</strong>\n"
+"</td>\n"
+"<td style=\"width: 65%; padding: 5px;\">\n"
+"<span t-field=\"object.vehicle_id.name\"></span>\n"
+"</td>\n"
+"</tr>\n"
+" Secția de ridicare \n"
+"<tr>\n"
+"<td colspan=\"2\" style=\"width: 100%; background-color:#f2f2f2; padding: 5px;\">\n"
+"<strong>Detalii de ridicare</strong>\n"
+"</td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td style=\"width: 35%; padding: 5px;\">\n"
+"<strong>Data ridicării</strong>\n"
+"</td>\n"
+"<td style=\"width: 65%; padding: 5px;\">\n"
+"<span t-field=\"object.start_date\"></span>\n"
+"</td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td style=\"vertical-align: middle; width: 35%; padding: 5px;\">\n"
+"<strong>Adresa de preluare</strong>\n"
+"</td>\n"
+"<td style=\"width: 65%; padding: 5px;\">\n"
+"<t t-if=\"object.pick_up_street\">\n"
+"<span t-field=\"object.pick_up_street\"></span>\n"
+"<br/>\n"
+"</t>\n"
+"<t t-if=\"object.pick_up_street2\">\n"
+"<span t-field=\"object.pick_up_street2\"></span>\n"
+"<br/>\n"
+"</t>\n"
+"<t t-if=\"object.pick_up_city\">\n"
+"<span t-field=\"object.pick_up_city\"></span>\n"
+"<span t-field=\"object.pick_up_state_id.name\"></span>\n"
+"<span t-field=\"object.pick_up_zip\"></span>\n"
+"<br/>\n"
+"</t>\n"
+"<t t-if=\"object.pick_up_country_id\">\n"
+"<span t-field=\"object.pick_up_country_id.name\"></span>\n"
+"</t>\n"
+"</td>\n"
+"</tr>\n"
+" Secțiunea de întoarcere \n"
+"<tr>\n"
+"<td colspan=\"2\" style=\"width: 100%; background-color:#f2f2f2; padding: 5px;\">\n"
+"<strong>Please try again later.That’s all we know.</strong>\n"
+"</td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td style=\"width: 35%; padding: 5px;\">\n"
+"<strong>Data de predare</strong>\n"
+"</td>\n"
+"<td style=\"width: 65%; padding: 5px;\">\n"
+"<span t-field=\"object.end_date\"></span>\n"
+"</td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td style=\"vertical-align: middle; padding: 5px;\">\n"
+"<strong>Adresa de predare</strong>\n"
+"</td>\n"
+"<td style=\"width: 65%; padding: 5px;\">\n"
+"<t t-if=\"object.drop_off_street\">\n"
+"<span t-field=\"object.drop_off_street\"></span>\n"
+"<br/>\n"
+"</t>\n"
+"<t t-if=\"object.drop_off_street2\">\n"
+"<span t-field=\"object.drop_off_street2\"></span>\n"
+"<br/>\n"
+"</t>\n"
+"<t t-if=\"object.drop_off_city\">\n"
+"<span t-field=\"object.drop_off_city\"></span>\n"
+"<span t-field=\"object.drop_off_state_id.name\"></span>\n"
+"<span t-field=\"object.drop_off_zip\"></span>\n"
+"<br/>\n"
+"</t>\n"
+"<t t-if=\"object.drop_off_country_id\">\n"
+"<span t-field=\"object.drop_off_country_id.name\"></span>\n"
+"</t>\n"
+"</td>\n"
+"</tr>\n"
+"</table>\n"
+"<hr style=\"margin: 5px;\"/>\n"
+"<p>\n"
+"                    Vă rugăm să fiți disponibil la timp la locul de preluare și să aveți documentele necesare.\n"
+"                </p>\n"
+"<p>\n"
+"                    Pentru orice asistență sau modificări, nu ezitați să ne contactați.\n"
+"                </p>\n"
+"<p>\n"
+"                    Excursie minunată!\n"
+"                </p>\n"
+"<hr style=\"margin: 0; padding: 0;\"/>\n"
+"<span>\n"
+"<strong>\n"
+"                        Salutări,\n"
+"                        <br/>\n"
+"<t t-out=\"object.responsible_id.name\"></t>\n"
+"</strong>\n"
+"<br/>\n"
+"<t t-out=\"object.company_id.name\"></t>\n"
+"<br/>\n"
+"<t t-out=\"object.company_id.phone\"></t>\n"
+"<br/>\n"
+"<t t-out=\"object.company_id.email\"></t>\n"
+"<br/>\n"
+"<t t-out=\"object.company_id.website\"></t>\n"
+"</span>\n"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_web_template
+msgid "<i class=\"bi bi-search me-2\"/>Search"
+msgstr "<i class=\"bi bi-search me-2\"></i>Căutare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_kanban_view
+msgid "<i class=\"fa fa-calendar me-1\" title=\"Durations\"/>"
+msgstr "<i class=\"fa fa-calendar me-1\" title=\"Durations\"></i>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+msgid ""
+"<i class=\"fa fa-calendar-check-o me-2\"/>\n"
+"                                        Booking Enquiry Details"
+msgstr ""
+"<i class=\"fa fa-calendar-check-o me-2\"></i>\n"
+"                                        Detalii privind cererea de rezervare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_kanban_view
+msgid "<i class=\"fa fa-car me-1\" title=\"Vehicle\"/>"
+msgstr "<i class=\"fa fa-car me-1\" title=\"Vehicle\"></i>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+msgid ""
+"<i class=\"fa fa-credit-card me-2\"/>\n"
+"                                        Pricing Details"
+msgstr ""
+"<i class=\"fa fa-credit-card me-2\"></i>\n"
+"                                        Detalii de preț"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_scratch_customer_sign_template
+msgid "<i class=\"fa fa-pen me-2\"/>Accept &amp; Sign Report"
+msgstr "<i class=\"fa fa-pen me-2\"></i>Acceptați și semnați raportul"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_kanban_view
+msgid "<i class=\"fa fa-user me-1\" title=\"Customer\"/>"
+msgstr "<i class=\"fa fa-user me-1\" title=\"Customer\"></i>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid ""
+"<span class=\"badge bg-success fs-6 px-3 py-2\" "
+"id=\"vehicleStatus\">Available</span>"
+msgstr ""
+"<span class=\"badge bg-success fs-6 px-3 py-2\" "
+"id=\"vehicleStatus\">Disponibil</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "<span class=\"badge bg-success\">Available</span>"
+msgstr "<span class=\"badge bg-success\">Disponibil</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid ""
+"<span class=\"carousel-control-next-icon\" aria-hidden=\"true\"/>\n"
+"                                                    <span class=\"visually-hidden\">Next</span>"
+msgstr ""
+"<span aria-hidden=\"true\" class=\"carousel-control-next-icon\"></span>\n"
+"<span class=\"visually-hidden\">Următorul</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid ""
+"<span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"/>\n"
+"                                                    <span class=\"visually-hidden\">Previous</span>"
+msgstr ""
+"<span aria-hidden=\"true\" class=\"carousel-control-prev-icon\"></span>\n"
+"<span class=\"visually-hidden\">Anterior</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "<span class=\"fw-bold\">Total</span>"
+msgstr "<span class=\"fw-bold\">Total</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_web_template
+msgid ""
+"<span class=\"input-group-text\">\n"
+"                                                            <i class=\"fa fa-money\"/>\n"
+"                                                        </span>\n"
+"                                                        <select name=\"vehicle_price_type_id\" id=\"vehicle_price_type_id\" class=\"form-select fs-small\">\n"
+"                                                            <option value=\"\">Price Type</option>\n"
+"                                                            <option value=\"hour\">Price per Hours</option>\n"
+"                                                            <option value=\"day\">Price per Day</option>\n"
+"                                                            <option value=\"week\">Price per Week</option>\n"
+"                                                            <option value=\"month\">Price per Month</option>\n"
+"                                                            <option value=\"year\">Price per Year</option>\n"
+"                                                            <option value=\"kilometer\">Price per Kilometer</option>\n"
+"                                                            <option value=\"mile\">Price per Mile</option>\n"
+"                                                        </select>"
+msgstr ""
+"<span class=\"input-group-text\">\n"
+"<i class=\"fa fa-money\"></i>\n"
+"</span>\n"
+"<select class=\"form-select fs-small\" id=\"vehicle_price_type_id\" name=\"vehicle_price_type_id\">\n"
+"<option value=\"\">Tip de preț</option>\n"
+"<option value=\"hour\">Preț pe oră</option>\n"
+"<option value=\"day\">Preț pe zi</option>\n"
+"<option value=\"week\">Preț pe săptămână</option>\n"
+"<option value=\"month\">Preț pe Month</option>\n"
+"<option value=\"year\">Preț pe an</option>\n"
+"<option value=\"kilometer\">Preț pe kilometru</option>\n"
+"<option value=\"mile\">Preț pe milă</option>\n"
+"</select>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Cancellation Reasons</span>"
+msgstr "<span class=\"label\">Motive de anulare</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Charge Type</span>"
+msgstr "<span class=\"label\">Tip de încărcare</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Company</span>"
+msgstr "<span class=\"label\">Companie</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Customer</span>"
+msgstr "<span class=\"label\">Client</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Date</span>"
+msgstr "<span class=\"label\">Data</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Deposit Journal</span>"
+msgstr "<span class=\"label\">Jurnalul de depozit</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Descriptions</span>"
+msgstr "<span class=\"label\">Descrieri</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Driver Charges</span>"
+msgstr "<span class=\"label\">Taxe pentru șofer</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Driver Name</span>"
+msgstr "<span class=\"label\">Nume șofer</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Driver Required?</span>"
+msgstr "<span class=\"label\">Driver necesar?</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Email Address</span>"
+msgstr "<span class=\"label\">Adresa de e-mail</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Fuel Type</span>"
+msgstr "<span class=\"label\">Tip de combustibil</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Full Name</span>"
+msgstr "<span class=\"label\">Numele complet</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">If Any Deposit</span>"
+msgstr "<span class=\"label\">Dacă Orice Depunere</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">If any extra charges</span>"
+msgstr "<span class=\"label\">Dacă există taxe suplimentare</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Invoice Item</span>"
+msgstr "<span class=\"label\">Articol de factură</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Last Odometer</span>"
+msgstr "<span class=\"label\">Ultimul kilometraj</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">License Plate</span>"
+msgstr "<span class=\"label\">Înmatriculare</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Location</span>"
+msgstr "<span class=\"label\">Locaţie</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Model Year</span>"
+msgstr "<span class=\"label\">Anul modelului</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Payment Type</span>"
+msgstr "<span class=\"label\">Tip de plată</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Phone Number</span>"
+msgstr "<span class=\"label\">Număr de telefon</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Policy</span>"
+msgstr "<span class=\"label\">Politică</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Reference Number</span>"
+msgstr "<span class=\"label\">Număr de referință</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Rent Type</span>"
+msgstr "<span class=\"label\">Tip de chirie</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Rent per</span>"
+msgstr "<span class=\"label\">Chirie per</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Responsible</span>"
+msgstr "<span class=\"label\">Responsabil</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Signature</span>"
+msgstr "<span class=\"label\">Semnătura</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Terms &amp; Conditions</span>"
+msgstr "<span class=\"label\">Termeni și condiții</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Total Damage Amount</span>"
+msgstr "<span class=\"label\">Valoarea totală a daunelor</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Total Extra Charges</span>"
+msgstr "<span class=\"label\">Taxe suplimentare totale</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Total</span>"
+msgstr "<span class=\"label\">Total</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Transmission</span>"
+msgstr "<span class=\"label\">Transmitere</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span class=\"label\">Vehicle</span>"
+msgstr "<span class=\"label\">Vehicul</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">Drop-Off "
+"Location</span>"
+msgstr ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">Locație de "
+"predare</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">Pick-Up "
+"Location</span>"
+msgstr ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">Locația de "
+"ridicare</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "<span class=\"o_stat_text\">Journal Entry</span>"
+msgstr "<span class=\"o_stat_text\">Intrare în jurnal</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "<span class=\"small\">Days</span>"
+msgstr ""
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid ""
+"<span class=\"spinner-border spinner-border-sm me-2 d-none\" id=\"bookingSpinner\">\n"
+"                                                    </span>\n"
+"                                                    Submit Enquiry"
+msgstr ""
+"<span class=\"spinner-border spinner-border-sm me-2 d-none\" id=\"bookingSpinner\">\n"
+"</span>\n"
+"                                                    Trimiteți întrebarea"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span>☐ I accept penalties for late return.</span>"
+msgstr "<span>☐ Accept penalități pentru returnare cu întârziere.</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span>☐ I acknowledge damage responsibility.</span>"
+msgstr "<span>☐ Recunosc responsabilitatea daunelor.</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span>☐ I agree to all traffic laws.</span>"
+msgstr "<span>☐ Sunt de acord cu toate legile rutiere.</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span>☐ I have inspected the vehicle.</span>"
+msgstr "<span>☐ Am inspectat vehiculul.</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span>☐ I possess a valid driver's license.</span>"
+msgstr "<span>☐ Am un permis de conducere valabil.</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<span>☐ I will not operate under influence.</span>"
+msgstr "<span>☐ Nu voi opera sub influență.</span>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid ""
+"<strong>\n"
+"                                            Authorized Signature\n"
+"                                        </strong>"
+msgstr ""
+"<strong>\n"
+"                                            Semnătura autorizată\n"
+"                                        </strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid ""
+"<strong>\n"
+"                                            Customer Signature\n"
+"                                        </strong>"
+msgstr ""
+"<strong>\n"
+"                                            Semnătura clientului\n"
+"                                        </strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid ""
+"<strong>\n"
+"                                    Total:\n"
+"                                </strong>"
+msgstr ""
+"<strong>\n"
+"                                    Total:\n"
+"                                </strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_list
+msgid ""
+"<strong>\n"
+"                        There are currently no enquiries for your account.\n"
+"                    </strong>"
+msgstr ""
+"<strong>\n"
+"                        În prezent, nu există întrebări pentru contul dvs.\n"
+"                    </strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_scratch_customer_sign_template
+msgid "<strong>Accepted on behalf of:</strong>"
+msgstr "<strong>Acceptat în numele:</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Amount</strong>"
+msgstr "<strong>Cantitate</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid "<strong>Customer</strong>"
+msgstr "<strong>Client</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Description</strong>"
+msgstr "<strong>Descriere</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid "<strong>Email</strong>"
+msgstr "<strong>E-mail</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid "<strong>Fuel Type</strong>"
+msgstr "<strong>Tip de combustibil</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Invoice</strong>"
+msgstr "<strong>Factura</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid "<strong>Model</strong>"
+msgstr "<strong>Model</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Name</strong>"
+msgstr "<strong>Nume</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Payment Amount</strong>"
+msgstr ""
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Payment Date</strong>"
+msgstr "<strong>Data plății</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Payment Status</strong>"
+msgstr "<strong>Starea plății</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid "<strong>Phone</strong>"
+msgstr "<strong>Telefon</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Policy Amount</strong>"
+msgstr "<strong>Suma politei</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Policy Number</strong>"
+msgstr "<strong>Numărul poliței</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Product</strong>"
+msgstr "<strong>Produs</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Qty</strong>"
+msgstr "<strong>Cant</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid "<strong>Reference Number</strong>"
+msgstr "<strong>Număr de referință</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Rental Agreement</strong>"
+msgstr "<strong>Contract de închiriere</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "<strong>Sub Total</strong>"
+msgstr "<strong>Subtotal</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid "<strong>Terms &amp; Conditions</strong>"
+msgstr "<strong>Termeni și condiții</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid ""
+"<strong>Terms &amp; Conditions</strong>\n"
+"                                    <br/>"
+msgstr ""
+"<strong>Termeni și condiții</strong>\n"
+"<br/>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid "<strong>Transmission</strong>"
+msgstr "<strong>Transmitere</strong>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_contract_scratch_report_template
+msgid "<strong>Vehicle</strong>"
+msgstr "<strong>Vehicul</strong>"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "A.M."
+msgstr "A.M."
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "AM"
+msgstr "A.M"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__customer_documents__document_type__aadhaar_card
+msgid "Aadhaar card"
+msgstr "card Aadhaar"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid ""
+"Acceptable file\n"
+"                                                        size"
+msgstr ""
+"Fișier acceptabil\n"
+"                                                        dimensiune"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__access_token
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__access_token
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__access_token
+msgid "Access Token"
+msgstr "Token de acces"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__account_payment_state
+msgid "Account Payment State"
+msgstr ""
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_needaction
+msgid "Action Needed"
+msgstr "Acțiune necesară"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_ids
+msgid "Activities"
+msgstr "Activități"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activitate Excepție Decorare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_state
+msgid "Activity State"
+msgstr "Stare de activitate"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Pictograma tip de activitate"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Add Arrow"
+msgstr "Adăugați săgeata"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Add Rectangle"
+msgstr "Adăugați dreptunghi"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Add Text"
+msgstr "Adăugați text"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "Additional Charges"
+msgstr "Taxe suplimentare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__additional_info_ids
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Additional Information"
+msgstr "Informații suplimentare"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "All"
+msgstr "Toate"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"All\n"
+"                                    Prices"
+msgstr ""
+"Toate\n"
+"                                    Preturi"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"All\n"
+"                                    Seats"
+msgstr ""
+"Toate\n"
+"                                    Scaune"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "All Customers"
+msgstr "Toți Clienții"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "All Statistics"
+msgstr "Toate Statisticile"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__amount
+msgid "Amount"
+msgstr "Cantitate"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__return_deposit
+msgid "Amount to Return"
+msgstr ""
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__is_any_damage
+msgid "Any Damage"
+msgstr "Orice daune"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Approve"
+msgstr "Aproba"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Are you sure you want to delete this image?"
+msgstr "Sigur doriți să ștergeți această imagine?"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Arrow"
+msgstr "Săgeată"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Attach Receipt"
+msgstr "Atașați chitanța"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_attachment_count
+msgid "Attachment Count"
+msgstr "Număr de atașamente"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Authorization Details"
+msgstr "Detalii de autorizare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Authorized Signature"
+msgstr "Semnătura autorizată"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Auto-validation"
+msgstr "Validare automată"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__transmission__automatic
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Automatic"
+msgstr "Automat"
+
+#. module: vehicle_rental
+#: model:ir.ui.menu,name:vehicle_rental.menu_vehicle_availability
+msgid "Availability"
+msgstr "Disponibilitate"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Available Vehicles"
+msgstr "Vehicule disponibile"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__avatar
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__avatar
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__bevrage
+msgid "Bevrage"
+msgstr "Anchetă"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__bill_id
+msgid "Bill"
+msgstr "Proiect de lege"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_booking_form_view
+msgid "Book"
+msgstr "Carte"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Book Now"
+msgstr ""
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "Book This Vehicle"
+msgstr "Rezervați acest vehicul"
+
+#. module: vehicle_rental
+#: model:ir.ui.menu,name:vehicle_rental.menu_contract_booking
+msgid "Book Vehicle"
+msgstr "Rezervați vehicul"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Book Your Vehicle"
+msgstr "Rezervă-ți vehiculul"
+
+#. module: vehicle_rental
+#: model:ir.ui.menu,name:vehicle_rental.menu_crm_lead_booking_enquiry
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.portal_rental_booking_enquiry
+msgid "Booking Enquiries"
+msgstr "Întrebări de rezervare"
+
+#. module: vehicle_rental
+#: model:website.menu,name:vehicle_rental.menu_web_booking_enquiry
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_crm_lead_inherit_form_view
+msgid "Booking Enquiry"
+msgstr "Cerere de rezervare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_crm_lead_inherit_form_view
+msgid "Booking Enquiry Details"
+msgstr "Detalii privind cererea de rezervare"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_crm_lead
+msgid "Booking Enquiry Lead"
+msgstr "Lider de solicitare de rezervare"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Browse Files"
+msgstr "Răsfoiți fișiere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_scratch_customer_sign_template
+msgid ""
+"By signing this scratch report, I confirm that the details have been reviewed and\n"
+"                                    accepted."
+msgstr ""
+"Prin semnarea acestui raport de zgârietură, confirm că detaliile au fost revizuite și\n"
+"                                    acceptat."
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__fuel_type__cng
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "CNG"
+msgstr "GNC"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__rental_vehicle_image__capture_method__camera
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_damage_image__capture_method__camera
+msgid "Camera Capture"
+msgstr "Captură cu cameră"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid ""
+"Camera access denied. Please allow camera access in your browser settings."
+msgstr ""
+"Accesul la cameră a fost interzis. Vă rugăm să permiteți accesul camerei în "
+"setările browserului dvs."
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Camera is in use by another application."
+msgstr "Camera este utilizată de o altă aplicație."
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__status__d_cancel
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.lead_rental_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.maintenance_request_bill_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_booking_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.return_deposit_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_damage_form_view
+msgid "Cancel"
+msgstr "Anula"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__cancellation_charge
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Cancellation Charge"
+msgstr "Taxa de anulare"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__cancellation_invoice_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Cancellation Invoice"
+msgstr "Factura de anulare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__cancellation_invoice_state
+msgid "Cancellation Invoice State"
+msgstr "Statul facturii de anulare"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_cancellation_policy
+#: model:ir.ui.menu,name:vehicle_rental.menu_cancellation_policy
+msgid "Cancellation Policies"
+msgstr "Politici de anulare"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_cancellation_policy
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Cancellation Policy"
+msgstr "Politica de anulare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__cancellation_reason
+msgid "Cancellation Reason"
+msgstr "Motiv de anulare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Cancellation Reasons"
+msgstr "Motive de anulare"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "Cancelled"
+msgstr "Anulat"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__capture_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__capture_date
+msgid "Capture Date"
+msgstr "Data capturii"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__capture_method
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__capture_method
+msgid "Capture Method"
+msgstr "Metoda de captare"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Capture Photo"
+msgstr "Captură fotografie"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Captured image"
+msgstr "Imagine capturată"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__category_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_web_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_list
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+msgid "Category"
+msgstr "Categorie"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__extra_charge_day
+msgid "Charge per Day"
+msgstr "Tarif pe zi"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__extra_charge_hour
+msgid "Charge per Hour"
+msgstr "Încărcare pe oră"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__extra_charge_km
+msgid "Charge per Kilometer"
+msgstr "Încărcare pe kilometru"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__extra_charge_mi
+msgid "Charge per Mile"
+msgstr "Tarif pe milă"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__extra_charge_month
+msgid "Charge per Month"
+msgstr "Tarif pe lună"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__extra_charge_week
+msgid "Charge per Week"
+msgstr "Încărcare pe săptămână"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__extra_charge_year
+msgid "Charge per Year"
+msgstr "Taxa pe an"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__driver_charge
+msgid "Charges"
+msgstr "Taxe"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__driver_charge_type
+msgid "Charges Type"
+msgstr "Tip de taxe"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Choose from our premium fleet of well-maintained vehicles"
+msgstr "Alegeți din flota noastră premium de vehicule bine întreținute"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "City"
+msgstr "Oraş"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+msgid "Communication"
+msgstr "Comunicare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_schedule__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_agreement_terms__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__company_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__company_id
+msgid "Company"
+msgstr "Companie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Company Details"
+msgstr "Detalii companie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "Company Information"
+msgstr "Informații despre companie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Complete your reservation details"
+msgstr "Completați detaliile rezervării dvs"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_res_config_settings
+msgid "Config Settings"
+msgstr "Setări de configurare"
+
+#. module: vehicle_rental
+#: model:ir.ui.menu,name:vehicle_rental.menu_configuration
+msgid "Configurations"
+msgstr "Configurații"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__contract_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_hr_expense_inherit_search_view
+msgid "Contract"
+msgstr "Contracta"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_rental_contract_booking
+msgid "Contract Booking"
+msgstr "Contract de rezervare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.customer_documents_form_view
+msgid "Contract Document Details"
+msgstr "Detalii document contract"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__contract_expense_ids
+msgid "Contract Expense"
+msgstr "Cheltuieli contractuale"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+#: model:ir.actions.act_window,name:vehicle_rental.action_vehicle_contract
+#: model:ir.ui.menu,name:vehicle_rental.menu_vehicle_contract
+msgid "Contracts"
+msgstr "Contracte"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "Contract’s Details"
+msgstr ""
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Country"
+msgstr "Ţară"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.maintenance_request_bill_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid "Create Bill"
+msgstr "Creați Bill"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_lead_rental_contract
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_crm_lead_inherit_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.lead_rental_contract_form_view
+msgid "Create Contract"
+msgstr "Creați contract"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Create Extra Service Invoice"
+msgstr "Creați factură suplimentară pentru servicii"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Create Installment"
+msgstr "Creați rate"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.return_deposit_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_damage_form_view
+msgid "Create Invoice"
+msgstr "Creați factura"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Create Maintenance Request"
+msgstr "Creați cerere de întreținere"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_return_deposit
+msgid "Create Return Deposit Invoice"
+msgstr "Creați factură de depozit de retur"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Create Trip Expense Reports"
+msgstr "Creați rapoarte de cheltuieli de călătorie"
+
+#. module: vehicle_rental
+#: model:ir.model,website_form_label:vehicle_rental.model_crm_lead
+msgid "Create an Opportunity"
+msgstr "Creați o oportunitate"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__created_on
+msgid "Created On"
+msgstr "Creat pe"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_features__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_inclusions__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_rental_policy__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request_bill__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_schedule__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_agreement_terms__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_rental_dashboard__create_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__create_uid
+msgid "Created by"
+msgstr "Creat de"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_features__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_inclusions__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_rental_policy__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request_bill__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_schedule__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_agreement_terms__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_rental_dashboard__create_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__create_date
+msgid "Created on"
+msgstr "Creat pe"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__currency_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__currency_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__currency_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__currency_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__currency_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__currency_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__currency_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__currency_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__currency_id
+msgid "Currency"
+msgstr "Valută"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__is_scratch_report
+msgid "Custom Scratch Report"
+msgstr "Raport personalizat de zgârietură"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__partner_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__customer_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__customer_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Customer Details"
+msgstr "Detalii client"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_customer_documents
+#: model:ir.model,name:vehicle_rental.model_customer_documents
+msgid "Customer Documents"
+msgstr "Documentele Clientului"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Customer Information"
+msgstr "Informații despre clienți"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__customer_signature
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Customer Signature"
+msgstr "Semnătura clientului"
+
+#. module: vehicle_rental
+#: model:ir.ui.menu,name:vehicle_rental.menu_fleet_vehicle_customer
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_search_view
+msgid "Customers"
+msgstr "Clienții"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "DROP-OFF"
+msgstr "DROP-OFF"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__crm_lead__fleet_price_type__day
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__payment_type__daily
+msgid "Daily"
+msgstr "Zilnic"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__damage_amount
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__damage_amount
+msgid "Damage Amount"
+msgstr "Suma daunelor"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Damage Images"
+msgstr "Imagini de deteriorare"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_vehicle_damage
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Damage Invoice"
+msgstr "Factură de daune"
+
+#. module: vehicle_rental
+#: model:ir.ui.menu,name:vehicle_rental.menu_vehicle_dashboard
+msgid "Dashboard"
+msgstr "Bord"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__date
+msgid "Date"
+msgstr "Data"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "Day"
+msgstr "Zi"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__fleet_renting_days
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__rent_type__days
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+msgid "Days"
+msgstr "Zile"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Delete"
+msgstr "Şterge"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Delete Selected"
+msgstr "Ștergeți selectat"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__deposit
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Deposit"
+msgstr "Depozit"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__deposit_invoice_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Deposit Invoice"
+msgstr "Factură de depozit"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__journal_id
+msgid "Deposit Journal"
+msgstr "Jurnalul de depozit"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__account_payment_id
+msgid "Deposit Payment"
+msgstr "Plata Depozitului"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__description
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__description
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__description
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__description
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__description
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__description
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__description
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Description"
+msgstr "Descriere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_damage_form_view
+msgid "Descriptions"
+msgstr "Descrieri"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__fuel_type__diesel
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Diesel"
+msgstr "Diesel"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_move__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_payment__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_features__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_inclusions__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_rental_policy__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle_log_contract__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_hr_expense__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request_bill__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_schedule__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_agreement_terms__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_rental_dashboard__display_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__display_name
+msgid "Display Name"
+msgstr "Numele de afișare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__avatar
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__avatar
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__customer_document_id
+msgid "Document"
+msgstr "Document"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__document_count
+msgid "Document Count"
+msgstr "Număr de documente"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__document_type
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.customer_documents_search_view
+msgid "Document Type"
+msgstr "Tip document"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Documents"
+msgstr "Documente"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Download"
+msgstr "Descărcați"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Draw"
+msgstr "Remiză"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_hr_expense__driver_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__driver_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_hr_expense_inherit_search_view
+msgid "Driver"
+msgstr "Șofer"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__is_driver_required
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_search_view
+msgid "Driver Required"
+msgstr "Driver necesar"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__customer_documents__document_type__dl
+msgid "Driving license"
+msgstr "Permis de conducere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__drop_off_city
+msgid "Drop Off City"
+msgstr "Drop Off City"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__drop_off_country_id
+msgid "Drop Off Country"
+msgstr "Drop Off Țara"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__drop_off_street
+msgid "Drop Off Street"
+msgstr "Drop Off Street"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__drop_off_street2
+msgid "Drop Off Street2"
+msgstr "Drop Off Street2"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__drop_off_zip
+msgid "Drop Off Zip"
+msgstr "Drop Off Zip"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Drop your images here"
+msgstr "Aruncă imaginile aici"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__end_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__end_date
+msgid "Drop-off Date"
+msgstr "Data de predare"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "Durations of In-Progress Rental Contracts"
+msgstr "Duratele contractelor de închiriere în curs"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Edit Scratch Image"
+msgstr "Editați imaginea Scratch"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__fuel_type__electric
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Electric"
+msgstr "Electric"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__customer_email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid ""
+"Email\n"
+"                                                        <span class=\"text-danger\">*</span>"
+msgstr ""
+"E-mail\n"
+"                                                        <span class=\"text-danger\">*</span>"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_hr_expense__employee_ids
+msgid "Employees"
+msgstr "Angajatii"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_web_template
+msgid ""
+"End\n"
+"                                                        Date"
+msgstr ""
+"Sfârșit\n"
+"                                                        Data"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/availability_template.xml:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__end_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__end_date
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_list
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "End Date"
+msgstr "Data de încheiere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.portal_rental_breadcrumbs
+msgid "Enquiries"
+msgstr "Întrebări"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Enquiry"
+msgstr "Anchetă"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "Ensure start date is greater than or equal to today's date."
+msgstr ""
+"Asigurați-vă că data de începere este mai mare sau egală cu data de astăzi."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.res_config_settings_view_form_vehicle_rental
+msgid "Enter link to see privacy policies"
+msgstr "Introduceți linkul pentru a vedea politicile de confidențialitate"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.res_config_settings_view_form_vehicle_rental
+msgid "Enter link to see terms & conditions"
+msgstr "Introduceți linkul pentru a vedea termenii și condițiile"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__driver_charge_type__excluding
+msgid "Excluding in rent charge"
+msgstr "Excluzând taxa de chirie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Expenses"
+msgstr "Cheltuieli"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__extra_charge
+msgid "Extra Charge"
+msgstr "Taxa suplimentara"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Extra Charge Details"
+msgstr "Detalii taxe suplimentare"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__extra_charge_invoice_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Charge Invoice"
+msgstr "Factură cu taxă suplimentară"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__extra_charge_payment_state
+msgid "Extra Charge Payment State"
+msgstr "Statul de plată suplimentar"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "Extra Charge per"
+msgstr "Taxă suplimentară per"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Charge per Day"
+msgstr "Taxă suplimentară pe zi"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Charge per Hour"
+msgstr "Taxă suplimentară pe oră"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Charge per KM"
+msgstr "Taxă suplimentară pe KM"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Charge per MI"
+msgstr "Taxă suplimentară per MI"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Charge per Month"
+msgstr "Taxă suplimentară pe lună"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Charge per Week"
+msgstr "Taxă suplimentară pe săptămână"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Charge per Year"
+msgstr "Taxă suplimentară pe an"
+
+#. module: vehicle_rental
+#: model:product.template,name:vehicle_rental.vehicle_rent_extra_charge_product_template
+msgid "Extra Charges"
+msgstr "Taxe suplimentare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Charges Details"
+msgstr "Detalii taxe suplimentare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__extra_service_ids
+msgid "Extra Service"
+msgstr "Serviciu suplimentar"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__extra_service_charge
+msgid "Extra Service Charge"
+msgstr "Taxă suplimentară pentru servicii"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.extra_service_form_view
+msgid "Extra Service Details"
+msgstr "Detalii suplimentare despre servicii"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__extra_service_invoice_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Service Invoice"
+msgstr "Factură pentru servicii suplimentare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Extra Services"
+msgstr "Servicii suplimentare"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Failed to add image: "
+msgstr "Nu s-a putut adăuga imaginea:"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Failed to download image"
+msgstr "Nu s-a putut descărca imaginea"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Failed to remove image"
+msgstr "Nu s-a putut elimina imaginea"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__features_ids
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "Features"
+msgstr "Caracteristici"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "File '%s' is not an image"
+msgstr "Fișierul „%s” nu este o imagine"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "File '%s' is too large (max 10MB)"
+msgstr "Fișierul „%s” este prea mare (maximum 10 MB)"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__file_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__file_name
+msgid "File Name"
+msgstr "Nume de fișier"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__file_size
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__file_size
+msgid "File Size (bytes)"
+msgstr "Dimensiunea fișierului (octeți)"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__image_filename
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__image_filename
+msgid "Filename"
+msgstr "Nume de fișier"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_web_template
+msgid "Find Your Perfect Ride"
+msgstr "Găsește-ți cursa perfectă"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__fleet_id
+msgid "Fleet"
+msgstr "Flota"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_fleet_additional_info
+msgid "Fleet Additional Info"
+msgstr "Informații suplimentare despre flotă"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__fleet_expense_ids
+msgid "Fleet Expense"
+msgstr "Cheltuiala flotei"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_fleet_features
+#: model:ir.model,name:vehicle_rental.model_fleet_features
+#: model:ir.ui.menu,name:vehicle_rental.menu_fleet_features
+msgid "Fleet Features"
+msgstr "Caracteristicile flotei"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__fleet_image_ids
+msgid "Fleet Image"
+msgstr "Imagine de flotă"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.fleet_images_action
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Fleet Images"
+msgstr "Imagini de flotă"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_fleet_images
+msgid "Fleet Images "
+msgstr "Imagini de flotă"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_fleet_inclusions
+msgid "Fleet Inclusions"
+msgstr "Incluziuni în flotă"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_fleet_rental_policy
+msgid "Fleet Rental Policies"
+msgstr "Politici de închiriere a flotei"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_fleet_vehicle
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_bank_statement_line__fleet_vehicle_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_move__fleet_vehicle_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_hr_expense__fleet_vehicle_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__fleet_vehicle_id
+msgid "Fleet Vehicle"
+msgstr "Vehicul de flotă"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_fleet_vehicle_log_contract
+msgid "Fleet Vehicle Log Contract"
+msgstr "Contract de jurnal de flotă de vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_booking_form_view
+msgid "Fleet Vehicles"
+msgstr "Flota de vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.portal_rental_booking_enquiry
+msgid "Follow, view booking enquires"
+msgstr "Urmăriți, vizualizați cererile de rezervare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_follower_ids
+msgid "Followers"
+msgstr "Urmaritori"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Adepți (parteneri)"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Pictogramă minunată de font, de ex. fa-sarcini"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Free Drawing"
+msgstr "Desen gratuit"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "From %1"
+msgstr "De la %1"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "From %1 to %2"
+msgstr "De la %1 la %2"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "Fuel"
+msgstr "Combustibil"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"Fuel\n"
+"                                    Type"
+msgstr ""
+"Combustibil\n"
+"                                    Tip"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__fuel_type
+msgid "Fuel Type"
+msgstr "Tip de combustibil"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_search_view
+msgid "Fuel Types"
+msgstr "Tipuri de combustibil"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__fuel_type__full_hybrid
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Full Hybrid"
+msgstr "Hibrid complet"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__payment_type__full_payment
+msgid "Full Payment"
+msgstr "Plata integrala"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__fuel_type__gasoline
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Gasoline"
+msgstr "Benzină"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__has_message
+msgid "Has Message"
+msgstr "Are mesaj"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_scratch_customer_sign_template
+msgid "Hello"
+msgstr "Buna ziua"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Home"
+msgstr "Acasă"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "Hour"
+msgstr "Oră"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__crm_lead__fleet_price_type__hour
+msgid "Hourly"
+msgstr "Orar"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__rent_type__hour
+msgid "Hours"
+msgstr "Ore"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_hr_expense
+msgid "Hr Expense"
+msgstr "Cheltuieli de ore"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid ""
+"Huge file size.\n"
+"                                                        The image\n"
+"                                                        should be optimized/reduced."
+msgstr ""
+"Dimensiune uriașă a fișierului.\n"
+"                                                        Imaginea\n"
+"                                                        ar trebui optimizat/redus."
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__fuel_type__hydrogen
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Hydrogen"
+msgstr "Hidrogen"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "I accept the"
+msgstr "Accept"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_move__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_payment__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_features__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_inclusions__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_rental_policy__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle_log_contract__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_hr_expense__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request_bill__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_schedule__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_agreement_terms__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_res_config_settings__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_rental_dashboard__id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__id
+msgid "ID"
+msgstr "ID"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_exception_icon
+msgid "Icon"
+msgstr "Pictogramă"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Pictogramă pentru a indica o activitate de excepție."
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__if_any_deposit
+msgid "If Any Deposit"
+msgstr "Dacă Orice Depunere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__is_any_extra_charges
+msgid "If any extra charges"
+msgstr "Dacă există taxe suplimentare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Dacă sunt bifate, mesajele noi necesită atenția dvs."
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__message_has_error
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Dacă sunt bifate, unele mesaje au o eroare de livrare."
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__image_1920
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__avatar
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__scratch_image
+msgid "Image"
+msgstr "Imagine"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__image_1024
+msgid "Image 1024"
+msgstr "Imaginea 1024"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__image_128
+msgid "Image 128"
+msgstr "Imaginea 128"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__image_256
+msgid "Image 256"
+msgstr "Imaginea 256"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__image_512
+msgid "Image 512"
+msgstr "Imaginea 512"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Image Capture One2Many"
+msgstr "Captură de imagine One2Many"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.view_fleet_images_form
+msgid "Image Name"
+msgstr "Nume imagine"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Image added successfully"
+msgstr "Imaginea adăugată cu succes"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Image downloaded"
+msgstr "Imaginea descărcată"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Image removed"
+msgstr "Imaginea a fost eliminată"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__image
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Images"
+msgstr "Imagini"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "In Maintenance"
+msgstr "În întreținere"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__status__b_in_progress
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "In Progress"
+msgstr "În curs"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__driver_charge_type__including
+msgid "Including in rent charge"
+msgstr "Inclusiv in taxa de chirie"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_inclusions__inclusion
+msgid "Inclusion"
+msgstr "Includere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__inclusion_ids
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Inclusions"
+msgstr "Incluziuni"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Initializing camera..."
+msgstr "Se inițializează camera..."
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__installment_created
+msgid "Installment Created"
+msgstr "Rată creată"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_insurance_policy
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__insurance_policy_ids
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Insurance Policy"
+msgstr "Polița de asigurare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.insurance_policy_form_view
+msgid "Insurance Policy Details"
+msgstr "Detalii Polița de Asigurare"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_payment_option.py:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__invoice_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__invoice_count
+msgid "Invoice Count"
+msgstr "Număr de facturi"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Invoice Details"
+msgstr "Detalii factură"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__invoice_item_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__invoice_item_id
+msgid "Invoice Item"
+msgstr "Articol de factură"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Invoices"
+msgstr "Facturi"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__is_any_trip_expense
+msgid "Is Any Trip Expense"
+msgstr "Este orice cheltuială de călătorie"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__is_any_vehicle_expense
+msgid "Is Any Vehicle Expense"
+msgstr "Este orice cheltuială cu vehiculul"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_is_follower
+msgid "Is Follower"
+msgstr "Este urmaș"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__is_invoice_done
+msgid "Is Invoice Done"
+msgstr "Factura este finalizată"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "KM"
+msgstr "KM"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__crm_lead__fleet_price_type__kilometer
+msgid "Kilometer"
+msgstr "Kilometru"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__rent_type__km
+msgid "Kilometers"
+msgstr "Kilometri"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__fuel_type__lpg
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "LPG"
+msgstr "GPL"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__last_odometer
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Last Odometer"
+msgstr "Ultimul kilometraj"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_features__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_inclusions__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_rental_policy__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request_bill__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_schedule__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_agreement_terms__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_rental_dashboard__write_uid
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualizare de către"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_features__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_inclusions__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_rental_policy__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request_bill__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_schedule__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_agreement_terms__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_rental_dashboard__write_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualizare pe"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__crm_lead_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__crm_lead_id
+msgid "Lead"
+msgstr "Duce"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_list
+msgid "Lead #"
+msgstr "Nr."
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_lead_rental_contract
+msgid "Lead Rental Contract"
+msgstr "Contract de închiriere plumb"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle_log_contract__license_plate
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__license_plate
+msgid "License Plate"
+msgstr "Înmatriculare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.res_config_settings_view_form_vehicle_rental
+msgid "Links of Terms and Policies"
+msgstr "Link-uri de Termeni și Politici"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Loading..."
+msgstr "Încărcare..."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "M. Requests"
+msgstr "M. Cereri"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "MI"
+msgstr "MI"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid "Maintenance Bill"
+msgstr "Factura de întreținere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__maintenance_bill_count
+msgid "Maintenance Bill Count"
+msgstr "Numărul facturilor de întreținere"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Maintenance Bills"
+msgstr "Facturi de întreținere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_schedule__maintenance_days
+msgid "Maintenance Days"
+msgstr "Zile de întreținere"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_bank_statement_line__maintenance_request_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_move__maintenance_request_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__maintenance_request_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request_bill__maintenance_request_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__maintenance_request_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__maintenance_request_id
+msgid "Maintenance Request"
+msgstr "Cerere de întreținere"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_maintenance_request_bill
+#: model:ir.model,name:vehicle_rental.model_maintenance_request_bill
+msgid "Maintenance Request Bill"
+msgstr "Factura de cerere de întreținere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__maintenance_request_count
+msgid "Maintenance Request Count"
+msgstr "Număr de cereri de întreținere"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+#: model:ir.actions.act_window,name:vehicle_rental.action_maintenance_requests
+#: model:ir.ui.menu,name:vehicle_rental.menu_maintenance_requests
+msgid "Maintenance Requests"
+msgstr "Cereri de întreținere"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_maintenance_schedule
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__maintenance_schedule_id
+msgid "Maintenance Schedule"
+msgstr "Program de întreținere"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_maintenance_schedule
+#: model:ir.ui.menu,name:vehicle_rental.menu_maintenance_schedule
+msgid "Maintenance Schedules"
+msgstr "Programe de întreținere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__transmission__manual
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Manual"
+msgstr "Manual"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_has_error
+msgid "Message Delivery error"
+msgstr "Eroare de livrare a mesajului"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_ids
+msgid "Messages"
+msgstr "Mesaje"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__crm_lead__fleet_price_type__mile
+msgid "Mile"
+msgstr "Mile"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__rent_type__mi
+msgid "Miles"
+msgstr "Miles"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__minimum_km_per_day
+msgid "Min KM per Day"
+msgstr "KM min pe zi"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "Minimum km per day must be greater than 0"
+msgstr "Numărul minim de km pe zi trebuie să fie mai mare de 0"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__model_year
+msgid "Model"
+msgstr "Model"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "Month"
+msgstr "Lună"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__crm_lead__fleet_price_type__month
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__payment_type__monthly
+msgid "Monthly"
+msgstr "Lunar"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "Monthly Contract Invoice Revenue"
+msgstr "Venituri lunare din facturi contractuale"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__rent_type__month
+msgid "Months"
+msgstr "Luni"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Data limită a activității mele"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/hr_expense.py:0
+msgid "My Expenses"
+msgstr "Cheltuielile mele"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__name
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_features__name
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__policy_name
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_schedule__name
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__name
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__name
+msgid "Name"
+msgstr "Nume"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid ""
+"Name\n"
+"                                                        <span class=\"text-danger\">*</span>"
+msgstr ""
+"Nume\n"
+"                                                        <span class=\"text-danger\">*</span>"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__status__a_draft
+msgid "New"
+msgstr "Nou"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Următorul eveniment din calendarul de activități"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Termenul limită pentru următoarea activitate"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_summary
+msgid "Next Activity Summary"
+msgstr "Rezumatul activității următoare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_type_id
+msgid "Next Activity Type"
+msgstr "Următorul tip de activitate"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__maintenance_schedule_id
+msgid "Next Maintenance Schedule"
+msgstr "Următorul program de întreținere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "No"
+msgstr "Nu"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "No camera found. Please connect a camera and try again."
+msgstr ""
+"Nu a fost găsită nicio cameră. Conectați o cameră și încercați din nou."
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "No images available"
+msgstr "Nu există imagini disponibile"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Notes..."
+msgstr "Note..."
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Numărul de acțiuni"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__seats
+msgid "Number of Seats"
+msgstr "Numărul de locuri"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numărul de erori"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.res_config_settings_view_form_vehicle_rental
+msgid "Number of items or vehicles to display per page in paginated views."
+msgstr ""
+"Numărul de articole sau vehicule de afișat pe pagină în vizualizări "
+"paginate."
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Numărul de mesaje care necesită acțiune"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Numărul de mesaje cu eroare de livrare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_crm_lead__seats
+msgid "Number of seats of the vehicle"
+msgstr "Numărul de locuri ale vehiculului"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__odometer_unit
+msgid "Odometer Unit"
+msgstr "Unitate de kilometraj"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__fleet_vehicle__status__available
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Operational"
+msgstr "Operațional"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "Operational Vehicles"
+msgstr "Vehicule operaționale"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid ""
+"Optimization\n"
+"                                                        required!\n"
+"                                                        Reduce the image size or\n"
+"                                                        increase your\n"
+"                                                        compression settings."
+msgstr ""
+"Optimizare\n"
+"                                                        necesar!\n"
+"                                                        Reduceți dimensiunea imaginii sau\n"
+"                                                        crește-ți\n"
+"                                                        setări de compresie."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.res_config_settings_view_form_vehicle_rental
+msgid "Other"
+msgstr "Alte"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "P.M."
+msgstr "P.M."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "PICK-UP"
+msgstr "PICK-UP"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "PM"
+msgstr "P.M"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.pager
+msgid "Page navigation"
+msgstr "Navigare în pagină"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__product_id
+msgid "Part"
+msgstr "Parte"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__part_price
+msgid "Part Price"
+msgstr "Prețul piesei"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid "Parts Price:"
+msgstr "Pret piese:"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "Passengers"
+msgstr "Pasagerii"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__customer_documents__document_type__passport
+msgid "Passport"
+msgstr "Paşaport"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__payment_amount
+msgid "Payment Amount"
+msgstr ""
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__payment_date
+msgid "Payment Date"
+msgstr "Data plății"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Payment Details"
+msgstr "Detalii de plată"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "Payment Information"
+msgstr "Informații de plată"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__payment_state
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__payment_state
+msgid "Payment State"
+msgstr "Statul de plată"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__payment_type
+msgid "Payment Type"
+msgstr "Tip de plată"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_search_view
+msgid "Payment Types"
+msgstr "Tipuri de plată"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "Pending Invoices"
+msgstr "Facturi în așteptare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__customer_phone
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid ""
+"Phone\n"
+"                                                        <span class=\"text-danger\">*</span>"
+msgstr ""
+"Telefon\n"
+"                                                        <span class=\"text-danger\">*</span>"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__customer_documents__document_type__photo_id
+msgid "Photo ID card"
+msgstr "Carte de identitate cu fotografie"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__pick_up_city
+msgid "Pick Up City"
+msgstr "Preluați orașul"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__pick_up_country_id
+msgid "Pick Up Country"
+msgstr "Preluați țara"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__pick_up_street
+msgid "Pick Up Street"
+msgstr "Pick Up Street"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__pick_up_street2
+msgid "Pick Up Street2"
+msgstr "Strada de ridicare2"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__pick_up_zip
+msgid "Pick Up Zip"
+msgstr "Ridicați Zip"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Pick-Up & Drop-Off Details"
+msgstr "Detalii de ridicare și predare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__start_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__start_date
+msgid "Pick-up Date"
+msgstr "Data ridicării"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/maintenance_schedule.py:0
+msgid "Please add a Maintenance Days greater than zero."
+msgstr "Vă rugăm să adăugați un Zile de întreținere mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "Please ensure that the Drop-off Date is greater than the Pick-up Date"
+msgstr ""
+"Vă rugăm să vă asigurați că data de predare este mai mare decât data de "
+"ridicare"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/wizards/return_deposit.py:0
+msgid "Please note: A return deposit amount is required."
+msgstr "Vă rugăm să rețineți: este necesară o sumă de depozit retur."
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__fuel_type__plug_in_hybrid_diesel
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Plug-in Hybrid Diesel"
+msgstr "Diesel hibrid plug-in"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__fuel_type__plug_in_hybrid_gasoline
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Plug-in Hybrid Gasoline"
+msgstr "Benzină hibridă cu plug-in"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_rental_policy__policy
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__cancellation_policy_id
+msgid "Policy"
+msgstr "Politică"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__policy_amount
+msgid "Policy Amount"
+msgstr "Suma politei"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Policy Details"
+msgstr "Detalii de politică"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__policy_number
+msgid "Policy Number"
+msgstr "Numărul poliței"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Post Journal Entries"
+msgstr "Postează intrări în jurnal"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_web_template
+msgid ""
+"Premium vehicle rentals for every journey. From economy cars\n"
+"                                    to luxury SUVs, we have the perfect vehicle waiting for you."
+msgstr ""
+"Închirieri de vehicule premium pentru fiecare călătorie. De la mașini economice\n"
+"                                    la SUV-urile de lux, avem vehiculul perfect care vă așteaptă."
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "Press ENTER to toggle"
+msgstr "Apăsați ENTER pentru a comuta"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__rent_price
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__price_unit
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_web_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+msgid "Price"
+msgstr "Preţ"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Price Breakdown"
+msgstr "Defalcare de preț"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__fleet_price_type
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+msgid "Price Type"
+msgstr "Tip de preț"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Price per Day"
+msgstr "Preț pe zi"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Price per Hours"
+msgstr "Preț pe oră"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Price per Kilometer"
+msgstr "Preț pe kilometru"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Price per Mile"
+msgstr "Preț pe milă"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Price per Month"
+msgstr "Preț pe lună"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Price per Week"
+msgstr "Preț pe săptămână"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Price per Year"
+msgstr "Preț pe an"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_crm_lead_inherit_form_view
+msgid "Pricing Details"
+msgstr "Detalii de preț"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Privacy Policy"
+msgstr "Politica de confidențialitate"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_res_config_settings__privacy_policy_link
+msgid "Privacy Policy Link"
+msgstr "Link pentru politica de confidențialitate"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Processing image..."
+msgstr "Se procesează imaginea..."
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__product_id
+msgid "Product"
+msgstr "Produs"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.view_fleet_images_form
+msgid "Property Images"
+msgstr "Imagini de proprietate"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__product_qty
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__quantity
+msgid "Quantity"
+msgstr "Cantitate"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__payment_type__quarterly
+msgid "Quarterly"
+msgstr "Trimestrial"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Rate"
+msgstr "Rata"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__customer_documents__document_type__ration_card
+msgid "Ration card"
+msgstr "Carte de rație"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_res_config_settings__pagination_item_per_page
+msgid "Records Per Page"
+msgstr "Înregistrări pe pagină"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__reference_no
+msgid "Reference No"
+msgstr "Nr. de referință"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Refuse"
+msgstr "Refuza"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__rent
+msgid "Rent"
+msgstr "Chirie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Rent Details"
+msgstr "Detalii de inchiriere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "Rent Information"
+msgstr "Informații de închiriere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__rent_type
+msgid "Rent Type"
+msgstr "Tip de chirie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_search_view
+msgid "Rent Types"
+msgstr "Tipuri de chirie"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__rent_day
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Rent per Day"
+msgstr "Chirie pe zi"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "Rent per Day must be greater than 0"
+msgstr "Chiria pe zi trebuie să fie mai mare de 0"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__rent_hour
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Rent per Hour"
+msgstr "Chirie pe oră"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "Rent per Hour must be greater than 0"
+msgstr "Chiria pe oră trebuie să fie mai mare de 0"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Rent per KM"
+msgstr "Chirie pe KM"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__rent_km
+msgid "Rent per Kilometer"
+msgstr "Chirie pe kilometru"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "Rent per Kilometer must be greater than 0"
+msgstr "Chiria pe kilometru trebuie să fie mai mare de 0"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Rent per MI"
+msgstr "Chirie pe MI"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__rent_mi
+msgid "Rent per Mile"
+msgstr "Chirie pe milă"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "Rent per Mile must be greater than 0"
+msgstr "Chiria pe milă trebuie să fie mai mare de 0"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__rent_month
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Rent per Month"
+msgstr "Chirie pe lună"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "Rent per Month must be greater than 0"
+msgstr "Chiria pe lună trebuie să fie mai mare de 0"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__rent_week
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Rent per Week"
+msgstr "Chirie pe saptamana"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "Rent per Week must be greater than 0"
+msgstr "Chiria pe săptămână trebuie să fie mai mare de 0"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__rent_year
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Rent per Year"
+msgstr "Chirie pe an"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "Rent per Year must be greater than 0"
+msgstr "Chiria pe an trebuie să fie mai mare de 0"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__rental_agreement_terms_id
+msgid "Rental Agreement"
+msgstr "Contract de închiriere"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_rental_agreement_terms
+#: model:ir.model,name:vehicle_rental.model_rental_agreement_terms
+#: model:ir.ui.menu,name:vehicle_rental.menu_rental_agreement_terms
+msgid "Rental Agreement Terms"
+msgstr "Termenii contractului de închiriere"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_rental_contract_booking
+msgid "Rental Contract Booking"
+msgstr "Rezervare contract de închiriere"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Rental Contracts"
+msgstr "Contracte de închiriere"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_account_payment
+msgid "Rental Deposit"
+msgstr "Depozit de închiriere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Rental Details"
+msgstr "Detalii de închiriere"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_account_move
+msgid "Rental Invoice"
+msgstr "Factura de inchiriere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Rental Policies"
+msgstr "Politici de închiriere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__rental_policy_ids
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.view_fleet_additional_info_form
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.view_fleet_inclusions_form
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.view_fleet_rental_policy_form
+msgid "Rental Policy"
+msgstr "Politica de închiriere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__rental_terms
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Rental Terms"
+msgstr "Condiții de închiriere"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_rental_vehicle_image
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__rental_vehicle_image_ids
+msgid "Rental Vehicle Image"
+msgstr "Imagine vehicul de închiriat"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid "Required Vehicle Services"
+msgstr "Servicii necesare pentru vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid "Required Vehicle Spare Parts"
+msgstr "Piese de schimb necesare pentru vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Reset"
+msgstr "Resetați"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__responsible_id
+msgid "Responsible"
+msgstr "Responsabil"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__activity_user_id
+msgid "Responsible User"
+msgstr "Utilizator responsabil"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Retake"
+msgstr "Relua"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Retry"
+msgstr "Reîncercați"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__status__c_return
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Return"
+msgstr "Reveni"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_return_deposit
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Return Deposit"
+msgstr "Depozit de returnare"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/wizards/return_deposit.py:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__return_deposit_invoice_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Return Deposit Invoice"
+msgstr "Retur factura de depozit"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__return_deposit_state
+msgid "Return Payment State"
+msgstr "Statul de returnare a plății"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Eroare de livrare prin SMS"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Save"
+msgstr "Salva"
+
+#. module: vehicle_rental
+#: model:ir.actions.report,name:vehicle_rental.action_rental_scratch_report_template
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__vehicle_scratch_report_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Scratch Report"
+msgstr "Raport de zgârietură"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_scratch_customer_sign_template
+msgid "Scratch Report Approval"
+msgstr "Aprobare raport de zgârietură"
+
+#. module: vehicle_rental
+#: model:mail.template,name:vehicle_rental.scratch_report_review_signature_required_mail_template
+msgid "Scratch Report Review & Signature Required Mail Template"
+msgstr ""
+"Șablon de e-mail obligatoriu pentru examinare a raportului de zgârietură și "
+"semnătură"
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_vehicle_scratch_report
+#: model:ir.ui.menu,name:vehicle_rental.menu_vehicle_scratch_report
+msgid "Scratch Reports"
+msgstr "Rapoarte Scratch"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/availability_template.xml:0
+msgid "Search"
+msgstr "Căutare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.portal_rental_breadcrumbs
+msgid "Search by lead, vehicle, category, seats..."
+msgstr "Căutați după conducător, vehicul, categorie, locuri..."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Searched vehicle not found"
+msgstr "Vehiculul căutat nu a fost găsit"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Seaters"
+msgstr "Scaune"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_list
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+msgid "Seats"
+msgstr "Scaune"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Select"
+msgstr "Selecta"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid ""
+"Select\n"
+"                                    Category"
+msgstr ""
+"Selectați\n"
+"                                    categorie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+msgid "Select Price Type"
+msgstr "Selectați tipul de preț"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Select/Move Objects"
+msgstr "Selectați/Mutați obiecte"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Send Scratch Approval Mail"
+msgstr "Trimiteți un e-mail de aprobare Scratch"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__sequence
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__sequence
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_inclusions__sequence
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_rental_policy__sequence
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__sequence
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__sequence
+msgid "Sequence"
+msgstr "Secvenţă"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__product_id
+msgid "Service"
+msgstr "Serviciu"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_service__service_charge
+msgid "Service Charge"
+msgstr "Taxa de serviciu"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__service_charge
+msgid "Service Charges"
+msgstr "Taxe de servicii"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_service_form_view
+msgid "Service Details"
+msgstr "Detalii serviciu"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Shape"
+msgstr "Formă"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__customer_signed_by
+msgid "Sign By"
+msgstr "Înregistrează-te"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__signature
+msgid "Signature"
+msgstr "Semnătura"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__customer_signed_date
+msgid "Signed Date"
+msgstr "Data semnării"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Size"
+msgstr "Dimensiune"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_part_form_view
+msgid "Spare Part Details"
+msgstr "Detalii piese de schimb"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Split"
+msgstr "Despică"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Split Expense"
+msgstr "Împărțiți cheltuielile"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/availability_template.xml:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__start_date
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__start_date
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.booking_enquiry_web_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_list
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Start Date"
+msgstr "Data de începere"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__pick_up_state_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "State"
+msgstr "Stat"
+
+#. module: vehicle_rental
+#: model:ir.actions.client,name:vehicle_rental.action_vehicle_rental_dashboard
+msgid "Statistics"
+msgstr "Statistici"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_vehicle__status
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__status
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_search_view
+msgid "Status"
+msgstr "Stare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status bazat pe activități\n"
+"Întârziat: data scadentă a trecut deja\n"
+"Astăzi: Data activității este astăzi\n"
+"Planificate: Activități viitoare."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Street 2..."
+msgstr "Strada 2..."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Street..."
+msgstr "Stradă..."
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__total_service_charge
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__sub_total
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_maintenance_part__price_sub_total
+msgid "Sub Total"
+msgstr "Subtotal"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Submit"
+msgstr "Trimiteți"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Supports JPG, PNG, GIF up to 10MB"
+msgstr "Suportă JPG, PNG, GIF până la 10 MB"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Switch Camera"
+msgstr "Comutați camera"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Take Photo"
+msgstr "Faceți o fotografie"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__tax_ids
+msgid "Taxes"
+msgstr "Impozite"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.cancellation_policy_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_agreement_terms_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.res_config_settings_view_form_vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Terms & Conditions"
+msgstr "Termeni și condiții"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_res_config_settings__terms_conditions_link
+msgid "Terms Conditions Link"
+msgstr "Termeni Condiții Link"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid ""
+"Terms and\n"
+"                                                        Conditions"
+msgstr "Termeni și condiții"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__terms_and_conditions
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_agreement_terms__rental_terms
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__terms_and_conditions
+msgid "Terms and Conditions"
+msgstr "Termeni și condiții"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_editor_template.xml:0
+msgid "Text"
+msgstr "Text"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_success
+msgid "Thank You!"
+msgstr "Multumesc!"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The Rent per %s must be greater than zero."
+msgstr "Chiria pe %s trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The driver charges must be greater than zero."
+msgstr "Taxele șoferului trebuie să fie mai mari decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The extra charge per %s must be greater than zero."
+msgstr "Taxa suplimentară per %s trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/insurance_policy.py:0
+msgid "The policy amount must be greater than zero."
+msgstr "Suma poliței trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The selected driver must be one of the allowed employees."
+msgstr "Șoferul selectat trebuie să fie unul dintre angajații autorizați."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The sign date cannot be earlier than today."
+msgstr "Data semnării nu poate fi mai devreme decât astăzi."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The total extra days must be greater than zero."
+msgstr ""
+"Numărul total de zile suplimentare trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The total extra hours must be greater than zero."
+msgstr "Numărul total de ore suplimentare trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The total extra km must be greater than zero."
+msgstr "Totalul km suplimentari trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The total extra miles must be greater than zero."
+msgstr "Totalul milelor suplimentare trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The total extra months must be greater than zero."
+msgstr "Totalul lunilor suplimentare trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The total extra weeks must be greater than zero."
+msgstr "Totalul săptămânilor suplimentare trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The total extra years must be greater than zero."
+msgstr "Numărul total de ani suplimentari trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The total kilometers must be greater than zero."
+msgstr "Numărul total de kilometri trebuie să fie mai mare decât zero."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "The total miles must be greater than zero."
+msgstr "Milele totale trebuie să fie mai mari decât zero."
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_cancellation_policy__title
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_images__title
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_agreement_terms__name
+msgid "Title"
+msgstr "Titlu"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "To %1"
+msgstr "Pentru %1"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Total"
+msgstr "Total"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Total Amount"
+msgstr "Valoare totală"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_day_rent
+msgid "Total Day Rent"
+msgstr "Chiria totală pe zi"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_days
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Total Days"
+msgstr "Total de zile"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_return_deposit__total_deposit
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_deposit
+msgid "Total Deposit"
+msgstr "Depozit total"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid "Total Estimations"
+msgstr "Estimări totale"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "Total Extra"
+msgstr "Supliment total"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_extra_charges
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Total Extra Charges"
+msgstr "Taxe suplimentare totale"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_extra_days
+msgid "Total Extra Days"
+msgstr "Total zile suplimentare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_extra_hour
+msgid "Total Extra Hours"
+msgstr "Total ore suplimentare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_extra_km
+msgid "Total Extra KM"
+msgstr "KM suplimentari total"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_extra_mi
+msgid "Total Extra Miles"
+msgstr "Total de mile suplimentare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_extra_month
+msgid "Total Extra Months"
+msgstr "Total luni suplimentare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_extra_week
+msgid "Total Extra Weeks"
+msgstr "Total săptămâni suplimentare"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_extra_year
+msgid "Total Extra Years"
+msgstr "Total ani suplimentari"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Total Hours"
+msgstr "Total de ore"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_km
+msgid "Total Kilometers"
+msgstr "Total de kilometri"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_km_rent
+msgid "Total Km Rent"
+msgstr "Total Km Chirie"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_mi_rent
+msgid "Total Mi Rent"
+msgstr "Total Mi Rent"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_mi
+msgid "Total Miles"
+msgstr "Total de mile"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Total Months"
+msgstr "Total luni"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__total_price
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+msgid "Total Price"
+msgstr "Preț total"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__total_vehicle_rent
+msgid "Total Rental Charges"
+msgstr "Taxele totale de închiriere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Total Service Charge"
+msgstr "Taxa totală de serviciu"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Total Taxes"
+msgstr "Total Taxe"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "Total Vehicles"
+msgstr "Total vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Total Weeks"
+msgstr "Total săptămâni"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Total Years"
+msgstr "Total ani"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Total:"
+msgstr "Total:"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__transmission
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.searched_fleet_vehicles
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "Transmission"
+msgstr "Transmitere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_search_view
+msgid "Transmission Types"
+msgstr "Tipuri de transmisie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Trip Expenses"
+msgstr "Cheltuieli de călătorie"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipul activității excepționale înregistrate."
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/image_capture_field.js:0
+msgid "Unable to access camera: "
+msgstr "Nu se poate accesa camera:"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__fleet_vehicle__status__in_maintenance
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Under Maintenance"
+msgstr "Sub Întreținere"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Unit Price"
+msgstr "Preț unitar"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__upcoming_maintenance_date
+msgid "Upcoming Maintenance Date"
+msgstr "Data de întreținere viitoare"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Update Vehicle Data"
+msgstr "Actualizați datele vehiculului"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__rental_vehicle_image__capture_method__upload
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_damage_image__capture_method__upload
+msgid "Uploaded"
+msgstr "Încărcat"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "Use This Photo"
+msgstr "Utilizați această fotografie"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid "Used Parts & Services"
+msgstr "Piese și servicii uzate"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_contract_scratch_customer_sign_template
+msgid "Validate Scratch Report"
+msgstr "Validați raportul Scratch"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_crm_lead__vehicle_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__vehicle_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_additional_info__fleet_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_inclusions__fleet_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_fleet_rental_policy__fleet_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_lead_rental_contract__vehicle_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_contract_booking__fleet_vehicle_ids
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__vehicle_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_scratch_report__vehicle_id
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_list
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_booking_enquiry_detail
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_hr_expense_inherit_search_view
+msgid "Vehicle"
+msgstr "Vehicul"
+
+#. module: vehicle_rental
+#: model:ir.actions.client,name:vehicle_rental.action_vehicle_availability
+msgid "Vehicle Availability"
+msgstr "Disponibilitatea vehiculului"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+#: model:ir.actions.report,name:vehicle_rental.action_vehicle_contract_report
+#: model:ir.model,name:vehicle_rental.model_vehicle_contract
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_bank_statement_line__vehicle_contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_move__vehicle_contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_account_payment__vehicle_contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_customer_documents__vehicle_contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_extra_service__vehicle_contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_hr_expense__vehicle_contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_insurance_policy__vehicle_contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_rental_vehicle_image__vehicle_contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_damage_image__vehicle_contract_id
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_payment_option__vehicle_contract_id
+msgid "Vehicle Contract"
+msgstr "Contractul de vehicul"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_calendar_view
+msgid "Vehicle Contract Calendar"
+msgstr "Calendarul contractelor de vehicule"
+
+#. module: vehicle_rental
+#: model:product.template,name:vehicle_rental.vehicle_contract_cancellation_charge_product_template
+msgid "Vehicle Contract Cancellation Charges"
+msgstr "Taxe de anulare a contractului de vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_pivot_view
+msgid "Vehicle Contract Details"
+msgstr "Detalii contractul vehiculului"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/availability_template.xml:0
+msgid "Vehicle Contracts"
+msgstr "Contracte de vehicule"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_vehicle_damage
+#: model:product.template,name:vehicle_rental.vehicle_damage_amount_product_template
+msgid "Vehicle Damage"
+msgstr "Deteriorarea vehiculului"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_vehicle_damage_image
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__vehicle_damage_image_ids
+msgid "Vehicle Damage Image"
+msgstr "Imagine de deteriorare a vehiculului"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Vehicle Damages"
+msgstr "Daune la vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_scratch_report_form_view
+msgid "Vehicle Details"
+msgstr "Detalii despre vehicul"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "Vehicle Expenses"
+msgstr "Cheltuieli cu vehiculul"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_extra_service
+msgid "Vehicle Extra Service"
+msgstr ""
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "Vehicle Image"
+msgstr "Imagine vehicul"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "Vehicle Images"
+msgstr "Imagini cu vehicule"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_vehicle_maintenance_part
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__vehicle_maintenance_part_ids
+msgid "Vehicle Maintenance Part"
+msgstr ""
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_maintenance_request
+msgid "Vehicle Maintenance Request"
+msgstr "Cerere de întreținere a vehiculului"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_vehicle_maintenance_service
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__vehicle_maintenance_service_ids
+msgid "Vehicle Maintenance Service"
+msgstr "Serviciul de întreținere a vehiculelor"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_payment_option_form_view
+msgid "Vehicle Payment Details"
+msgstr "Detalii de plată a vehiculului"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_vehicle_payment_option
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__vehicle_payment_option_ids
+msgid "Vehicle Payment Option"
+msgstr "Opțiune de plată pentru vehicul"
+
+#. module: vehicle_rental
+#: model:product.template,name:vehicle_rental.vehicle_rent_charge_product_template
+msgid "Vehicle Rent Charges"
+msgstr "Taxe de închiriere a vehiculelor"
+
+#. module: vehicle_rental
+#: model:product.template,name:vehicle_rental.vehicle_rent_deposit_product_template
+msgid "Vehicle Rent Deposit"
+msgstr "Depozit pentru chirie vehicul"
+
+#. module: vehicle_rental
+#: model:product.template,name:vehicle_rental.vehicle_day_wise_rent_product_template
+msgid "Vehicle Rent/Day Charges"
+msgstr "Închiriere vehicul/Taxe zilnice"
+
+#. module: vehicle_rental
+#: model:product.template,name:vehicle_rental.vehicle_km_wise_rent_product_template
+msgid "Vehicle Rent/Km Charges"
+msgstr "Închirierea vehiculului/Taxele km"
+
+#. module: vehicle_rental
+#: model:product.template,name:vehicle_rental.vehicle_mi_wise_rent_product_template
+msgid "Vehicle Rent/Mi Charges"
+msgstr "Închirierea vehiculului/Taxele mi"
+
+#. module: vehicle_rental
+#: model:mail.template,name:vehicle_rental.vehicle_rental_booking_confirmation_mail_template
+msgid "Vehicle Rental Booking Confirmation Mail Template"
+msgstr ""
+"Șablon de e-mail de confirmare a rezervării pentru închiriere de vehicule"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_vehicle_rental_dashboard
+msgid "Vehicle Rental Dashboard"
+msgstr "Tabloul de bord pentru închiriere de vehicule"
+
+#. module: vehicle_rental
+#: model:ir.actions.server,name:vehicle_rental.ir_cron_generate_missing_fleet_vehicle_access_tokens_ir_actions_server
+msgid "Vehicle Rental: Generate Access Tokens for Fleet Vehicles"
+msgstr ""
+"Închiriere de vehicule: generați jetoane de acces pentru vehiculele din "
+"flota"
+
+#. module: vehicle_rental
+#: model:ir.actions.server,name:vehicle_rental.ir_cron_generate_missing_access_token_vehicle_contract_ir_actions_server
+msgid "Vehicle Rental: Generate Access Tokens for Vehicle Contracts"
+msgstr ""
+"Închiriere de vehicule: generați jetoane de acces pentru contractele de "
+"vehicule"
+
+#. module: vehicle_rental
+#: model:ir.actions.server,name:vehicle_rental.vehicle_contract_invoice_ir_actions_server
+msgid "Vehicle Rental: Vehicle Contract Invoice"
+msgstr "Închiriere vehicul: Factură cu contractul vehiculului"
+
+#. module: vehicle_rental
+#: model:ir.actions.server,name:vehicle_rental.vehicle_schedule_maintenance_ir_actions_server
+msgid "Vehicle Rental: Vehicle Maintenance Schedule"
+msgstr "Închiriere vehicul: Program de întreținere a vehiculului"
+
+#. module: vehicle_rental
+#: model:ir.model,name:vehicle_rental.model_vehicle_scratch_report
+msgid "Vehicle Scratch Report"
+msgstr "Raport de zgârietură vehicul"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "Vehicle Specifications"
+msgstr "Specificațiile vehiculului"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "Vehicle Summary"
+msgstr "Rezumatul vehiculului"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid ""
+"Vehicle description will appear\n"
+"                                    here."
+msgstr ""
+"Va apărea descrierea vehiculului\n"
+"                                    aici."
+
+#. module: vehicle_rental
+#: model:ir.actions.act_window,name:vehicle_rental.action_fleet_vehicle
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__vehicle_ids
+#: model:ir.ui.menu,name:vehicle_rental.menu_fleet_vehicle
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_search_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_scratch_report_search_view
+msgid "Vehicles"
+msgstr "Vehicule"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.res_config_settings_view_form_vehicle_rental
+msgid "Vehicles Renal"
+msgstr "Vehicule Renale"
+
+#. module: vehicle_rental
+#: model:ir.ui.menu,name:vehicle_rental.main_menu_vehicle_rental
+msgid "Vehicles Rental"
+msgstr "Închiriere de vehicule"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request_bill__vendor_id
+msgid "Vendor"
+msgstr "Furnizor"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/maintenance_inherit.py:0
+#: code:addons/vehicle_rental/wizards/maintenance_request_bill.py:0
+#: model:ir.model.fields,field_description:vehicle_rental.field_maintenance_request__bill_count
+msgid "Vendor Bill"
+msgstr "Factura vânzătorului"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__customer_documents__document_type__voter_id
+msgid "Voter ID card"
+msgstr "Cartea de identitate a alegătorului"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,field_description:vehicle_rental.field_vehicle_contract__website_message_ids
+msgid "Website Messages"
+msgstr "Mesaje pe site"
+
+#. module: vehicle_rental
+#: model:ir.model.fields,help:vehicle_rental.field_vehicle_contract__website_message_ids
+msgid "Website communication history"
+msgstr "Istoricul comunicării site-ului"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "Week"
+msgstr "Săptămână"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__crm_lead__fleet_price_type__week
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__payment_type__weekly
+msgid "Weekly"
+msgstr "Săptămânal"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__rent_type__week
+msgid "Weeks"
+msgstr "Săptămâni"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "What's Included"
+msgstr "Ce este inclus"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "Year"
+msgstr "An"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__crm_lead__fleet_price_type__year
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__payment_type__yearly
+msgid "Yearly"
+msgstr "Anual"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__rent_type__year
+msgid "Years"
+msgstr "ani"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_report_template
+msgid "Yes"
+msgstr "Da"
+
+#. module: vehicle_rental
+#: model:mail.template,subject:vehicle_rental.vehicle_rental_booking_confirmation_mail_template
+msgid "Your Vehicle Rental Booking Confirmation"
+msgstr "Confirmarea rezervării dvs. de închiriere a vehiculului"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_booking_enquiry_success
+msgid ""
+"Your vehicle booking enquiry for\n"
+"                                        <br/>"
+msgstr ""
+"Cererea dvs. de rezervare a vehiculului pentru\n"
+"                                        <br/>"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "_duration_year"
+msgstr "_durata_an"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/js/lib/index.js:0
+msgid "_second"
+msgstr "_doilea"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "and"
+msgstr "şi"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "breadcrumb"
+msgstr "pesmet"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "e.g. 1st Installment"
+msgstr "de ex. Prima tranșă"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.maintenance_schedule_form_view
+msgid "e.g. 30 Days"
+msgstr "de ex. 30 de zile"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "e.g. Brandon Freeman"
+msgstr "de ex. Brandon Freeman"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.cancellation_policy_form_view
+msgid "e.g. Flexible Cancellation Policy.."
+msgstr "de ex. Politica de anulare flexibila..."
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "e.g. Lunch with Customer"
+msgstr "de ex. Pranz cu Clientul"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.fleet_features_form_view
+msgid "e.g. Safety & Driver‑Assistance"
+msgstr "de ex. Siguranță și asistență pentru șofer"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "e.g. Third party insurance"
+msgstr "de ex. Asigurare la terți"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.rental_agreement_terms_form_view
+msgid "e.g. Vehicle Rental Terms and Conditions.."
+msgstr "de ex. Termeni și condiții de închiriere de vehicule..."
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "fleet_vehicle_id"
+msgstr "fleet_vehicle_id"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__odometer_unit__kilometers
+msgid "km"
+msgstr "km"
+
+#. module: vehicle_rental
+#: model:ir.model.fields.selection,name:vehicle_rental.selection__vehicle_contract__odometer_unit__miles
+msgid "mi"
+msgstr "mi"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_enquiry_booking
+msgid "name@example.com"
+msgstr "nume@example.com"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/image_capture_field.xml:0
+msgid "or use the buttons below to add images"
+msgstr "sau folosiți butoanele de mai jos pentru a adăuga imagini"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+msgid "payment_amount"
+msgstr "sumă_plată"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "people"
+msgstr "oameni"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_details_template
+msgid "per"
+msgstr "pe"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_maintenance_request_inherit_form_view
+msgid "sub_total"
+msgstr "sub_total"
+
+#. module: vehicle_rental
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_contract_form_view
+#: model_terms:ir.ui.view,arch_db:vehicle_rental.vehicle_rental_form_view
+msgid "tax)"
+msgstr "taxa)"
+
+#. module: vehicle_rental
+#. odoo-javascript
+#: code:addons/vehicle_rental/static/src/xml/template.xml:0
+msgid "users"
+msgstr "utilizatorilor"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/vehicle_contract.py:0
+msgid "vehicle_contract_id"
+msgstr "vehicul_contract_id"
+
+#. module: vehicle_rental
+#. odoo-python
+#: code:addons/vehicle_rental/models/fleet_inherit.py:0
+msgid "vehicle_id"
+msgstr "vehicul_id"
+
+#. module: vehicle_rental
+#: model:mail.template,subject:vehicle_rental.scratch_report_review_signature_required_mail_template
+msgid "{{ object.vehicle_id.name}} Scratch Report Review & Signature Required"
+msgstr ""
+"{{ object.vehicle_id.name}} Examinarea raportului de zgârietură și semnătura"
+" necesară"

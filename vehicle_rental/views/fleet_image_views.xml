@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_fleet_images_form" model="ir.ui.view">
+            <field name="name">fleet.images.view.form</field>
+            <field name="model">fleet.images</field>
+            <field name="arch" type="xml">
+                <form string="Property Images">
+                    <field name="sequence" invisible="1"/>
+                    <div class="row o_website_sale_image_modal">
+                        <div class="col-md-8">
+                            <label for="title" string="Image Name"/>
+                            <h2>
+                                <field name="title" placeholder="Image Name"/>
+                            </h2>
+                        </div>
+                        <div class="col-md-4 text-center o_website_sale_image_modal_container">
+                            <div class="row">
+                                <div class="col">
+                                    <field name="image" widget="image" required="1"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="fleet_images_action" model="ir.actions.act_window">
+            <field name="name">Fleet Images</field>
+            <field name="res_model">fleet.images</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <record id="view_fleet_rental_policy_form" model="ir.ui.view">
+            <field name="name">fleet.rental.policy.view.form</field>
+            <field name="model">fleet.rental.policy</field>
+            <field name="arch" type="xml">
+                <form string="Rental Policy">
+                    <field name="sequence" invisible="1"/>
+                    <sheet>
+                        <group>
+                            <field name="policy"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="view_fleet_inclusions_form" model="ir.ui.view">
+            <field name="name">fleet.inclusions.view.form</field>
+            <field name="model">fleet.inclusions</field>
+            <field name="arch" type="xml">
+                <form string="Rental Policy">
+                    <field name="sequence" invisible="1"/>
+                    <sheet>
+                        <group>
+                            <field name="inclusion"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="view_fleet_additional_info_form" model="ir.ui.view">
+            <field name="name">fleet.additional.info.view.form</field>
+            <field name="model">fleet.additional.info</field>
+            <field name="arch" type="xml">
+                <form string="Rental Policy">
+                    <field name="sequence" invisible="1"/>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

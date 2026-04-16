@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================= -->
+    <!-- تعديل فورم العقود -->
+    <!-- ============================= -->
+    <record id="vehicle_contract_form_inherit_rental" model="ir.ui.view">
+        <field name="name">vehicle.contract.form.inherit.rental</field>
+        <field name="model">vehicle.contract</field>
+        <field name="inherit_id" ref="vehicle_contract_form_view"/>
+        <field name="arch" type="xml">
+
+            <!-- إضافة payment_method -->
+            <xpath expr="//field[@name='payment_type']" position="after">
+                <field name="payment_method"/>
+            </xpath>
+
+            <!-- إضافة تبويب الكفيل -->
+            <xpath expr="//notebook" position="inside">
+
+                <page string="بيانات الكفيل" name="guarantor_page">
+
+                    <group>
+                        <group>
+                            <field name="guarantor_id"
+                                   domain="[('id', '!=', customer_id)]"
+                                   options="{'no_create': True}"/>
+                            <field name="guarantor_phone" readonly="1"/>
+                            <field name="guarantor_nationality" readonly="1"/>
+                            <field name="guarantor_passport_number" readonly="1"/>
+                            <field name="guarantor_date_of_birth" readonly="1"/>
+                        </group>
+
+                        <group string="رخصة الكفيل">
+                            <field name="guarantor_license_number" readonly="1"/>
+                            <field name="guarantor_license_issue_place" readonly="1"/>
+                            <field name="guarantor_license_expiry" readonly="1"/>
+                        </group>
+                    </group>
+                    
+                    <!-- ✅ قسم توقيع الكفيل (جديد) -->
+                    <separator string="توقيع الكفيل" name="guarantor_signature_section"/>
+                    <group>
+                        <group>
+                            <field name="guarantor_signed_by" readonly="status == 'c_return'"
+                                   placeholder="اسم الكفيل كما سيوقع"/>
+                            <field name="guarantor_signed_date" readonly="1"/>
+                        </group>
+                        <group>
+                            <div class="mt-2 text-center">
+                                <field name="guarantor_signature" widget="signature" nolabel="1"
+                                       readonly="status == 'c_return'" class="oe_signature"
+                                       style="border: 1px solid #ccc; min-height: 100px;"/>
+                                <h6 class="mt-2 fw-bold text-muted">
+                                    توقيع الكفيل الضامن
+                                </h6>
+                            </div>
+                        </group>
+                    </group>
+
+                </page>
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

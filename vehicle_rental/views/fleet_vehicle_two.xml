@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="renta_fleet_vehicle_two_inherit_form_view" model="ir.ui.view">
+        <field name="name">renta.fleet.vehicle.two.inherit.form.view</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='open_assignation_logs']" position="before">
+                <button class="oe_stat_button" type="object" name="action_open_linked_asset" icon="fa-bank"
+                        invisible="not asset_id">
+                    <field string="Asset" name="asset_id" widget="statinfo"/>
+                </button>
+                <button class="oe_stat_button" type="object" name="action_open_vendor_bill" icon="fa-file-text-o"
+                        invisible="not vendor_bill_id" groups="account.group_account_user">
+                    <field string="Vendor Bill" name="vendor_bill_id" widget="statinfo"/>
+                </button>
+                <button class="oe_stat_button" type="object" name="action_open_purchase_order" icon="fa-shopping-cart"
+                        invisible="not purchase_order_id" groups="purchase.group_purchase_user">
+                    <field string="Purchase Order" name="purchase_order_id" widget="statinfo"/>
+                </button>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button string="Create Asset" name="action_create_linked_asset" type="object"
+                        class="btn btn-primary" invisible="asset_id"
+                        groups="account.group_account_user"/>
+                <button string="Open Asset" name="action_open_linked_asset" type="object"
+                        class="btn btn-secondary" invisible="not asset_id"
+                        groups="account.group_account_user"/>
+            </xpath>
+            <xpath expr="//form/sheet/group" position="inside">
+                <group string="Vehicle Identity">
+                    <field name="vin_sn" required="1"/>
+                    <field name="license_plate"/>
+                    <field name="engine_number"/>
+                    <field name="interior_color_ids" widget="many2many_tags" options="{'no_quick_create': False}" placeholder="Add interior colors"/>
+                    <field name="exterior_color_ids" widget="many2many_tags" options="{'no_quick_create': False}" placeholder="Add exterior colors"/>
+                </group>
+                <group string="Purchase &amp; Asset">
+                    <field name="asset_status" readonly="1"/>
+                    <field name="asset_id" readonly="1"/>
+                    <field name="purchase_order_id" groups="purchase.group_purchase_user"/>
+                    <field name="vendor_bill_id" groups="account.group_account_user"/>
+                    <field name="purchase_partner_id" readonly="1"/>
+                    <field name="acquisition_date" readonly="1"/>
+                    <field name="acquisition_value" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
