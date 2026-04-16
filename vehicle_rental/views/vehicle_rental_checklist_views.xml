@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="vehicle_rental_checklist_form_view" model="ir.ui.view">
+            <field name="name">vehicle.rental.checklist.form.view</field>
+            <field name="model">vehicle.rental.checklist</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="e.g. Luxury Car Rental Inspection" required="1"/>
+                            </h1>
+                        </div>
+                        <notebook>
+                            <page name="rental_checklist_items" string="Checklist Items">
+                                <field name="rental_checklist_item_ids" widget="section_and_note_one2many"
+                                       nolabel="1">
+                                    <list editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <control>
+                                            <create name="add_product_control" string="Add a item"/>
+                                            <create name="add_section_control" string="Add a section"
+                                                    context="{'default_display_type': 'line_section'}"/>
+                                        </control>
+                                        <field name="name" widget="section_and_note_text" required="1"/>
+                                        <field name="display_type" column_invisible="1"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="vehicle_rental_checklist_list_view" model="ir.ui.view">
+            <field name="name">vehicle.rental.checklist.list.view</field>
+            <field name="model">vehicle.rental.checklist</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="rental_checklist_item_ids" widget="many2many_tags"/>
+                </list>
+            </field>
+        </record>
+        <record id="vehicle_rental_checklist_search_view" model="ir.ui.view">
+            <field name="name">vehicle.rental.checklist.search.view</field>
+            <field name="model">vehicle.rental.checklist</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_vehicle_rental_checklist" model="ir.actions.act_window">
+            <field name="name">Vehicle Checklists</field>
+            <field name="res_model">vehicle.rental.checklist</field>
+            <field name="view_mode">list,form,search</field>
+        </record>
+    </data>
+</odoo>

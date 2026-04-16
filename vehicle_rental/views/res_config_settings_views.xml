@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form_vehicle_rental" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.vehicle.rental</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="Vehicles Rental" string="Vehicles Rental" name="vehicle_rental">
+                        <!-- Terms & Policies Block -->
+                        <block title="Links of Terms and Policies" id="vehicle_rental_terms_policy">
+                            <setting help="Enter link to see terms &amp; conditions">
+                                <field name="terms_conditions_link" class="ms-2 oe_inline"
+                                       string="Terms &amp; Conditions"
+                                       style="width: 10%; min-width: 4rem;"/>
+                            </setting>
+                            <setting help="Enter link to see privacy policies">
+                                <field name="privacy_policy_link" class="ms-2 oe_inline"
+                                       style="width: 10%; min-width: 4rem;"/>
+                            </setting>
+                        </block>
+
+                        <!--Other Details-->
+                        <block title="Other">
+                            <setting help="Number of items or vehicles to display per page in paginated views.">
+                                <field name="pagination_item_per_page"/>
+                            </setting>
+                        </block>
+
+                        <!-- Default CRM Assignment Block -->
+                        <block title="Default CRM Assignment" id="vehicle_rental_crm_assignment">
+                            <setting help="Select the default salesperson for rental booking enquiries.">
+                                <field name="salesperson_id" widget="many2one_avatar_user"
+                                       domain="[('share', '=', False)]" options="{'no_create': True}"/>
+                            </setting>
+
+                            <setting help="Select the default sales team for rental booking enquiries.">
+                                <field name="sale_team_id" options="{'no_create': True}"/>
+                            </setting>
+                        </block>
+
+                        <!--Vehicle Maintenance Settings-->
+                        <block title="Vehicle Maintenance Settings">
+                            <setting id="maintenance_reminder_days_setting" string="Maintenance Reminder Before (Days)"
+                                     help="Number of days before the maintenance due date to send reminder email.">
+                                <field name="maintenance_reminder_days"/>
+                            </setting>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

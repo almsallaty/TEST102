@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="main_menu_vehicle_rental" name="Vehicles Rental"
+                  web_icon="vehicle_rental,static/description/icon.png"/>
+
+        <menuitem id="menu_vehicle_dashboard"
+                  name="Dashboard"
+                  sequence="0"
+                  action="action_vehicle_rental_dashboard"
+                  parent="main_menu_vehicle_rental"/>
+
+        <menuitem id="menu_crm_lead_enquiry" name="Booking Enquiries" parent="main_menu_vehicle_rental" sequence="1"/>
+        <menuitem id="menu_customer_request"
+                  name="Leads"
+                  parent="menu_crm_lead_enquiry"
+                  action="crm.crm_lead_all_leads"
+                  sequence="1"/>
+        <menuitem id="menu_customer_pipeline"
+                  name="Pipeline"
+                  parent="menu_crm_lead_enquiry"
+                  action="crm.crm_lead_action_pipeline"
+                  sequence="2"/>
+
+        <menuitem id="menu_vehicle_availability"
+                  name="Availability"
+                  sequence="2"
+                  action="action_vehicle_availability"
+                  parent="main_menu_vehicle_rental"/>
+        <!-- <menuitem id="menu_contract_booking"
+                  name="Book Vehicle"
+                  parent="main_menu_vehicle_rental"
+                  action="action_rental_contract_booking"
+                  sequence="3"/> -->
+        <menuitem id="menu_vehicle_contract"
+                  name="Contracts"
+                  parent="main_menu_vehicle_rental"
+                  action="action_vehicle_contract"
+                  sequence="4"/>
+        <menuitem id="menu_maintenance_requests"
+                  name="Maintenance Requests"
+                  parent="main_menu_vehicle_rental"
+                  action="action_maintenance_requests"
+                  sequence="5"/>
+        <menuitem id="menu_fleet_vehicle"
+                  name="Vehicles"
+                  parent="main_menu_vehicle_rental"
+                  action="action_inherit_fleet_vehicle"
+                  sequence="6"/>
+        <menuitem id="menu_fleet_vehicle_customer"
+                  name="Customers"
+                  parent="main_menu_vehicle_rental"
+                  action="contacts.action_contacts"
+                  sequence="7"/>
+
+        <menuitem id="menu_configuration" name="Configurations" parent="main_menu_vehicle_rental" sequence="20"/>
+        <menuitem id="menu_cancellation_policy"
+                  name="Cancellation Policies"
+                  parent="menu_configuration"
+                  action="action_cancellation_policy"
+                  sequence="1"/>
+        <menuitem id="menu_rental_agreement_terms"
+                  name="Rental Agreement Terms"
+                  parent="menu_configuration"
+                  action="action_rental_agreement_terms"
+                  sequence="2"/>
+        <menuitem id="menu_vehicle_scratch_report"
+                  name="Scratch Reports"
+                  parent="menu_configuration"
+                  action="action_vehicle_scratch_report"
+                  sequence="3"/>
+        <menuitem id="menu_maintenance_schedule"
+                  name="Maintenance Schedules"
+                  parent="menu_configuration"
+                  action="action_maintenance_schedule"
+                  sequence="4"/>
+        <menuitem id="menu_fleet_features"
+                  name="Fleet Features"
+                  parent="menu_configuration"
+                  action="action_fleet_features"
+                  sequence="5"/>
+        <menuitem id="menu_vehicle_rental_checklist"
+                  name="Vehicle Checklists"
+                  parent="menu_configuration"
+                  action="action_vehicle_rental_checklist"
+                  sequence="6"/>
+    </data>
+</odoo>
