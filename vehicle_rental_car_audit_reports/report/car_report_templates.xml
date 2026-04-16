@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_car_profile">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Car Profile Report</h2>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td>Vehicle</td><td><t t-esc="o.display_name"/></td><td>Status</td><td><t t-esc="dict(o._fields['status'].selection).get(o.status, o.status) if 'status' in o._fields else ''"/></td></tr>
+                                <tr><td>Plate</td><td><t t-esc="o.license_plate or ''"/></td><td>VIN</td><td><t t-esc="o.vin_sn or ''"/></td></tr>
+                                <tr><td>Acquisition Date</td><td><t t-esc="o.acquisition_date or ''"/></td><td>Acquisition Cost</td><td><span t-field="o.x_acquisition_cost"/></td></tr>
+                                <tr><td>Total Rentals</td><td><t t-esc="o.x_rental_contract_total"/></td><td>Total Revenue</td><td><span t-field="o.x_total_rental_revenue"/></td></tr>
+                                <tr><td>Maintenance Count</td><td><t t-esc="o.x_maintenance_count"/></td><td>Maintenance Cost</td><td><span t-field="o.x_total_maintenance_cost"/></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_car_history">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Car Full History Report - <t t-esc="o.display_name"/></h2>
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <tr><th>Date</th><th>Type</th><th>Field</th><th>Old</th><th>New</th><th>User</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.movement_log_ids" t-as="l">
+                                    <td><t t-esc="l.event_datetime"/></td>
+                                    <td><t t-esc="dict(l._fields['event_type'].selection).get(l.event_type, l.event_type)"/></td>
+                                    <td><t t-esc="l.field_name or ''"/></td>
+                                    <td><t t-esc="l.old_value or ''"/></td>
+                                    <td><t t-esc="l.new_value or ''"/></td>
+                                    <td><t t-esc="l.user_id.display_name or ''"/></td>
+                                    <td><t t-esc="l.description or ''"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_car_rental">
+        <t t-call="web.html_container"><t t-foreach="docs" t-as="o"><t t-call="web.external_layout"><div class="page"><h2>Car Rental Performance Report</h2>
+        <table class="table table-sm table-bordered"><tbody>
+        <tr><td>Vehicle</td><td><t t-esc="o.display_name"/></td><td>Total Contracts</td><td><t t-esc="o.x_rental_contract_total"/></td></tr>
+        <tr><td>Total Days</td><td><t t-esc="o.x_total_rented_days"/></td><td>Total Hours</td><td><t t-esc="o.x_total_rented_hours"/></td></tr>
+        <tr><td>Total Revenue</td><td><span t-field="o.x_total_rental_revenue"/></td><td>Average / Contract</td><td><span t-field="o.x_avg_revenue_per_contract"/></td></tr>
+        <tr><td>First Rental</td><td><t t-esc="o.x_first_rental_date or ''"/></td><td>Last Rental</td><td><t t-esc="o.x_last_rental_date or ''"/></td></tr>
+        </tbody></table>
+        <h4>Contracts</h4>
+        <table class="table table-sm table-bordered"><thead><tr><th>Reference</th><th>Customer</th><th>Start</th><th>End</th><th>Status</th><th>Revenue</th></tr></thead><tbody>
+        <tr t-foreach="o.env['vehicle.contract'].search([('vehicle_id','=',o.id)])" t-as="c"><td><t t-esc="c.reference_no"/></td><td><t t-esc="c.customer_id.display_name if c.customer_id else ''"/></td><td><t t-esc="c.start_date or ''"/></td><td><t t-esc="c.end_date or ''"/></td><td><t t-esc="dict(c._fields['status'].selection).get(c.status,c.status)"/></td><td><t t-esc="c.x_contract_revenue_total if 'x_contract_revenue_total' in c._fields else ((c.total_vehicle_rent or 0.0)+(c.total_extra_charges or 0.0)+(c.extra_service_charge or 0.0)+(c.damage_amount or 0.0)+(c.cancellation_charge or 0.0))"/></td></tr>
+        </tbody></table></div></t></t></t>
+    </template>
+
+    <template id="report_car_maintenance">
+        <t t-call="web.html_container"><t t-foreach="docs" t-as="o"><t t-call="web.external_layout"><div class="page"><h2>Car Maintenance Report</h2>
+        <table class="table table-sm table-bordered"><tbody>
+        <tr><td>Vehicle</td><td><t t-esc="o.display_name"/></td><td>Maintenance Count</td><td><t t-esc="o.x_maintenance_count"/></td></tr>
+        <tr><td>Total Cost</td><td><span t-field="o.x_total_maintenance_cost"/></td><td>Average Cost</td><td><span t-field="o.x_avg_maintenance_cost"/></td></tr>
+        <tr><td>Downtime Days</td><td><t t-esc="o.x_total_downtime_days"/></td><td>Last Maintenance</td><td><t t-esc="o.x_last_maintenance_date or ''"/></td></tr>
+        </tbody></table>
+        <table class="table table-sm table-bordered"><thead><tr><th>Request</th><th>Date</th><th>Stage</th><th>Cost</th></tr></thead><tbody>
+        <tr t-foreach="o.env['maintenance.request'].search([('fleet_vehicle_id','=',o.id)])" t-as="m"><td><t t-esc="m.name or ''"/></td><td><t t-esc="m.request_date or ''"/></td><td><t t-esc="m.stage_id.display_name if m.stage_id else ''"/></td><td><t t-esc="m.sub_total if 'sub_total' in m._fields else 0.0"/></td></tr>
+        </tbody></table></div></t></t></t>
+    </template>
+
+    <template id="report_car_financial">
+        <t t-call="web.html_container"><t t-foreach="docs" t-as="o"><t t-call="web.external_layout"><div class="page"><h2>Car Financial Report</h2>
+        <table class="table table-sm table-bordered"><tbody>
+        <tr><td>Vehicle</td><td><t t-esc="o.display_name"/></td><td>Acquisition Cost</td><td><span t-field="o.x_acquisition_cost"/></td></tr>
+        <tr><td>Rental Revenue</td><td><span t-field="o.x_total_rental_revenue"/></td><td>Maintenance Cost</td><td><span t-field="o.x_total_maintenance_cost"/></td></tr>
+        <tr><td>Expense Cost</td><td><span t-field="o.x_total_trip_expense_cost"/></td><td>Operating Cost</td><td><span t-field="o.x_total_operating_cost"/></td></tr>
+        <tr><td>Net Profit</td><td><span t-field="o.x_net_profit"/></td><td>Cost / Rented Day</td><td><span t-field="o.x_total_cost_per_day"/></td></tr>
+        </tbody></table></div></t></t></t>
+    </template>
+
+    <template id="report_car_utilization">
+        <t t-call="web.html_container"><t t-foreach="docs" t-as="o"><t t-call="web.external_layout"><div class="page"><h2>Car Utilization Report</h2>
+        <table class="table table-sm table-bordered"><tbody>
+        <tr><td>Total Rented Days</td><td><t t-esc="o.x_total_rented_days"/></td><td>Downtime Days</td><td><t t-esc="o.x_total_downtime_days"/></td></tr>
+        <tr><td>Idle Days</td><td><t t-esc="o.x_idle_days"/></td><td>Utilization %</td><td><t t-esc="o.x_utilization_rate"/></td></tr>
+        </tbody></table></div></t></t></t>
+    </template>
+
+    <template id="report_car_documents">
+        <t t-call="web.html_container"><t t-foreach="docs" t-as="o"><t t-call="web.external_layout"><div class="page"><h2>Car Documents / Compliance Report</h2>
+        <table class="table table-sm table-bordered"><tbody>
+        <tr><td>Vehicle</td><td><t t-esc="o.display_name"/></td><td>Plate</td><td><t t-esc="o.license_plate or ''"/></td></tr>
+        <tr><td>VIN</td><td><t t-esc="o.vin_sn or ''"/></td><td>Engine Number</td><td><t t-esc="o.engine_number or ''"/></td></tr>
+        <tr><td>Vendor</td><td><t t-esc="o.purchase_partner_id.display_name if 'purchase_partner_id' in o._fields and o.purchase_partner_id else ''"/></td><td>Acquisition Date</td><td><t t-esc="o.acquisition_date or ''"/></td></tr>
+        </tbody></table></div></t></t></t>
+    </template>
+
+    <template id="report_car_customer_history">
+        <t t-call="web.html_container"><t t-foreach="docs" t-as="o"><t t-call="web.external_layout"><div class="page"><h2>Customer History by Car</h2>
+        <table class="table table-sm table-bordered"><thead><tr><th>Contract</th><th>Customer</th><th>Start</th><th>End</th><th>Status</th></tr></thead><tbody>
+        <tr t-foreach="o.env['vehicle.contract'].search([('vehicle_id','=',o.id)])" t-as="c"><td><t t-esc="c.reference_no"/></td><td><t t-esc="c.customer_id.display_name if c.customer_id else ''"/></td><td><t t-esc="c.start_date or ''"/></td><td><t t-esc="c.end_date or ''"/></td><td><t t-esc="dict(c._fields['status'].selection).get(c.status,c.status)"/></td></tr>
+        </tbody></table></div></t></t></t>
+    </template>
+
+    <template id="report_car_downtime">
+        <t t-call="web.html_container"><t t-foreach="docs" t-as="o"><t t-call="web.external_layout"><div class="page"><h2>Downtime Report</h2>
+        <table class="table table-sm table-bordered"><tbody>
+        <tr><td>Vehicle</td><td><t t-esc="o.display_name"/></td><td>Total Downtime Days</td><td><t t-esc="o.x_total_downtime_days"/></td></tr>
+        </tbody></table>
+        <table class="table table-sm table-bordered"><thead><tr><th>Request</th><th>Request Date</th><th>Stage</th></tr></thead><tbody>
+        <tr t-foreach="o.env['maintenance.request'].search([('fleet_vehicle_id','=',o.id)])" t-as="m"><td><t t-esc="m.name or ''"/></td><td><t t-esc="m.request_date or ''"/></td><td><t t-esc="m.stage_id.display_name if m.stage_id else ''"/></td></tr>
+        </tbody></table></div></t></t></t>
+    </template>
+
+    <template id="report_fleet_summary">
+        <t t-call="web.html_container"><t t-call="web.external_layout"><div class="page"><h2>Fleet Summary Report</h2>
+        <table class="table table-sm table-bordered"><thead><tr><th>Vehicle</th><th>Plate</th><th>Status</th><th>Contracts</th><th>Revenue</th><th>Maintenance</th><th>Net Profit</th></tr></thead><tbody>
+        <tr t-foreach="docs" t-as="o"><td><t t-esc="o.display_name"/></td><td><t t-esc="o.license_plate or ''"/></td><td><t t-esc="dict(o._fields['status'].selection).get(o.status,o.status) if 'status' in o._fields else ''"/></td><td><t t-esc="o.x_rental_contract_total"/></td><td><span t-field="o.x_total_rental_revenue"/></td><td><span t-field="o.x_total_maintenance_cost"/></td><td><span t-field="o.x_net_profit"/></td></tr>
+        </tbody></table></div></t></t>
+    </template>
+
+    <template id="report_contract_audit">
+        <t t-call="web.html_container"><t t-foreach="docs" t-as="o"><t t-call="web.external_layout"><div class="page"><h2>Contract Audit Report - <t t-esc="o.reference_no"/></h2>
+        <table class="table table-sm table-bordered"><tbody>
+        <tr><td>Customer</td><td><t t-esc="o.customer_id.display_name if o.customer_id else ''"/></td><td>Vehicle</td><td><t t-esc="o.vehicle_id.display_name if o.vehicle_id else ''"/></td></tr>
+        <tr><td>Status</td><td><t t-esc="dict(o._fields['status'].selection).get(o.status,o.status)"/></td><td>Revenue</td><td><span t-field="o.x_contract_revenue_total"/></td></tr>
+        <tr><td>Pick-up</td><td><t t-esc="o.start_date or ''"/></td><td>Drop-off</td><td><t t-esc="o.end_date or ''"/></td></tr>
+        </tbody></table>
+        <table class="table table-sm table-bordered"><thead><tr><th>Date</th><th>Action</th><th>Field</th><th>Old</th><th>New</th><th>User</th><th>Description</th></tr></thead><tbody>
+        <tr t-foreach="o.audit_log_ids" t-as="l"><td><t t-esc="l.event_datetime"/></td><td><t t-esc="dict(l._fields['action_type'].selection).get(l.action_type,l.action_type)"/></td><td><t t-esc="l.field_name or ''"/></td><td><t t-esc="l.old_value or ''"/></td><td><t t-esc="l.new_value or ''"/></td><td><t t-esc="l.user_id.display_name or ''"/></td><td><t t-esc="l.description or ''"/></td></tr>
+        </tbody></table></div></t></t></t>
+    </template>
+</odoo>

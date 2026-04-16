@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_car_profile" model="ir.actions.report">
+        <field name="name">Car Profile Report</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_car_profile</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_car_profile</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_car_history" model="ir.actions.report">
+        <field name="name">Car Full History Report</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_car_history</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_car_history</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_car_rental" model="ir.actions.report">
+        <field name="name">Car Rental Performance Report</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_car_rental</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_car_rental</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_car_maintenance" model="ir.actions.report">
+        <field name="name">Car Maintenance Report</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_car_maintenance</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_car_maintenance</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_car_financial" model="ir.actions.report">
+        <field name="name">Car Financial Report</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_car_financial</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_car_financial</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_car_utilization" model="ir.actions.report">
+        <field name="name">Car Utilization Report</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_car_utilization</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_car_utilization</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_car_documents" model="ir.actions.report">
+        <field name="name">Car Documents Report</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_car_documents</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_car_documents</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_car_customer_history" model="ir.actions.report">
+        <field name="name">Customer History by Car</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_car_customer_history</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_car_customer_history</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_car_downtime" model="ir.actions.report">
+        <field name="name">Downtime Report</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_car_downtime</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_car_downtime</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_fleet_summary" model="ir.actions.report">
+        <field name="name">Fleet Summary Report</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_fleet_summary</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_fleet_summary</field>
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_contract_audit" model="ir.actions.report">
+        <field name="name">Contract Audit Report</field>
+        <field name="model">vehicle.contract</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental_car_audit_reports.report_contract_audit</field>
+        <field name="report_file">vehicle_rental_car_audit_reports.report_contract_audit</field>
+        <field name="binding_model_id" ref="vehicle_rental.model_vehicle_contract"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
