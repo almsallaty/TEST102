@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_home_baroon_reservations" inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//div[contains(@class, 'o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Car Reservations</t>
+                <t t-set="url" t-value="'/my/car-reservations'"/>
+                <t t-set="count" t-value="car_reservation_count"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_menu_baroon_reservations" inherit_id="portal.portal_breadcrumbs" priority="30">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'car_reservations'" class="breadcrumb-item active">
+                <span>Car Reservations</span>
+            </li>
+            <li t-else="" class="breadcrumb-item">
+                <a href="/my/car-reservations">Car Reservations</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_car_reservations" name="My Car Reservations">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <div class="o_portal_wrap">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+                    <h2 class="mb-0">My Car Reservations</h2>
+                    <div>
+                        <span class="text-muted">Track quotations, reservations, and sold cars tied to your account.</span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <form method="get" action="/my/car-reservations" class="d-flex gap-2 align-items-center">
+                        <label class="text-muted">Sort by</label>
+                        <select name="sortby" class="form-select w-auto" onchange="this.form.submit()">
+                            <t t-foreach="sortings.items()" t-as="sort_item">
+                                <option t-att-value="sort_item[0]" t-att-selected="sort_item[0] == sortby and 'selected' or None">
+                                    <t t-esc="sort_item[1]['label']"/>
+                                </option>
+                            </t>
+                        </select>
+                    </form>
+                </div>
+
+                <t t-if="orders">
+                    <div class="row g-3">
+                        <t t-foreach="orders" t-as="order">
+                            <t t-set="car_line" t-value="order.order_line.filtered('car_lot_id')[:1]"/>
+                            <t t-set="car" t-value="car_line.car_lot_id"/>
+                            <div class="col-12">
+                                <div class="card shadow-sm border-0 rounded-4">
+                                    <div class="card-body">
+                                        <div class="row g-3 align-items-center">
+                                            <div class="col-lg-2 col-md-3">
+                                                <a t-if="car and car.website_url" t-att-href="car.website_url">
+                                                    <img t-if="car and car.display_cover_image" t-att-src="'/web/image/stock.lot/%s/display_cover_image' % car.id" class="img-fluid rounded-3"/>
+                                                </a>
+                                                <div t-if="not car or not car.display_cover_image" class="bg-light rounded-3 p-4 text-center text-muted">No Image</div>
+                                            </div>
+                                            <div class="col-lg-5 col-md-5">
+                                                <div class="fw-bold fs-5"><t t-esc="car.display_name_website if car else order.name"/></div>
+                                                <div class="text-muted mb-2">Order <t t-esc="order.name"/></div>
+                                                <div class="small">
+                                                    <div><strong>VIN:</strong> <t t-esc="car.name if car else '-'"/></div>
+                                                    <div><strong>Car Status:</strong> <t t-esc="dict(car._fields['car_status'].selection).get(car.car_status) if car else order.state"/></div>
+                                                    <div><strong>Order Status:</strong> <t t-esc="dict(order._fields['state'].selection).get(order.state) or order.state"/></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2">
+                                                <div class="fw-semibold">Price</div>
+                                                <div t-if="car">
+                                                    <span t-field="car.sale_price" t-options='{"widget": "monetary", "display_currency": order.currency_id}'/>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-2 text-md-end d-grid gap-2">
+                                                <a t-att-href="'/my/orders/%s' % order.id" class="btn btn-outline-primary rounded-pill">Open Order</a>
+                                                <form t-if="order.state in ('draft', 'sent')" t-att-action="'/my/car-reservations/%s/cancel' % order.id" method="post">
+                                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                                    <button type="submit" class="btn btn-outline-danger rounded-pill w-100">Cancel Reservation</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+
+                    <div t-if="pager and pager.get('page_count', 1) > 1" class="d-flex justify-content-center mt-4">
+                        <nav aria-label="Reservations pages">
+                            <ul class="pagination mb-0">
+                                <li t-att-class="'page-item %s' % ('disabled' if page &lt;= 1 else '')">
+                                    <a class="page-link" t-att-href="'/my/car-reservations/page/%s?sortby=%s' % (page - 1, sortby if sortby else 'date') if page &gt; 1 else '#'" aria-label="Previous">Previous</a>
+                                </li>
+                                <li class="page-item disabled">
+                                    <span class="page-link"><t t-esc="page"/> / <t t-esc="pager.get('page_count', 1)"/></span>
+                                </li>
+                                <li t-att-class="'page-item %s' % ('disabled' if page &gt;= pager.get('page_count', 1) else '')">
+                                    <a class="page-link" t-att-href="'/my/car-reservations/page/%s?sortby=%s' % (page + 1, sortby if sortby else 'date') if page &lt; pager.get('page_count', 1) else '#'" aria-label="Next">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </t>
+                <div t-else="" class="alert alert-info rounded-4">
+                    You do not have any car reservations yet.
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
