@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_car_profile" model="ir.actions.report">
+        <field name="name">Car Profile</field>
+        <field name="model">stock.lot</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">baroon_dealership.report_car_profile</field>
+        <field name="report_file">baroon_dealership.report_car_profile</field>
+        <field name="binding_model_id" ref="stock.model_stock_lot"/>
+        <field name="binding_type">report</field>
+        <field name="print_report_name">'Car Profile - %s' % (object.name or '')</field>
+    </record>
+
+    <record id="action_report_car_profitability" model="ir.actions.report">
+        <field name="name">Profitability Report</field>
+        <field name="model">stock.lot</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">baroon_dealership.report_car_profitability</field>
+        <field name="report_file">baroon_dealership.report_car_profitability</field>
+        <field name="binding_model_id" ref="stock.model_stock_lot"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_car_accounting" model="ir.actions.report">
+        <field name="name">Accounting Report</field>
+        <field name="model">stock.lot</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">baroon_dealership.report_car_accounting</field>
+        <field name="report_file">baroon_dealership.report_car_accounting</field>
+        <field name="binding_model_id" ref="stock.model_stock_lot"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_car_executive_summary" model="ir.actions.report">
+        <field name="name">Executive Inventory Summary</field>
+        <field name="model">stock.lot</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">baroon_dealership.report_car_executive_summary</field>
+        <field name="report_file">baroon_dealership.report_car_executive_summary</field>
+        <field name="binding_model_id" ref="stock.model_stock_lot"/>
+        <field name="binding_type">report</field>
+        <field name="multi">True</field>
+    </record>
+
+    <template id="report_car_profile">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row mb-3">
+                            <div class="col-8">
+                                <h2>Car Profile</h2>
+                                <div><strong><t t-esc="o.product_id.display_name or ''"/></strong></div>
+                                <div>VIN: <t t-esc="o.name or ''"/></div>
+                                <div>Status: <t t-esc="dict(o._fields['car_status'].selection).get(o.car_status, '')"/></div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <img t-if="o.display_cover_image" t-att-src="image_data_uri(o.display_cover_image)" style="max-width: 220px; max-height: 160px; border: 1px solid #ccc;"/>
+                            </div>
+                        </div>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td><strong>Brand</strong></td><td><t t-esc="o.car_brand or ''"/></td><td><strong>Model</strong></td><td><t t-esc="o.car_model or ''"/></td></tr>
+                                <tr><td><strong>Trim</strong></td><td><t t-esc="o.car_trim or ''"/></td><td><strong>Year</strong></td><td><t t-esc="o.year or ''"/></td></tr>
+                                <tr><td><strong>Engine Number</strong></td><td><t t-esc="o.engine_number or ''"/></td><td><strong>Plate Number</strong></td><td><t t-esc="o.plate_number or ''"/></td></tr>
+                                <tr><td><strong>Body Style</strong></td><td><t t-esc="dict(o._fields['body_style'].selection).get(o.body_style, '') if o.body_style else ''"/></td><td><strong>Condition</strong></td><td><t t-esc="dict(o._fields['condition'].selection).get(o.condition, '') if o.condition else ''"/></td></tr>
+                                <tr><td><strong>Mileage</strong></td><td><t t-esc="o.mileage or 0"/></td><td><strong>Current Location</strong></td><td><t t-esc="o.current_location_id.display_name or o.branch_location or ''"/></td></tr>
+                            </tbody>
+                        </table>
+                        <h4>Purchase &amp; Shipment</h4>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td><strong>Vendor</strong></td><td><t t-esc="o.purchase_partner_id.display_name or ''"/></td><td><strong>Purchase Order</strong></td><td><t t-esc="o.purchase_order_id.name or ''"/></td></tr>
+                                <tr><td><strong>Purchase Date</strong></td><td><t t-esc="o.purchase_date or ''"/></td><td><strong>Shipment Ref</strong></td><td><t t-esc="o.shipping_reference or ''"/></td></tr>
+                                <tr><td><strong>ETA</strong></td><td><t t-esc="o.expected_arrival_date or ''"/></td><td><strong>Arrival</strong></td><td><t t-esc="o.arrival_date or ''"/></td></tr>
+                                <tr><td><strong>Port of Loading</strong></td><td><t t-esc="o.port_of_loading or ''"/></td><td><strong>Destination Port</strong></td><td><t t-esc="o.destination_port or ''"/></td></tr>
+                            </tbody>
+                        </table>
+                        <h4>Commercial</h4>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td><strong>Reserved By</strong></td><td><t t-esc="o.reservation_partner_id.display_name or ''"/></td><td><strong>Reserved Order</strong></td><td><t t-esc="o.reservation_order_id.name or ''"/></td></tr>
+                                <tr><td><strong>Buyer</strong></td><td><t t-esc="o.buyer_id.display_name or ''"/></td><td><strong>Sale Order</strong></td><td><t t-esc="o.sale_order_id.name or ''"/></td></tr>
+                                <tr><td><strong>Salesperson</strong></td><td><t t-esc="o.salesperson_id.name or ''"/></td><td><strong>Delivered Date</strong></td><td><t t-esc="o.delivered_date or ''"/></td></tr>
+                            </tbody>
+                        </table>
+                        <h4>Movement Snapshot</h4>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr><th>Date</th><th>Type</th><th>From</th><th>To</th><th>Document</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="o.location_history_ids[:10]" t-as="m">
+                                    <td><t t-esc="m.movement_date or ''"/></td>
+                                    <td><t t-esc="dict(m._fields['movement_type'].selection).get(m.movement_type, m.movement_type)"/></td>
+                                    <td><t t-esc="m.source_location_id.display_name or ''"/></td>
+                                    <td><t t-esc="m.destination_location_id.display_name or ''"/></td>
+                                    <td><t t-esc="m.picking_id.name or ''"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_car_profitability">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Car Profitability</h2>
+                        <h3><t t-esc="o.product_id.display_name or ''"/> - VIN <t t-esc="o.name or ''"/></h3>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td>Purchase Cost</td><td><span t-field="o.purchase_cost" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td>Manual Landed Cost</td><td><span t-field="o.landed_cost" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td>Linked Landed Cost</td><td><span t-field="o.landed_cost_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td>Reconditioning</td><td><span t-field="o.reconditioning_cost" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td>Other Expenses</td><td><span t-field="o.expense_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td><strong>Total Cost</strong></td><td><strong><span t-field="o.total_cost" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></strong></td></tr>
+                                <tr><td>Sale Price</td><td><span t-field="o.sale_price" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td><strong>Gross Margin</strong></td><td><strong><span t-field="o.gross_margin" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></strong></td></tr>
+                                <tr><td>Margin %</td><td><t t-esc="'%.2f' % (o.margin_percent or 0.0)"/>%</td></tr>
+                            </tbody>
+                        </table>
+                        <h4>Expense Detail</h4>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr><th>Date</th><th>Name</th><th>Type</th><th>Vendor</th><th>Amount</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="o.expense_ids" t-as="e" t-if="e.state == 'approved'">
+                                    <td><t t-esc="e.expense_date or ''"/></td>
+                                    <td><t t-esc="e.name or ''"/></td>
+                                    <td><t t-esc="dict(e._fields['expense_type'].selection).get(e.expense_type, e.expense_type)"/></td>
+                                    <td><t t-esc="e.vendor_id.display_name or ''"/></td>
+                                    <td><span t-field="e.amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_car_accounting">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Accounting &amp; Cost Control</h2>
+                        <h3><t t-esc="o.product_id.display_name or ''"/> - VIN <t t-esc="o.name or ''"/></h3>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td>Vendor</td><td><t t-esc="o.purchase_partner_id.display_name or ''"/></td><td>Buyer</td><td><t t-esc="o.buyer_id.display_name or ''"/></td></tr>
+                                <tr><td>PO</td><td><t t-esc="o.purchase_order_id.name or ''"/></td><td>SO</td><td><t t-esc="o.sale_order_id.name or ''"/></td></tr>
+                                <tr><td>Vendor Bills</td><td><t t-esc="o.vendor_bill_count"/></td><td>Landed Costs</td><td><t t-esc="o.landed_cost_count"/></td></tr>
+                                <tr><td>Currency</td><td><t t-esc="o.currency_id.display_name or ''"/></td><td>Status</td><td><t t-esc="dict(o._fields['car_status'].selection).get(o.car_status, '')"/></td></tr>
+                            </tbody>
+                        </table>
+                        <h4>Cost Stack</h4>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td>Purchase Cost</td><td><span t-field="o.purchase_cost" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td>Total Linked Expenses</td><td><span t-field="o.expense_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td>Total Linked Landed Cost</td><td><span t-field="o.landed_cost_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td>Total Cost</td><td><span t-field="o.total_cost" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                            </tbody>
+                        </table>
+                        <h4>Linked Bills</h4>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr><th>Bill</th><th>Vendor</th><th>Date</th><th>Total</th><th>Status</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="o.vendor_bill_ids" t-as="b">
+                                    <td><t t-esc="b.name or b.ref or ''"/></td>
+                                    <td><t t-esc="b.partner_id.display_name or ''"/></td>
+                                    <td><t t-esc="b.invoice_date or ''"/></td>
+                                    <td><span t-field="b.amount_total" t-options='{"widget": "monetary", "display_currency": b.currency_id}'/></td>
+                                    <td><t t-esc="b.payment_state or b.state or ''"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_car_executive_summary">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Executive Inventory Summary</h2>
+                    <table class="table table-sm table-bordered">
+                        <thead>
+                            <tr>
+                                <th>VIN</th><th>Car</th><th>Status</th><th>Location</th><th>Vendor</th><th>Buyer</th><th>Total Cost</th><th>Sale Price</th><th>Margin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="o">
+                                <td><t t-esc="o.name or ''"/></td>
+                                <td><t t-esc="o.product_id.display_name or ''"/></td>
+                                <td><t t-esc="dict(o._fields['car_status'].selection).get(o.car_status, '')"/></td>
+                                <td><t t-esc="o.current_location_id.display_name or o.branch_location or ''"/></td>
+                                <td><t t-esc="o.purchase_partner_id.display_name or ''"/></td>
+                                <td><t t-esc="o.buyer_id.display_name or ''"/></td>
+                                <td><span t-field="o.total_cost" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                <td><span t-field="o.sale_price" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                                <td><span t-field="o.gross_margin" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_car_movement" model="ir.actions.report">
+        <field name="name">Movement Report</field>
+        <field name="model">stock.lot</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">baroon_dealership.report_car_movement</field>
+        <field name="report_file">baroon_dealership.report_car_movement</field>
+        <field name="binding_model_id" ref="stock.model_stock_lot"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_car_expense" model="ir.actions.report">
+        <field name="name">Extra Cost Sheet</field>
+        <field name="model">car.expense</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">baroon_dealership.report_car_expense</field>
+        <field name="report_file">baroon_dealership.report_car_expense</field>
+        <field name="binding_model_id" ref="model_car_expense"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_test_drive" model="ir.actions.report">
+        <field name="name">Test Drive Report</field>
+        <field name="model">car.test.drive</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">baroon_dealership.report_test_drive</field>
+        <field name="report_file">baroon_dealership.report_test_drive</field>
+        <field name="binding_model_id" ref="model_car_test_drive"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_landed_cost" model="ir.actions.report">
+        <field name="name">Landed Cost Car Allocation</field>
+        <field name="model">stock.landed.cost</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">baroon_dealership.report_landed_cost</field>
+        <field name="report_file">baroon_dealership.report_landed_cost</field>
+        <field name="binding_model_id" ref="stock_landed_costs.model_stock_landed_cost"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_car_movement">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Movement Report</h2>
+                        <h3><t t-esc="o.product_id.display_name or ''"/> - VIN <t t-esc="o.name or ''"/></h3>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr><th>Date</th><th>Type</th><th>From</th><th>To</th><th>Document</th><th>User</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="o.location_history_ids" t-as="m">
+                                    <td><t t-esc="m.movement_date or ''"/></td>
+                                    <td><t t-esc="dict(m._fields['movement_type'].selection).get(m.movement_type, m.movement_type)"/></td>
+                                    <td><t t-esc="m.source_location_id.display_name or ''"/></td>
+                                    <td><t t-esc="m.destination_location_id.display_name or ''"/></td>
+                                    <td><t t-esc="m.picking_id.name or ''"/></td>
+                                    <td><t t-esc="m.user_id.name or ''"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_car_expense">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Extra Cost Sheet</h2>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td><strong>Car</strong></td><td><t t-esc="o.lot_id.product_id.display_name or ''"/></td></tr>
+                                <tr><td><strong>VIN</strong></td><td><t t-esc="o.lot_id.name or ''"/></td></tr>
+                                <tr><td><strong>Expense</strong></td><td><t t-esc="o.name or ''"/></td></tr>
+                                <tr><td><strong>Type</strong></td><td><t t-esc="dict(o._fields['expense_type'].selection).get(o.expense_type, o.expense_type)"/></td></tr>
+                                <tr><td><strong>Vendor</strong></td><td><t t-esc="o.vendor_id.display_name or ''"/></td></tr>
+                                <tr><td><strong>Date</strong></td><td><t t-esc="o.expense_date or ''"/></td></tr>
+                                <tr><td><strong>Amount</strong></td><td><span t-field="o.amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td></tr>
+                                <tr><td><strong>Vendor Bill</strong></td><td><t t-esc="o.account_move_id.name or o.account_move_id.ref or ''"/></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_test_drive">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Test Drive Report</h2>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td><strong>Reference</strong></td><td><t t-esc="o.name or ''"/></td><td><strong>Status</strong></td><td><t t-esc="dict(o._fields['state'].selection).get(o.state, o.state)"/></td></tr>
+                                <tr><td><strong>Customer</strong></td><td><t t-esc="o.partner_id.display_name or ''"/></td><td><strong>Car VIN</strong></td><td><t t-esc="o.lot_id.name or ''"/></td></tr>
+                                <tr><td><strong>Scheduled</strong></td><td><t t-esc="o.scheduled_datetime or ''"/></td><td><strong>Expected Return</strong></td><td><t t-esc="o.expected_return_datetime or ''"/></td></tr>
+                                <tr><td><strong>Deposit</strong></td><td><span t-field="o.security_deposit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></td><td><strong>Deposit Payment</strong></td><td><t t-esc="o.deposit_payment_state or ''"/></td></tr>
+                                <tr><td><strong>Quotation</strong></td><td><t t-esc="o.sale_order_id.name or ''"/></td><td><strong>Deposit Applied</strong></td><td><t t-esc="'Yes' if o.deposit_applied_to_sale else 'No'"/></td></tr>
+                            </tbody>
+                        </table>
+                        <h4>Check Out / Return</h4>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td>Odometer Out</td><td><t t-esc="o.odometer_out or 0"/></td><td>Odometer In</td><td><t t-esc="o.odometer_in or 0"/></td></tr>
+                                <tr><td>Fuel Out</td><td><t t-esc="o.fuel_out or 0"/></td><td>Fuel In</td><td><t t-esc="o.fuel_in or 0"/></td></tr>
+                                <tr><td>Scratch Out</td><td colspan="3"><t t-esc="o.scratch_report_out or ''"/></td></tr>
+                                <tr><td>Scratch In</td><td colspan="3"><t t-esc="o.scratch_report_in or ''"/></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_landed_cost">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Landed Cost Car Allocation</h2>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr><td><strong>Name</strong></td><td><t t-esc="o.name or ''"/></td><td><strong>Status</strong></td><td><t t-esc="o.state or ''"/></td></tr>
+                                <tr><td><strong>Total</strong></td><td><span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.company_currency_id}'/></td><td><strong>Cars</strong></td><td><t t-esc="len(o.car_lot_ids)"/></td></tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm table-bordered">
+                            <thead><tr><th>VIN</th><th>Car</th><th>Share</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="o.car_lot_ids" t-as="car">
+                                    <td><t t-esc="car.name or ''"/></td>
+                                    <td><t t-esc="car.product_id.display_name or ''"/></td>
+                                    <td><span t-esc="o.amount_total / (len(o.car_lot_ids) or 1)"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
