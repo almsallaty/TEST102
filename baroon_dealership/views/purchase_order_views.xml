@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_baroon_dealership" model="ir.ui.view">
+        <field name="name">purchase.order.form.baroon.dealership</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//div[@name='button_box']" position="inside">
+                <button name="action_view_po_cars" type="object" class="oe_stat_button" icon="fa-car">
+                    <field name="car_count" string="Cars" widget="statinfo"/>
+                </button>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="action_create_cars_from_vins" type="object" string="Create Cars from VINs" class="btn-primary" invisible="state not in ('purchase', 'done')"/>
+                <button name="action_advance_import_stage" type="object" string="Next Import Stage" class="btn-secondary" invisible="state not in ('purchase', 'done') or shipment_status == 'available'"/>
+                <field name="shipment_status" widget="statusbar" statusbar_visible="draft,incoming,in_shipment,customs,received,available" options="{'clickable': false}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/list/field[@name='product_qty']" position="after">
+                <field name="vin_lot_ids" string="VINs" widget="many2many_tags" optional="show" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id, 'default_purchase_order_id': parent.id, 'default_purchase_line_id': id, 'default_car_status': 'incoming'}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='product_qty']" position="after">
+                <field name="vin_lot_ids" string="VINs" widget="many2many_tags" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id, 'default_purchase_order_id': parent.id, 'default_purchase_line_id': id, 'default_car_status': 'incoming'}"/>
+                <field name="vin_list" widget="text" placeholder="Optional bulk entry: one VIN per line or comma separated..."/>
+            </xpath>
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="Import Tracking">
+                    <group>
+                        <group>
+                            <field name="shipment_reference"/>
+                            <field name="port_of_loading"/>
+                            <field name="destination_port"/>
+                        </group>
+                        <group>
+                            <field name="eta"/>
+                            <field name="actual_arrival"/>
+                            <field name="customs_release_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="shipment_notes" placeholder="Shipment, customs, and arrival notes..."/>
+                    </group>
+                    <separator string="Cars Created from This PO"/>
+                    <field name="car_lot_ids" nolabel="1" context="{'default_purchase_order_id': id}">
+                        <list create="false" delete="false">
+                            <field name="name" string="VIN"/>
+                            <field name="product_id"/>
+                            <field name="car_status"/>
+                            <field name="purchase_line_id" optional="show"/>
+                            <field name="expected_arrival_date" optional="show"/>
+                            <field name="reservation_order_id" optional="show"/>
+                            <field name="sale_order_id" optional="show"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
