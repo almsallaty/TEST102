@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_baroon_dealership_dashboard_form" model="ir.ui.view">
+        <field name="name">baroon.dealership.dashboard.form</field>
+        <field name="model">baroon.dealership.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Dealership Dashboard" create="false" edit="false" delete="false">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_open_inventory" class="oe_stat_button" icon="fa-car">
+                            <span>Open Inventory</span>
+                        </button>
+                    </div>
+
+                    <div class="o_baroon_dashboard_hero">
+                        <div class="o_baroon_dashboard_title_wrap">
+                            <div class="o_baroon_dashboard_title">Executive Dashboard</div>
+                            <div class="o_baroon_dashboard_subtitle">A colorful at-a-glance view of inventory, reservations, arrivals, and profitability.</div>
+                        </div>
+                    </div>
+
+                    <div class="o_baroon_dashboard_grid">
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_1">
+                            <div class="o_baroon_dashboard_label">Active Inventory</div>
+                            <div class="o_baroon_dashboard_value"><field name="active_inventory_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_2">
+                            <div class="o_baroon_dashboard_label">Available</div>
+                            <div class="o_baroon_dashboard_value"><field name="available_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_3">
+                            <div class="o_baroon_dashboard_label">Reserved</div>
+                            <div class="o_baroon_dashboard_value"><field name="reserved_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_4">
+                            <div class="o_baroon_dashboard_label">Sold / Delivered</div>
+                            <div class="o_baroon_dashboard_value"><field name="sold_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_5">
+                            <div class="o_baroon_dashboard_label">Arriving Soon</div>
+                            <div class="o_baroon_dashboard_value"><field name="arriving_soon_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_6">
+                            <div class="o_baroon_dashboard_label">Inventory Value</div>
+                            <div class="o_baroon_dashboard_value"><field name="inventory_value" widget="monetary" options="{'currency_field': 'currency_id'}"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_7 o_baroon_dashboard_card_wide">
+                            <div class="o_baroon_dashboard_label">Average Margin %</div>
+                            <div class="o_baroon_dashboard_value"><field name="average_margin"/></div>
+                        </div>
+                    </div>
+
+                    <notebook>
+                        <page string="Pipeline">
+                            <group>
+                                <group string="Incoming / Shipment">
+                                    <field name="incoming_ids" nolabel="1">
+                                        <list create="false" delete="false" edit="false">
+                                            <field name="dashboard_label"/>
+                                            <field name="car_status"/>
+                                            <field name="expected_arrival_date"/>
+                                            <field name="days_to_arrival"/>
+                                        </list>
+                                    </field>
+                                </group>
+                                <group string="Reserved">
+                                    <field name="reserved_ids" nolabel="1">
+                                        <list create="false" delete="false" edit="false">
+                                            <field name="dashboard_label"/>
+                                            <field name="reservation_partner_id"/>
+                                            <field name="reservation_order_id"/>
+                                        </list>
+                                    </field>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Available Inventory">
+                            <field name="available_ids" nolabel="1">
+                                <list create="false" delete="false" edit="false">
+                                    <field name="dashboard_label"/>
+                                    <field name="sale_price"/>
+                                    <field name="days_in_stock"/>
+                                    <field name="branch_location"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_baroon_dealership_dashboard_window" model="ir.actions.act_window">
+        <field name="name">Executive Dashboard</field>
+        <field name="res_model">baroon.dealership.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_baroon_dealership_dashboard_form"/>
+        <field name="target">current</field>
+    </record>
+</odoo>
