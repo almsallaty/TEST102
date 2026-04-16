@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- تعريف التقرير -->
+    <record id="action_vehicle_contract_report" model="ir.actions.report">
+        <field name="name">Vehicle Contract - Baron Style</field>
+        <field name="model">vehicle.contract</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_rental.vehicle_contract_report_template</field>
+        <field name="report_file">vehicle_rental.vehicle_contract_report_template</field>
+        <field name="binding_model_id" ref="model_vehicle_contract"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="base.paperformat_euro"/>
+        <field name="print_report_name">'Contract_' + (object.reference_no or '')</field>
+    </record>
+        
+    <!-- قالب QWeb الرئيسي -->
+    <template id="vehicle_contract_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page baron">
+        
+                        <!-- ================= STYLE ================= -->
+                        <style>
+                            .baron { font-family: Arial; direction: ltr; font-size: 10pt; }
+                            .box { border: 1.5px solid #000; margin-bottom: 10px; padding: 6px; }
+                            .title { font-weight: bold; border-bottom: 1px solid #000; margin-bottom: 5px; padding-bottom: 2px; }
+                            .row { display: flex; margin-bottom: 4px; }
+                            .label { width: 35%; font-weight: bold; }
+                            .value { width: 65%; border-bottom: 1px solid #000; min-height: 14px; }
+                            .grid-3 { display: flex; gap: 6px; }
+                            .grid-3 > div { flex: 1; }
+                            .center-box { border: 2px solid #000; text-align: center; padding: 6px; font-weight: bold; margin-bottom: 10px; }
+                            .table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+                            .table td, .table th { border: 1px solid #000; padding: 4px; text-align: center; }
+                            .sign { display: flex; justify-content: space-between; margin-top: 30px; }
+                            .sign div { width: 40%; text-align: center; }
+                            .line { border-top: 1px solid #000; margin-top: 40px; }
+                        </style>
+        
+                        <!-- ================= HEADER ================= -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 3px solid #000; padding-bottom: 10px;">
+                            <!-- عنوان العقد -->
+                            <div style="text-align: center; flex: 1;">
+                                <div style="font-weight: bold; font-size: 16pt; color: #000;">Vehicle Rental Contract</div>
+                            </div>
+                            
+                            <!-- رقم العقد -->
+                            <div style="text-align: right; padding: 8px 20px; border: 2px solid #000; border-radius: 4px; background: #f9f9f9; min-width: 180px;">
+                                <div style="font-size: 10pt; color: #555; margin-bottom: 3px;">Contract No.</div>
+                                <div style="font-weight: bold; font-size: 18pt; color: #000;" t-field="doc.reference_no"/>
+                                <div t-if="doc.start_date" style="font-size: 9pt; color: #666; margin-top: 5px;">
+                                    Date: <span t-field="doc.start_date" t-options='{"widget": "date"}'/>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- ================= PARTY 1 ================= -->
+                        <div class="box">
+                            <div class="title">Party One</div>
+                            <p>
+                                Mr. <strong>Abdul Basit Ibrahim Qashira</strong>  
+                                acting as the legal representative of Baron Car Rental Company, Commercial Registration No. 15249, 
+                                hereinafter referred to in this contract as (the Lessor).
+                            </p>
+                        </div>
+                            
+                        <!-- ================= PARTY 2 ================= -->
+                        <div class="box">
+                            <div class="title">Party Two</div>
+                            <div class="row">
+                                <div class="label">Mr./Ms.</div>
+                                <div class="value"><span t-field="doc.customer_id"/></div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="label">Nationality</div>
+                                <div class="value"><span t-field="doc.nationality_id"/></div>
+                            </div> -->
+                            <div class="row">
+                                <div class="label">Holder of (ID No. / Passport No.)</div>
+                                <div class="value"><span t-field="doc.renter_passport_number"/></div>
+                            </div>
+                            <p>Hereinafter referred to in this contract as (the Renter).</p>
+                        </div>
+
+                        <!-- ================= CUSTOMER DETAILS ================= -->
+                        <div class="box">
+                            <div class="title">Party Two Details</div>
+                            <div class="row">
+                                <div class="label">Date of Birth</div>
+                                <div class="value"><span t-field="doc.renter_date_of_birth"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">ID / Passport No.</div>
+                                <div class="value"><span t-field="doc.renter_passport_number"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Residential Address</div>
+                                <div class="value"><span t-field="doc.city"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Phone Number</div>
+                                <div class="value"><span t-field="doc.customer_phone"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">WhatsApp</div>
+                                <div class="value"><span t-field="doc.customer_phone"/></div>
+                            </div>
+                        </div>
+        
+                        <!-- ================= LICENSE ================= -->
+                        <div class="box">
+                            <div class="title">Driver's License Details</div>
+                            <div class="grid-3">
+                                <div>
+                                    <div class="label">License No.</div>
+                                    <div class="value"><span t-field="doc.renter_license_number"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">Valid Until</div>
+                                    <div class="value"><span t-field="doc.renter_license_expiry"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">Place of Issue</div>
+                                    <div class="value"><span t-field="doc.renter_license_issue_place"/></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ================= GUARANTOR ================= -->
+                        <div class="box">
+                            <div class="title">Guarantor Details</div>
+                            <div class="grid-3">
+                                <div>
+                                    <div class="label">Guarantor Name</div>
+                                    <div class="value"><span t-field="doc.guarantor_id"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">Nationality</div>
+                                    <div class="value"><span t-field="doc.guarantor_nationality"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">Passport No.</div>
+                                    <div class="value"><span t-field="doc.guarantor_passport_number"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">Address</div>
+                                    <div class="value"><span t-field="doc.city"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">I, the undersigned</div>
+                                    <div class="value"><span t-field="doc.guarantor_id"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">hereby guarantee Mr./Ms.</div>
+                                    <div class="value"><span t-field="doc.customer_id"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">Renter of Vehicle</div>
+                                    <div class="value"><span t-field="doc.vehicle_id"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">Plate No.</div>
+                                    <div class="value"><span t-field="doc.license_plate"/></div>
+                                </div>
+                                <div>
+                                    <div class="label">Signature</div>
+                                    <div class="value"><span t-field="doc.guarantor_signature"/></div>
+                                </div>
+                            </div>
+                            <p style="margin-top: 8px; font-size: 9pt;">
+                                Regarding the rental agreement with Baron Car Rental Company, I hereby declare myself as a guarantor for all obligations during the rental period. The Lessor (Baron Car Rental Company) reserves the right to claim from me any or all outstanding dues owed by the Renter. I accept full liability and guarantee the fulfillment of these obligations in any manner deemed appropriate by the Lessor. This serves as my personal guarantee and assurance.
+                            </p>
+                        </div>
+        
+                        <!-- ================= VEHICLE ================= -->
+                        <div class="box">
+                            <div class="title">Rented Vehicle Details</div>
+                            <div class="row">
+                                <div class="label">Vehicle Make/Type</div>
+                                <div class="value"><span t-field="doc.vehicle_id"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">VIN / Chassis No.</div>
+                                <div class="value"><span t-field="doc.vin_sn"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">License Plate No.</div>
+                                <div class="value"><span t-field="doc.license_plate"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Year of Manufacture</div>
+                                <div class="value"><span t-field="doc.vehicle_model_year"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Category / Model</div>
+                                <div class="value"><span t-field="doc.vehicle_id.model_id"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Engine No.</div>
+                                <div class="value"><span t-field="doc.engine_number"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Interior Color</div>
+                                <div class="value"><span t-field="doc.interior_color_ids"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Exterior Color</div>
+                                <div class="value"><span t-field="doc.exterior_color_ids"/></div>
+                            </div>
+                        </div>
+        
+                        <!-- ================= DATES ================= -->
+                        <div class="box">
+                            <div class="title">Rental Details</div>
+                            <div class="row">
+                                <div class="label">Vehicle Pickup Date</div>
+                                <div class="value"><span t-field="doc.start_date"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Vehicle Return Date</div>
+                                <div class="value"><span t-field="doc.end_date"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Rental Duration</div>
+                                <div class="value"><span t-field="doc.total_days"/> Day(s)</div>
+                            </div>
+                        </div>
+                                                
+                        <!-- ================= TRAVEL AREA ================= -->
+                        <div class="box">
+                            <div class="title">Authorized Travel Area</div>
+                            <div class="row">
+                                <div class="label">Travel Location</div>
+                                <div class="value">
+                                    <span t-if="doc.travel_inside_libya">Within Libya 🇱🇾</span>
+                                    <span t-if="doc.travel_outside_libya">
+                                        Outside Libya 🌍 - Country: <strong><span t-field="doc.travel_country"/></strong>
+                                    </span>
+                                    <span t-if="not doc.travel_inside_libya and not doc.travel_outside_libya">Not Specified</span>
+                                </div>
+                            </div>
+                            <div class="row" t-if="doc.travel_outside_libya and doc.travel_permit_number">
+                                <div class="label">Permit No.</div>
+                                <div class="value"><span t-field="doc.travel_permit_number"/></div>
+                            </div>
+                        </div>
+        
+                        <!-- ================= AMOUNTS ================= -->
+                        <div class="box">
+                            <div class="title">Financial Details</div>
+                            <table class="table">
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                </tr>
+                                <tr>
+                                    <td>Rental Value</td>
+                                    <td><span t-field="doc.total_vehicle_rent"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Paid / Deposit</td>
+                                    <td><span t-field="doc.total_extra_charges"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Balance Due</td>
+                                    <td><t t-esc="doc.total_vehicle_rent - doc.total_extra_charges"/></td>
+                                </tr>
+                            </table>
+                        </div>
+        
+                        <!-- ================= CONDITION ================= -->
+                        <div class="box">
+                            <div class="title">Vehicle Condition</div>
+                            <div class="row">
+                                <div class="label">At Pickup</div>
+                                <div class="value"><span t-field="doc.vehicle_condition_delivery"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">At Return</div>
+                                <div class="value"><span t-field="doc.vehicle_condition_return"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Odometer at Pickup</div>
+                                <div class="value"><span t-field="doc.delivery_odometer"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="label">Odometer at Return</div>
+                                <div class="value"><span t-field="doc.return_odometer"/></div>
+                            </div>
+                        </div>
+
+                        <!-- ================= TERMS & CONDITIONS ================= -->
+                        <div class="box">
+                            <div class="title" style="font-size:12pt">Terms &amp; Conditions</div>
+                            <div style="font-size: 10pt; line-height: 1.6; text-align: justify; padding:5px">
+                                <p style="margin-bottom: 8px;">
+                                    <strong>Preamble:</strong> Whereas Party One owns Baron Car Rental Company, and Party Two wishes to rent a motor vehicle under the terms and conditions specified in this contract, the following has been agreed upon:
+                                </p>
+                                <p style="margin-bottom: 8px;"><strong>1. Security Deposit:</strong> The Renter agrees to surrender their passport and the agreed security deposit upon signing this contract. Deductions may be made for damages, traffic violations, or outstanding fees.</p>
+                                <p style="margin-bottom: 8px;"><strong>2. Vehicle Handover:</strong> The Renter acknowledges receiving the vehicle in good condition with all accessories and documents. The Renter assumes full responsibility for maintenance, accidents, theft, traffic violations, and fuel costs from pickup until return.</p>
+                                <p style="margin-bottom: 8px;"><strong>3. Vehicle Return:</strong> The Renter must return the vehicle with all tires, accessories, and tools to the company premises upon contract expiration or in case of sudden breakdown. The Lessor reserves the right to immediately repossess the vehicle in case of contract violation or suspected illegal use. If the delay exceeds 24 hours without justification, the Lessor may report the vehicle to security authorities.</p>
+                                <p style="margin-bottom: 8px;"><strong>4. Accident Reporting:</strong> In case of an accident, the Renter must immediately notify the company and traffic police without moving the vehicle, obtain an official police report, and secure the vehicle. The Renter is liable for a fixed fee of 2,000 LYD for body/engine damage, plus all legal fines and restoration costs.</p>
+                                <p style="margin-bottom: 8px;"><strong>5. Rental During Repair:</strong> The Renter shall continue paying the daily rental rate throughout the repair period following an accident until the vehicle is restored to its original condition.</p>
+                                <p style="margin-bottom: 8px;"><strong>6. Exclusive Use:</strong> Only the Renter or an additional driver specified in the contract may operate the vehicle. Handing over the vehicle to unauthorized persons is strictly prohibited, and both Renter and Guarantor will be penalized for violations.</p>
+                                <p style="margin-bottom: 8px;"><strong>7. Prohibited Uses:</strong> The vehicle shall not be used for commercial transport of goods/passengers for hire, illegal activities, commercial purposes, or towing/pushing other vehicles.</p>
+                                <p style="margin-bottom: 8px;"><strong>8. Travel Restrictions:</strong> Travel is permitted only within the specified city. Leaving the city or crossing Libyan borders requires prior written approval from the company.</p>
+                                <p style="margin-bottom: 8px;"><strong>9. Daily Mileage Limit:</strong> A maximum of 500 km per day is permitted. Excess kilometers will incur additional charges (each excess day counts as an additional rental day).</p>
+                                <p style="margin-bottom: 8px;"><strong>10. Maintenance &amp; Breakdowns:</strong> The Renter covers minor maintenance (e.g., flat tires). The Company covers sudden breakdowns not caused by misuse.</p>
+                                <p style="margin-bottom: 8px;"><strong>11. Misuse Damages:</strong> The Renter bears the cost of repair/replacement for parts damaged due to misuse or accidents. All repairs must be conducted at workshops authorized by the Lessor.</p>
+                                <p style="margin-bottom: 8px;"><strong>12. Acceptance:</strong> By signing this contract, the Renter confirms having read, understood, and fully agreed to all stated terms.</p>
+                                <p style="margin-bottom: 8px;"><strong>13. Engine Tampering:</strong> Tampering with the engine, battery, sensors, cameras, or odometer is strictly prohibited. The Renter is legally liable for all damages, and the Company reserves the right to pursue legal action for compensation.</p>
+                                <p style="margin-bottom: 8px;"><strong>14. GPS Tracking:</strong> The Renter consents to GPS tracking for asset protection and fleet management, agreeing that data will be used strictly for security and operational purposes.</p>
+                                <p style="margin-bottom: 8px;"><strong>15. Insurance:</strong> The vehicle is covered by rental insurance only. The Renter is responsible for any damages or liabilities not covered by the insurance policy.</p>
+                                <p style="margin-bottom: 8px;"><strong>16. Late Return Fee:</strong> A penalty of 20 LYD per hour will be charged for late return. Delays exceeding 6 hours will be charged as half a rental day.</p>
+                                <p style="margin-bottom: 8px;"><strong>17. Vehicle Cleanliness:</strong> The Renter must return the vehicle clean. A cleaning fee of 70 LYD will be charged if returned in an unacceptable condition.</p>
+                                <p style="margin-bottom: 8px;"><strong>18. Left-Behind Items:</strong> The Company is not responsible for personal belongings left in the vehicle after return. No compensation claims will be entertained.</p>
+                                <p style="margin-bottom: 8px;"><strong>19. Compensation for Detention:</strong> The Lessor reserves the right to claim compensation for vehicle downtime in garages, offices, or legal detention until a final court ruling, and the Renter must return the vehicle in working condition.</p>
+                                <p style="margin-bottom: 8px;"><strong>20. Legal Claims:</strong> The Renter agrees to cover all legal expenses, compensation, and attorney fees arising from accidents or incidents during the rental period.</p>
+                                <p style="margin-bottom: 8px;"><strong>21. Traffic Violations &amp; Reckless Driving:</strong> A penalty of 2,000 LYD applies for reckless driving or traffic violations, in addition to all fines and legal costs.</p>
+                                <p style="margin-bottom: 8px;"><strong>22. Oil Change &amp; Maintenance:</strong> The Renter must monitor the odometer. If 4,000 km are exceeded during the rental period, the Renter must notify the Lessor and bring the vehicle for an oil change and routine maintenance. Failure to do so makes the Renter fully liable for resulting damages and repair costs.</p>
+                                <p style="margin-bottom: 8px;"><strong>23. Guarantor Liability:</strong> The Guarantor is a principal party to this contract and agrees to joint liability with the Renter for all financial and legal obligations.</p>
+                                <p style="margin-bottom: 8px;"><strong>24. Amendments:</strong> Any modifications or additions to this contract are void unless in writing and officially stamped by the Company.</p>
+                                <p style="margin-bottom: 8px;"><strong>25. Penalty Clause:</strong> The Renter is liable for penalty charges in case of failure to return the vehicle, or if it is damaged or disabled, and may be required to pay the full vehicle value.</p>
+                                <p style="margin-bottom: 8px;"><strong>26. Force Majeure:</strong> The Renter shall compensate the Company for the vehicle's value in case of total loss or damage due to force majeure (e.g., theft, natural disasters, fire). The Company bears no liability for such events.</p>
+                                <p style="margin-bottom: 0;"><strong>27. Acknowledgment &amp; Signature:</strong> The Renter acknowledges reading and understanding all terms. Signature constitutes full legal acceptance and assumption of responsibility.</p>
+                            </div>
+                        </div>
+        
+                        <!-- ================= SIGN ================= -->
+                        <div class="sign">
+                            <div>
+                                <div class="line"></div>
+                                Company Signature
+                            </div>
+                            <div>
+                                <div class="line"></div>
+                                Client Signature
+                            </div>
+                        </div>
+        
+                    </div> 
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
