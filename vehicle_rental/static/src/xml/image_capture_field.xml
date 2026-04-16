@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- Camera Capture Dialog Template -->
+    <t t-name="vehicle_rental.CameraCaptureDialog">
+        <Dialog title="'Capture Image'" size="'lg'">
+            <div class="image-capture-dialog">
+                <t t-if="state.error">
+                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                        <i class="fa fa-exclamation-triangle me-2"/>
+                        <span t-esc="state.error"/>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-primary" t-on-click="startCamera">
+                            <i class="fa fa-refresh me-1"/> Retry
+                        </button>
+                    </div>
+                </t>
+                <t t-else="">
+                    <div class="camera-container position-relative bg-dark rounded-3 overflow-hidden" style="min-height: 300px;">
+                        <t t-if="!state.cameraReady and !state.previewImage">
+                            <div class="camera-loading d-flex flex-column align-items-center justify-content-center p-5 text-white" style="min-height: 300px;">
+                                <div class="spinner-border text-light mb-3" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <span>Initializing camera...</span>
+                            </div>
+                        </t>
+                        <video t-ref="videoElement" 
+                               class="w-100" 
+                               t-att-class="{'d-none': state.previewImage}"
+                               style="max-height: 60vh; object-fit: contain;"
+                               autoplay="true" 
+                               playsinline="true"
+                               muted="true"/>
+                        <t t-if="state.previewImage">
+                            <img t-att-src="state.previewImage" 
+                                 class="w-100" 
+                                 style="max-height: 60vh; object-fit: contain;"
+                                 alt="Captured image"/>
+                        </t>
+                        <canvas t-ref="canvasElement" class="d-none"/>
+                    </div>
+                    <div class="camera-controls d-flex justify-content-center align-items-center gap-3 mt-4 p-3">
+                        <t t-if="!state.previewImage">
+                            <button type="button" 
+                                    class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width: 48px; height: 48px;"
+                                    t-on-click="switchCamera"
+                                    t-att-disabled="!state.cameraReady"
+                                    title="Switch Camera">
+                                <i class="fa fa-refresh fa-lg"/>
+                            </button>
+                            <button type="button" 
+                                    class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center shadow-lg capture-btn"
+                                    style="width: 72px; height: 72px;"
+                                    t-on-click="capturePhoto"
+                                    t-att-disabled="!state.cameraReady"
+                                    title="Capture Photo">
+                                <i class="fa fa-camera fa-2x"/>
+                            </button>
+                            <button type="button" 
+                                    class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width: 48px; height: 48px;"
+                                    t-on-click="onClose"
+                                    title="Cancel">
+                                <i class="fa fa-times fa-lg"/>
+                            </button>
+                        </t>
+                        <t t-else="">
+                            <button type="button" class="btn btn-outline-secondary px-4 py-2" t-on-click="retakePhoto">
+                                <i class="fa fa-undo me-2"/> Retake
+                            </button>
+                            <button type="button" class="btn btn-success px-4 py-2" t-on-click="confirmCapture">
+                                <i class="fa fa-check me-2"/> Use This Photo
+                            </button>
+                        </t>
+                    </div>
+                </t>
+            </div>
+        </Dialog>
+    </t>
+
+    <!-- Main One2Many Field Template -->
+    <t t-name="vehicle_rental.ImageCaptureOne2ManyField">
+        <div class="o_field_image_capture_one2many">
+            <!-- Upload Section -->
+            <t t-if="!props.readonly">
+                <div class="image-capture-container mb-4">
+                    <!-- Main Upload Area -->
+                    <div class="upload-area rounded-3 border-2 border-dashed p-4 text-center position-relative"
+                         t-att-class="{'drag-active': state.isDragging}"
+                         t-on-dragover="onDragOver"
+                         t-on-dragleave="onDragLeave"
+                         t-on-drop="onDrop">
+                        
+                        <div class="upload-icon-wrapper mb-3">
+                            <div class="upload-icon-circle mx-auto d-flex align-items-center justify-content-center rounded-circle">
+                                <i class="fa fa-cloud-upload fa-2x"/>
+                            </div>
+                        </div>
+                        
+                        <h6 class="mb-2 fw-semibold">Drop your images here</h6>
+                        <p class="text-muted small mb-3">or use the buttons below to add images</p>
+                        
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <t t-if="isCameraAvailable">
+                                <button type="button" 
+                                        class="btn btn-primary px-4"
+                                        t-on-click="openCameraDialog"
+                                        t-att-disabled="state.isProcessing">
+                                    <i class="fa fa-camera me-2"/>
+                                    Take Photo
+                                </button>
+                            </t>
+                            <button type="button" 
+                                    class="btn btn-outline-primary px-4" 
+                                    t-on-click="triggerFileUpload"
+                                    t-att-disabled="state.isProcessing">
+                                <i class="fa fa-folder-open me-2"/>
+                                Browse Files
+                            </button>
+                        </div>
+                        
+                        <input type="file" 
+                               t-ref="fileInput" 
+                               class="d-none" 
+                               accept="image/*" 
+                               multiple="true"
+                               t-on-change="onFileSelect"/>
+                        
+                        <p class="text-muted small mt-3 mb-0">
+                            <i class="fa fa-info-circle me-1"/>
+                            Supports JPG, PNG, GIF up to 10MB
+                        </p>
+                    </div>
+                </div>
+            </t>
+            
+            <!-- Image Gallery -->
+            <t t-if="previewImages.length > 0">
+                <div class="image-gallery-section">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="mb-0 fw-semibold">
+                            <i class="fa fa-images me-2 text-primary"/>
+                            Images
+                            <span class="badge bg-primary rounded-pill ms-2" t-esc="previewImages.length"/>
+                        </h6>
+                    </div>
+                    
+                    <div class="image-gallery-grid">
+                        <t t-foreach="previewImages" t-as="img" t-key="img.id">
+                            <div class="gallery-item">
+                                <div class="gallery-card">
+                                    <!-- Image -->
+                                    <div class="gallery-image-wrapper" t-on-click="() => this.openLightbox(img)">
+                                        <img t-att-src="getImageSrc(img)" 
+                                             class="gallery-image"
+                                             t-att-alt="img.name"
+                                             loading="lazy"/>
+                                        <div class="gallery-overlay">
+                                            <i class="fa fa-search-plus fa-lg"/>
+                                        </div>
+                                        
+                                        <!-- Size Tag (top-left) -->
+                                        <t t-if="img.sizeInBytes > 0 and img.sizeFormatted">
+                                            <span t-att-class="'size-tag size-' + img.sizeCategory">
+                                                <i t-att-class="img.sizeCategory === 'large' ? 'fa fa-exclamation-circle' : (img.sizeCategory === 'medium' ? 'fa fa-info-circle' : 'fa fa-check-circle')"/>
+                                                <t t-esc="img.sizeFormatted"/>
+                                            </span>
+                                        </t>
+                                    </div>
+                                    
+                                    <!-- Card Footer -->
+                                    <div class="gallery-card-footer">
+                                        <div class="gallery-info">
+                                            <span class="gallery-title" t-att-title="img.name" t-esc="img.name"/>
+                                            <div class="gallery-meta-row">
+                                                <span class="gallery-meta">
+                                                    <i t-att-class="img.captureMethod === 'camera' ? 'fa fa-camera' : 'fa fa-upload'"/>
+                                                    <t t-esc="img.captureMethod == 'camera' ? 'Camera' : 'Upload'"/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-actions">
+                                            <button type="button" 
+                                                    class="btn-gallery-action btn-download"
+                                                    t-on-click.stop="(ev) => this.downloadImage(img, ev)"
+                                                    title="Download">
+                                                <i class="fa fa-download"/>
+                                            </button>
+                                            <t t-if="!props.readonly">
+                                                <button type="button" 
+                                                        class="btn-gallery-action btn-delete"
+                                                        t-on-click.stop="(ev) => this.confirmDelete(img, ev)"
+                                                        title="Delete">
+                                                    <i class="fa fa-trash"/>
+                                                </button>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </t>
+            
+            <!-- Empty State (when no images and readonly) -->
+            <t t-if="previewImages.length === 0 and props.readonly">
+                <div class="empty-state text-center py-5">
+                    <div class="empty-state-icon mb-3">
+                        <i class="fa fa-images fa-3x text-muted"/>
+                    </div>
+                    <h6 class="text-muted">No images available</h6>
+                </div>
+            </t>
+            
+            <!-- Lightbox -->
+            <t t-if="state.lightboxImage">
+                <div class="lightbox-overlay" t-on-click="closeLightbox">
+                    <div class="lightbox-container">
+                        <!-- Close Button -->
+                        <button type="button" class="lightbox-close" t-on-click="closeLightbox">
+                            <i class="fa fa-times"/>
+                        </button>
+                        
+                        <!-- Toolbar -->
+                        <div class="lightbox-toolbar" t-on-click.stop="">
+                            <!-- Size indicator in lightbox -->
+                            <t t-if="state.lightboxImage.sizeInBytes > 0 and state.lightboxImage.sizeFormatted">
+                                <span t-att-class="'lightbox-size-badge size-' + state.lightboxImage.sizeCategory">
+                                    <i t-att-class="state.lightboxImage.sizeCategory === 'large' ? 'fa fa-exclamation-circle' : (state.lightboxImage.sizeCategory === 'medium' ? 'fa fa-info-circle' : 'fa fa-check-circle')"/>
+                                    <t t-esc="state.lightboxImage.sizeFormatted"/>
+                                </span>
+                            </t>
+                            <button type="button" 
+                                    class="lightbox-btn"
+                                    t-on-click.stop="(ev) => this.downloadImage(state.lightboxImage, ev)">
+                                <i class="fa fa-download me-2"/>
+                                Download
+                            </button>
+                            <t t-if="!props.readonly">
+                                <button type="button" 
+                                        class="lightbox-btn lightbox-btn-danger"
+                                        t-on-click.stop="(ev) => this.confirmDelete(state.lightboxImage, ev)">
+                                    <i class="fa fa-trash me-2"/>
+                                    Delete
+                                </button>
+                            </t>
+                        </div>
+                        
+                        <!-- Image -->
+                        <div class="lightbox-image-wrapper" t-on-click.stop="">
+                            <img t-att-src="getImageSrc(state.lightboxImage)" 
+                                 class="lightbox-image"
+                                 t-att-alt="state.lightboxImage.name"/>
+                        </div>
+                        
+                        <!-- Image Info -->
+                        <div class="lightbox-info" t-on-click.stop="">
+                            <span class="lightbox-title" t-esc="state.lightboxImage.name"/>
+                            <span class="lightbox-meta">
+                                <i t-att-class="state.lightboxImage.captureMethod === 'camera' ? 'fa fa-camera' : 'fa fa-upload'" class="me-1"/>
+                                <t t-esc="state.lightboxImage.captureMethod === 'camera' ? 'Captured from camera' : 'Uploaded file'"/>
+                            </span>
+                        </div>
+                        
+                        <!-- Navigation (if multiple images) -->
+                        <t t-if="previewImages.length > 1">
+                            <button type="button" 
+                                    class="lightbox-nav lightbox-nav-prev"
+                                    t-on-click.stop="() => this.navigateLightbox(-1)"
+                                    t-att-disabled="state.lightboxImage.index === 0">
+                                <i class="fa fa-chevron-left"/>
+                            </button>
+                            <button type="button" 
+                                    class="lightbox-nav lightbox-nav-next"
+                                    t-on-click.stop="() => this.navigateLightbox(1)"
+                                    t-att-disabled="state.lightboxImage.index === previewImages.length - 1">
+                                <i class="fa fa-chevron-right"/>
+                            </button>
+                            <div class="lightbox-counter">
+                                <t t-esc="state.lightboxImage.index + 1"/> / <t t-esc="previewImages.length"/>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </t>
+            
+            <!-- Processing Overlay -->
+            <t t-if="state.isProcessing">
+                <div class="processing-overlay">
+                    <div class="processing-card">
+                        <div class="processing-spinner"/>
+                        <p class="processing-text">Processing image...</p>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+
+</templates>
