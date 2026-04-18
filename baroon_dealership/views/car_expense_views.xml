@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_car_expense_list" model="ir.ui.view">
+        <field name="name">car.expense.list</field>
+        <field name="model">car.expense</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="expense_date"/>
+                <field name="lot_id"/>
+                <field name="name"/>
+                <field name="expense_type"/>
+                <field name="vendor_id" optional="show"/>
+                <field name="account_move_id" optional="show"/>
+                <field name="bill_payment_state" optional="show"/>
+                <field name="landed_cost_id" optional="show"/>
+                <field name="amount"/>
+                <button name="action_create_vendor_bill" type="object" string="Create Bill" invisible="account_move_id or not vendor_id"/>
+                <button name="action_open_vendor_bill" type="object" string="Open Bill" invisible="not account_move_id"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_car_expense_form" model="ir.ui.view">
+        <field name="name">car.expense.form</field>
+        <field name="model">car.expense</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="%(action_report_car_expense)d" type="action" string="Print Cost Sheet" class="btn-secondary"/>
+                    <button name="action_create_vendor_bill" type="object" string="Create Vendor Bill" class="btn-primary" invisible="account_move_id or not vendor_id"/>
+                    <button name="action_open_vendor_bill" type="object" string="Open Vendor Bill" class="btn-secondary" invisible="not account_move_id"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="lot_id"/>
+                            <field name="name"/>
+                            <field name="expense_type"/>
+                            <field name="expense_date"/>
+                            <field name="vendor_id"/>
+                            <field name="amount"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="account_move_id" readonly="1"/>
+                            <field name="bill_payment_state" readonly="1"/>
+                            <field name="landed_cost_id"/>
+                            <field name="purchase_order_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <field name="note" widget="text"/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_car_expenses" model="ir.actions.act_window">
+        <field name="name">Car Expenses</field>
+        <field name="res_model">car.expense</field>
+        <field name="view_mode">list,form,graph,pivot</field>
+    </record>
+
+    <record id="view_car_expense_graph" model="ir.ui.view">
+        <field name="name">car.expense.graph</field>
+        <field name="model">car.expense</field>
+        <field name="arch" type="xml">
+            <graph string="Car Expenses" type="bar">
+                <field name="expense_type"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_car_expense_pivot" model="ir.ui.view">
+        <field name="name">car.expense.pivot</field>
+        <field name="model">car.expense</field>
+        <field name="arch" type="xml">
+            <pivot string="Car Expenses">
+                <field name="expense_type" type="row"/>
+                <field name="lot_id" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>
