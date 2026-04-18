@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_baroon_dealership_dashboard_form" model="ir.ui.view">
+        <field name="name">baroon.dealership.dashboard.form</field>
+        <field name="model">baroon.dealership.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Executive Dashboard" create="false" edit="false" delete="false">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_refresh_dashboard" class="oe_stat_button" icon="fa-refresh">
+                            <span>Refresh</span>
+                        </button>
+                        <button type="object" name="action_open_inventory" class="oe_stat_button" icon="fa-car">
+                            <span>Inventory</span>
+                        </button>
+                        <button type="object" name="action_open_pipeline" class="oe_stat_button" icon="fa-ship">
+                            <span>Pipeline</span>
+                        </button>
+                        <button type="object" name="action_open_reports" class="oe_stat_button" icon="fa-bar-chart">
+                            <span>Analytics</span>
+                        </button>
+                    </div>
+
+                    <div class="o_baroon_dashboard_hero">
+                        <div class="o_baroon_dashboard_title_wrap">
+                            <div class="o_baroon_dashboard_title">Baroon Executive Dashboard</div>
+                            <div class="o_baroon_dashboard_subtitle">Live operational cockpit for inventory, shipment pipeline, reservations, sales readiness, test drives, profitability, and financial exposure.</div>
+                        </div>
+                    </div>
+
+                    <div class="o_baroon_dashboard_grid">
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_1">
+                            <div class="o_baroon_dashboard_label">Active Inventory</div>
+                            <div class="o_baroon_dashboard_value"><field name="active_inventory_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_2">
+                            <div class="o_baroon_dashboard_label">Available Cars</div>
+                            <div class="o_baroon_dashboard_value"><field name="available_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_3">
+                            <div class="o_baroon_dashboard_label">Reserved Cars</div>
+                            <div class="o_baroon_dashboard_value"><field name="reserved_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_4">
+                            <div class="o_baroon_dashboard_label">In Transit / Receiving</div>
+                            <div class="o_baroon_dashboard_value"><field name="in_transit_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_5">
+                            <div class="o_baroon_dashboard_label">Preparation Queue</div>
+                            <div class="o_baroon_dashboard_value"><field name="preparation_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_6">
+                            <div class="o_baroon_dashboard_label">Sold</div>
+                            <div class="o_baroon_dashboard_value"><field name="sold_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_7">
+                            <div class="o_baroon_dashboard_label">Delivered</div>
+                            <div class="o_baroon_dashboard_value"><field name="delivered_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_1">
+                            <div class="o_baroon_dashboard_label">Arriving Soon</div>
+                            <div class="o_baroon_dashboard_value"><field name="arriving_soon_count"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_6 o_baroon_dashboard_card_wide">
+                            <div class="o_baroon_dashboard_label">Inventory Asking Value</div>
+                            <div class="o_baroon_dashboard_value"><field name="inventory_value" widget="monetary" options="{'currency_field': 'currency_id'}"/></div>
+                        </div>
+                        <div class="o_baroon_dashboard_card o_baroon_gradient_7 o_baroon_dashboard_card_wide">
+                            <div class="o_baroon_dashboard_label">Projected Margin on Active Cars</div>
+                            <div class="o_baroon_dashboard_value"><field name="total_margin_value" widget="monetary" options="{'currency_field': 'currency_id'}"/></div>
+                        </div>
+                    </div>
+
+                    <group col="4" class="mt16">
+                        <group string="Commercial Pulse">
+                            <field name="open_opportunity_count" readonly="1"/>
+                            <field name="open_quotation_count" readonly="1"/>
+                            <field name="active_test_drive_count" readonly="1"/>
+                            <button type="object" name="action_open_opportunities" string="Open Opportunities" class="btn-primary"/>
+                            <button type="object" name="action_open_quotations" string="Open Quotations"/>
+                            <button type="object" name="action_open_test_drives" string="Active Test Drives"/>
+                        </group>
+                        <group string="Financial Pulse">
+                            <field name="approved_expense_count" readonly="1"/>
+                            <field name="pending_bill_count" readonly="1"/>
+                            <field name="landed_cost_count" readonly="1"/>
+                            <button type="object" name="action_open_expenses" string="Approved Expenses" class="btn-primary"/>
+                            <button type="object" name="action_open_profitability" string="Profitability Review"/>
+                        </group>
+                        <group string="Value &amp; Yield">
+                            <field name="reserved_value" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1"/>
+                            <field name="sold_value" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1"/>
+                            <field name="total_pipeline_value" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1"/>
+                            <field name="total_cost_value" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1"/>
+                        </group>
+                        <group string="Operational KPI">
+                            <field name="average_margin" readonly="1"/>
+                            <field name="average_days_in_stock" readonly="1"/>
+                            <field name="average_days_to_arrival" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Pipeline Cars">
+                            <field name="incoming_ids" nolabel="1">
+                                <list create="false" delete="false">
+                                    <field name="name" string="VIN"/>
+                                    <field name="product_id"/>
+                                    <field name="car_status"/>
+                                    <field name="expected_arrival_date"/>
+                                    <field name="days_to_arrival"/>
+                                    <field name="purchase_partner_id"/>
+                                    <field name="current_location_id"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Available &amp; Reserved">
+                            <separator string="Best Available Cars"/>
+                            <field name="available_ids" nolabel="1">
+                                <list create="false" delete="false">
+                                    <field name="name" string="VIN"/>
+                                    <field name="product_id"/>
+                                    <field name="sale_price"/>
+                                    <field name="total_cost"/>
+                                    <field name="gross_margin"/>
+                                    <field name="margin_percent"/>
+                                    <field name="days_in_stock"/>
+                                </list>
+                            </field>
+                            <separator string="Reserved Cars"/>
+                            <field name="reserved_ids" nolabel="1">
+                                <list create="false" delete="false">
+                                    <field name="name" string="VIN"/>
+                                    <field name="reservation_partner_id"/>
+                                    <field name="reservation_order_id"/>
+                                    <field name="reserved_until"/>
+                                    <field name="sale_price"/>
+                                    <field name="salesperson_id"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Profitability &amp; Aging">
+                            <separator string="Top Margin Cars"/>
+                            <field name="top_margin_ids" nolabel="1">
+                                <list create="false" delete="false">
+                                    <field name="name" string="VIN"/>
+                                    <field name="product_id"/>
+                                    <field name="sale_price"/>
+                                    <field name="total_cost"/>
+                                    <field name="gross_margin"/>
+                                    <field name="margin_percent"/>
+                                </list>
+                            </field>
+                            <separator string="Aging Inventory"/>
+                            <field name="aging_ids" nolabel="1">
+                                <list create="false" delete="false">
+                                    <field name="name" string="VIN"/>
+                                    <field name="product_id"/>
+                                    <field name="car_status"/>
+                                    <field name="days_in_stock"/>
+                                    <field name="sale_price"/>
+                                    <field name="current_location_id"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Activity Feed">
+                            <separator string="Recent Test Drives"/>
+                            <field name="test_drive_ids" nolabel="1">
+                                <list create="false" delete="false">
+                                    <field name="name"/>
+                                    <field name="lot_id"/>
+                                    <field name="partner_id"/>
+                                    <field name="state"/>
+                                    <field name="scheduled_datetime"/>
+                                    <field name="security_deposit"/>
+                                    <field name="deposit_payment_state"/>
+                                </list>
+                            </field>
+                            <separator string="Recent Expenses"/>
+                            <field name="expense_ids" nolabel="1">
+                                <list create="false" delete="false">
+                                    <field name="expense_date"/>
+                                    <field name="name"/>
+                                    <field name="lot_id"/>
+                                    <field name="expense_type"/>
+                                    <field name="vendor_id"/>
+                                    <field name="amount"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_baroon_dealership_dashboard_server" model="ir.actions.server">
+        <field name="name">Executive Dashboard</field>
+        <field name="model_id" ref="stock.model_stock_lot"/>
+        <field name="state">code</field>
+        <field name="code">action = env['baroon.dealership.dashboard'].open_dashboard_action()</field>
+    </record>
+</odoo>
