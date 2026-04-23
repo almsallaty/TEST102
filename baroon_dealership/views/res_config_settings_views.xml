@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_baroon_dealership" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.baroon.dealership</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Car Dealership" name="baroon_dealership" invisible="0">
+                    <block title="Dealership Rules">
+                        <setting string="Require a complete profile before website publication">
+                            <field name="dealership_require_complete_profile"/>
+                        </setting>
+                        <setting string="Allow manual car status actions">
+                            <field name="dealership_allow_manual_status"/>
+                        </setting>
+                        <setting string="Update car status from validated receipts">
+                            <field name="dealership_auto_receipt_status"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>
