@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <record id="action_executive_dashboard_client" model="ir.actions.client">
-        <field name="name">Executive Cockpit</field>
-        <field name="tag">baroon_executive_dashboard</field>
-    </record>
-    <menuitem id="menu_car_sale_dashboard_client" name="Executive Cockpit" parent="menu_car_sale_root" action="action_executive_dashboard_client" sequence="4" groups="baroon_dealership.group_executive,baroon_dealership.group_sales_manager"/>
-</odoo>
