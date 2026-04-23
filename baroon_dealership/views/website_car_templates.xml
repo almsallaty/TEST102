@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_cars_listing" name="Cars Listing">
+        <t t-call="website.layout">
+            <div id="wrap" class="o_car_sale_site">
+                <section class="car-hero">
+                    <div class="container">
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-7">
+                                <span class="car-kicker">Sales Only • VIN Controlled • Website Ready</span>
+                                <h1 class="car-hero-title">Cars ready for sale, tracked by VIN, shown with full detail.</h1>
+                                <p class="car-hero-text">Clean stock. Strong images. Shipment status. Price, specs, and gallery on one smooth website experience.</p>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="car-hero-card">
+                                    <div class="hero-card-metric">
+                                        <span class="metric-value"><t t-esc="len(cars)"/></span>
+                                        <span class="metric-label">Cars matched</span>
+                                    </div>
+                                    <div class="hero-card-metric">
+                                        <span class="metric-value"><t t-esc="len(brands)"/></span>
+                                        <span class="metric-label">Brands</span>
+                                    </div>
+                                    <div class="hero-card-metric">
+                                        <span class="metric-value"><t t-esc="len(models)"/></span>
+                                        <span class="metric-label">Models</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="container py-4">
+                    <form action="/cars" method="get" class="car-filter-shell">
+                        <div class="row g-3">
+                            <div class="col-lg-4">
+                                <label class="form-label">Search</label>
+                                <input type="text" name="search" class="form-control car-input" placeholder="VIN, plate, engine, brand, model" t-att-value="search or ''"/>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label">Brand</label>
+                                <select name="brand" class="form-select car-input">
+                                    <option value="">All Brands</option>
+                                    <t t-foreach="brands" t-as="brand">
+                                        <option t-att-value="brand" t-att-selected="brand == selected_brand and 'selected' or None"><t t-esc="brand"/></option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label">Model</label>
+                                <select name="model" class="form-select car-input">
+                                    <option value="">All Models</option>
+                                    <t t-foreach="models" t-as="model_name">
+                                        <option t-att-value="model_name" t-att-selected="model_name == selected_model and 'selected' or None"><t t-esc="model_name"/></option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label">Year</label>
+                                <select name="year" class="form-select car-input">
+                                    <option value="">All Years</option>
+                                    <t t-foreach="years" t-as="car_year">
+                                        <option t-att-value="car_year" t-att-selected="str(car_year) == str(selected_year) and 'selected' or None"><t t-esc="car_year"/></option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label">Status</label>
+                                <select name="status" class="form-select car-input">
+                                    <option value="">All Statuses</option>
+                                    <t t-foreach="statuses" t-as="status_item">
+                                        <option t-att-value="status_item[0]" t-att-selected="status_item[0] == selected_status and 'selected' or None"><t t-esc="status_item[1]"/></option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label">Min Price</label>
+                                <input type="number" step="0.01" name="min_price" class="form-control car-input" t-att-value="selected_min_price or ''"/>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label">Max Price</label>
+                                <input type="number" step="0.01" name="max_price" class="form-control car-input" t-att-value="selected_max_price or ''"/>
+                            </div>
+                            <div class="col-lg-8 d-flex align-items-end gap-2 flex-wrap">
+                                <button type="submit" class="btn btn-dark car-btn-primary">Apply Filters</button>
+                                <a href="/cars" class="btn btn-outline-secondary car-btn-secondary">Reset</a>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="car-results-header">
+                        <div>
+                            <h2 class="car-section-title">Cars on Sale</h2>
+                            <p class="text-muted mb-0">Strong visual cards with VIN, price, specs, and current sale status.</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <t t-foreach="cars" t-as="car">
+                            <div class="col-xl-4 col-md-6">
+                                <div class="car-card">
+                                    <a t-att-href="car.website_url or ('/cars/%s' % car.id)" class="car-card-media">
+                                        <img t-if="car.display_cover_image" t-att-src="'/web/image/stock.lot/%s/display_cover_image' % car.id" class="car-card-img" loading="lazy"/>
+                                        <div t-else="" class="car-card-placeholder">No Image</div>
+                                        <span class="car-status-badge" t-if="car.car_status == 'available'">Available</span>
+                                        <span class="car-status-badge car-status-coming" t-elif="car.car_status in upcoming_states">Coming Soon</span>
+                                        <span class="car-status-badge car-status-reserved" t-else=""><t t-esc="dict(car._fields['car_status'].selection).get(car.car_status) or car.car_status"/></span>
+                                    </a>
+                                    <div class="car-card-body">
+                                        <div class="d-flex justify-content-between align-items-start gap-3 mb-2">
+                                            <div>
+                                                <h3 class="car-card-title">
+                                                    <a t-att-href="car.website_url or ('/cars/%s' % car.id)">
+                                                        <t t-esc="' '.join(filter(None, [car.car_brand, car.car_model, car.car_trim])) or car.product_id.display_name"/>
+                                                    </a>
+                                                </h3>
+                                                <div class="car-card-subtitle">
+                                                    <span><t t-esc="car.year or '-'"/></span>
+                                                    <span>•</span>
+                                                    <span>VIN <t t-esc="car.name or '-'"/></span>
+                                                </div>
+                                            </div>
+                                            <div class="car-price">
+                                                <span t-field="car.sale_price" t-options='{"widget": "monetary", "display_currency": car.currency_id}'/>
+                                            </div>
+                                        </div>
+
+                                        <div class="car-spec-grid">
+                                            <div class="spec-chip"><i class="fa fa-dashboard"/> <span><t t-esc="car.mileage or 0"/> km</span></div>
+                                            <div class="spec-chip"><i class="fa fa-tint"/> <span><t t-esc="dict(car._fields['fuel_type'].selection).get(car.fuel_type) or '-'"/></span></div>
+                                            <div class="spec-chip"><i class="fa fa-cog"/> <span><t t-esc="dict(car._fields['gearbox_type'].selection).get(car.gearbox_type) or '-'"/></span></div>
+                                            <div class="spec-chip"><i class="fa fa-map-marker"/> <span><t t-esc="car.branch_location or (car.current_location_id.display_name if car.current_location_id else '-')"/></span></div>
+                                        </div>
+
+                                        <p class="car-card-text"><t t-esc="car.website_short_description or car.notes or ''"/></p>
+
+                                        <div class="car-card-footer d-grid gap-2">
+                                            <a t-att-href="car.website_url or ('/cars/%s' % car.id)" class="btn btn-dark car-btn-primary w-100">Open Full Car Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                        <div t-if="not cars" class="col-12">
+                            <div class="car-empty-state">
+                                <h3>No cars matched your filters.</h3>
+                                <p>Try widening the price range or clearing one of the filters.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <template id="website_car_detail" name="Car Detail">
+        <t t-call="website.layout">
+            <div id="wrap" class="o_car_sale_site">
+                <section class="container py-4">
+                    <div class="mb-4 d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="/cars" class="btn btn-outline-secondary car-btn-secondary">Back to Cars</a>
+                        </div>
+                        <a t-if="car.website_url" t-att-href="car.website_url" class="text-muted small">Direct link</a>
+                    </div>
+
+                    <div t-if="reserve_success" class="alert alert-success" role="alert"><t t-esc="reserve_success"/></div>
+                    <div t-if="reserve_error" class="alert alert-danger" role="alert"><t t-esc="reserve_error"/></div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-7">
+                            <div class="car-detail-gallery">
+                                <div class="car-main-image-shell">
+                                    <img t-if="car.display_cover_image" t-att-src="'/web/image/stock.lot/%s/display_cover_image' % car.id" class="car-main-image js-car-main-image" t-att-data-full="'/web/image/stock.lot/%s/display_cover_image' % car.id" onclick="var modal=document.getElementById('carLightboxModal');var modalImg=document.querySelector('.js-car-lightbox-image');if(modal&amp;&amp;modalImg){modalImg.src=this.getAttribute('data-full')||this.getAttribute('src');modal.classList.add('is-open');}return false;"/>
+                                    <div t-else="" class="car-card-placeholder">No Image</div>
+                                    <a t-if="car.display_cover_image" href="#" class="car-lightbox-btn js-open-car-lightbox" onclick="var img=document.querySelector('.js-car-main-image');var modal=document.getElementById('carLightboxModal');var modalImg=document.querySelector('.js-car-lightbox-image');if(img&amp;&amp;modal&amp;&amp;modalImg){modalImg.src=img.getAttribute('data-full')||img.getAttribute('src');modal.classList.add('is-open');}return false;">
+                                        <i class="fa fa-expand"/> Full View
+                                    </a>
+                                </div>
+                                <div class="car-thumb-grid" role="tablist" aria-label="Car gallery thumbnails">
+                                    <t t-if="car.display_cover_image">
+                                        <a href="#" class="car-thumb is-active js-car-thumb" aria-label="Preview cover image" title="Preview cover image"
+                                           t-att-data-src="'/web/image/stock.lot/%s/display_cover_image' % car.id"
+                                           t-att-data-full="'/web/image/stock.lot/%s/display_cover_image' % car.id"
+                                           onclick="var img=document.querySelector('.js-car-main-image');if(img){var src=this.getAttribute('data-full')||this.getAttribute('data-src');img.src=src;img.setAttribute('data-full',src);}document.querySelectorAll('.js-car-thumb').forEach(function(el){el.classList.remove('is-active');});this.classList.add('is-active');return false;">
+                                            <img t-att-src="'/web/image/stock.lot/%s/display_cover_image' % car.id"/>
+                                        </a>
+                                    </t>
+                                    <t t-foreach="car.gallery_image_ids" t-as="imgrec">
+                                        <a href="#" class="car-thumb js-car-thumb" aria-label="Preview gallery image"
+                                           t-att-data-src="'/web/image/car.lot.image/%s/avatar' % imgrec.id"
+                                           t-att-data-full="'/web/image/car.lot.image/%s/avatar' % imgrec.id"
+                                           onclick="var img=document.querySelector('.js-car-main-image');if(img){var src=this.getAttribute('data-full')||this.getAttribute('data-src');img.src=src;img.setAttribute('data-full',src);}document.querySelectorAll('.js-car-thumb').forEach(function(el){el.classList.remove('is-active');});this.classList.add('is-active');return false;">
+                                            <img t-att-src="'/web/image/car.lot.image/%s/avatar' % imgrec.id"/>
+                                        </a>
+                                    </t>
+                                </div>
+                            </div>
+
+                            <div class="car-content-card mt-4">
+                                <h2 class="car-section-title">Description</h2>
+                                <div class="car-richtext" t-if="car.website_description" t-field="car.website_description"/>
+                                <p t-else=""><t t-esc="car.website_short_description or car.notes or 'No description available yet.'"/></p>
+                            </div>
+
+                            <div class="car-content-card mt-4">
+                                <h2 class="car-section-title">Technical Details</h2>
+                                <div class="car-detail-grid">
+                                    <div class="detail-row"><span>Brand</span><strong><t t-esc="car.car_brand or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Model</span><strong><t t-esc="car.car_model or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Trim</span><strong><t t-esc="car.car_trim or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Year</span><strong><t t-esc="car.year or '-'"/></strong></div>
+                                    <div class="detail-row"><span>VIN</span><strong><t t-esc="car.name or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Engine No.</span><strong><t t-esc="car.engine_number or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Plate No.</span><strong><t t-esc="car.plate_number or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Mileage</span><strong><t t-esc="car.mileage or 0"/> km</strong></div>
+                                    <div class="detail-row"><span>Fuel</span><strong><t t-esc="dict(car._fields['fuel_type'].selection).get(car.fuel_type) or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Gearbox</span><strong><t t-esc="dict(car._fields['gearbox_type'].selection).get(car.gearbox_type) or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Horse Power</span><strong><t t-esc="car.horse_power or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Engine Size</span><strong><t t-esc="car.engine_size or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Body Style</span><strong><t t-esc="dict(car._fields['body_style'].selection).get(car.body_style) or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Seats</span><strong><t t-esc="car.seats or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Doors</span><strong><t t-esc="car.doors or '-'"/></strong></div>
+                                    <div class="detail-row"><span>Drive</span><strong><t t-esc="dict(car._fields['drivetrain'].selection).get(car.drivetrain) or '-'"/></strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <div class="car-sticky-panel">
+                                <span class="car-status-pill" t-if="car.car_status == 'available'">Available</span>
+                                <span class="car-status-pill car-status-coming" t-elif="coming_soon">Coming Soon</span>
+                                <span class="car-status-pill car-status-reserved" t-else=""><t t-esc="dict(car._fields['car_status'].selection).get(car.car_status)"/></span>
+                                <h1 class="car-detail-title"><t t-esc="' '.join(filter(None, [car.car_brand, car.car_model, car.car_trim])) or car.product_id.display_name"/></h1>
+                                <div class="car-detail-subtitle"><t t-esc="car.year or '-'"/> • VIN <t t-esc="car.name or '-'"/></div>
+                                <div class="car-detail-price">
+                                    <span t-field="car.sale_price" t-options='{"widget": "monetary", "display_currency": car.currency_id}'/>
+                                </div>
+
+                                <div class="car-mini-specs">
+                                    <div class="mini-spec"><span>Condition</span><strong><t t-esc="dict(car._fields['condition'].selection).get(car.condition) or '-'"/></strong></div>
+                                    <div class="mini-spec"><span>Location</span><strong><t t-esc="car.branch_location or (car.current_location_id.display_name if car.current_location_id else '-')"/></strong></div>
+                                    <div class="mini-spec"><span>Status</span><strong><t t-esc="dict(car._fields['car_status'].selection).get(car.car_status) or '-'"/></strong></div>
+                                </div>
+
+                                <div class="car-timeline">
+                                    <h3>Shipment &amp; Availability</h3>
+                                    <div class="timeline-item"><span>Purchase Date</span><strong><t t-esc="car.purchase_date or '-'"/></strong></div>
+                                    <div class="timeline-item"><span>Expected Arrival</span><strong><t t-esc="car.expected_arrival_date or '-'"/></strong></div>
+                                    <div class="timeline-item"><span>Arrived</span><strong><t t-esc="car.arrival_date or '-'"/></strong></div>
+                                    <div class="timeline-item"><span>Customs Released</span><strong><t t-esc="car.customs_release_date or '-'"/></strong></div>
+                                    <div class="timeline-item"><span>Shipping Ref</span><strong><t t-esc="car.shipping_reference or '-'"/></strong></div>
+                                </div>
+
+                                <div class="car-timeline">
+                                    <h3 t-if="can_reserve_online">Reserve Online</h3>
+                                    <h3 t-elif="coming_soon">Coming Soon</h3>
+                                    <h3 t-else="">Contact Our Team</h3>
+
+                                    <t t-if="can_reserve_online">
+                                        <form t-att-action="'/cars/%s/reserve' % car.id" method="post" class="row g-2">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                            <div class="col-12">
+                                                <input type="text" name="partner_name" class="form-control car-input" placeholder="Your name" required="required"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="phone" class="form-control car-input" placeholder="Phone"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="email" name="email" class="form-control car-input" placeholder="Email"/>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea name="note" class="form-control car-input" rows="4" placeholder="Message or reservation details"></textarea>
+                                            </div>
+                                            <div class="col-12 d-grid">
+                                                <button type="submit" class="btn btn-dark car-btn-primary">Send Reservation Request</button>
+                                            </div>
+                                            <div class="col-12">
+                                                <small class="text-muted">If you are signed in, your reservation will appear in My Reservations until the sale is completed.</small>
+                                            </div>
+                                        </form>
+                                    </t>
+                                    <div t-elif="coming_soon" class="car-coming-soon-note">
+                                        This car is visible now so customers can follow its arrival and details, but online reservation is disabled until it becomes available. Call us if you want the sales team to reserve it manually.
+                                    </div>
+                                    <div t-else="" class="car-coming-soon-note">
+                                        This car is currently reserved. Call us if you want help finding a similar car or want the team to review availability.
+                                    </div>
+
+                                    <div t-if="existing_order and existing_order.state in ('draft', 'sent')" class="mt-3 d-grid">
+                                        <a href="/my/car-reservations" class="btn btn-outline-dark car-btn-secondary">Manage My Reservation</a>
+                                    </div>
+                                </div>
+
+                                <t t-if="car.exterior_color_ids or car.interior_color_ids">
+                                    <div class="car-timeline">
+                                        <h3>Color Tags</h3>
+                                        <div class="mb-2" t-if="car.exterior_color_ids">
+                                            <div class="color-label">Exterior</div>
+                                            <div class="tag-cloud">
+                                                <t t-foreach="car.exterior_color_ids" t-as="tag">
+                                                    <span class="tag-pill"><t t-esc="tag.name"/></span>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div t-if="car.interior_color_ids">
+                                            <div class="color-label">Interior</div>
+                                            <div class="tag-cloud">
+                                                <t t-foreach="car.interior_color_ids" t-as="tag">
+                                                    <span class="tag-pill"><t t-esc="tag.name"/></span>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="car-lightbox-modal" id="carLightboxModal" aria-hidden="true">
+                    <div class="car-lightbox-toolbar">
+                        <button type="button" class="car-lightbox-tool js-zoom-out" aria-label="Zoom out" onclick="var img=document.querySelector('.js-car-lightbox-image');var z=parseFloat(img.dataset.zoom||1);z=Math.max(z-0.2,0.6);img.dataset.zoom=z;img.style.transform='scale('+z+')';var reset=document.querySelector('.js-zoom-reset');if(reset){reset.textContent=Math.round(z*100)+'%';}return false;"><i class="fa fa-search-minus"/></button>
+                        <button type="button" class="car-lightbox-tool js-zoom-reset" aria-label="Reset zoom" onclick="var img=document.querySelector('.js-car-lightbox-image');img.dataset.zoom=1;img.style.transform='scale(1)';this.textContent='100%';return false;">100%</button>
+                        <button type="button" class="car-lightbox-tool js-zoom-in" aria-label="Zoom in" onclick="var img=document.querySelector('.js-car-lightbox-image');var z=parseFloat(img.dataset.zoom||1);z=Math.min(z+0.2,3);img.dataset.zoom=z;img.style.transform='scale('+z+')';var reset=document.querySelector('.js-zoom-reset');if(reset){reset.textContent=Math.round(z*100)+'%';}return false;"><i class="fa fa-search-plus"/></button>
+                        <button type="button" class="car-lightbox-close js-close-car-lightbox" aria-label="Close" onclick="var modal=document.getElementById('carLightboxModal');var img=document.querySelector('.js-car-lightbox-image');if(modal){modal.classList.remove('is-open');}if(img){img.src='';img.style.transform='scale(1)';img.dataset.zoom=1;}var reset=document.querySelector('.js-zoom-reset');if(reset){reset.textContent='100%';}return false;"><i class="fa fa-times"/></button>
+                    </div>
+                    <div class="car-lightbox-stage">
+                        <img src="" alt="" class="car-lightbox-image js-car-lightbox-image"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
