@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_lot_form_car_luxury_bds" model="ir.ui.view">
+        <field name="name">stock.lot.form.car.luxury.bds</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="baroon_dealership.view_stock_lot_form_car_management"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <div class="o_bds_scope" invisible="not is_car_vehicle">
+                    <div class="bds-sticky">
+                        <div class="bds-grid bds-grid--cols-2 align-items-center">
+                            <div class="d-flex align-items-center gap-3">
+                                <field name="car_image" widget="image" options="{'size': [120,120]}" class="rounded-3"/>
+                                <div>
+                                    <div class="bds-title-lg"><field name="car_brand" nolabel="1" readonly="1"/> <field name="car_model" nolabel="1" readonly="1"/></div>
+                                    <div class="text-muted">VIN <field name="name" nolabel="1" readonly="1"/> • <field name="year" nolabel="1" readonly="1"/></div>
+                                    <field name="car_status" widget="statusbar" statusbar_visible="draft,incoming,in_shipment,customs,received,in_preparation,available,reserved,sold,delivered"/>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="bds-value"><field name="sale_price" widget="monetary" options="{'currency_field': 'currency_id'}" nolabel="1"/></div>
+                                <div class="text-muted">Days in stock: <field name="days_in_stock" nolabel="1" readonly="1"/></div>
+                                <div class="text-muted" groups="baroon_dealership.group_accountant,baroon_dealership.group_executive">Total cost: <field name="total_cost" widget="monetary" options="{'currency_field': 'currency_id'}" nolabel="1" readonly="1"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
