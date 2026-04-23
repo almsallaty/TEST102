@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="car_exterior_color_view_tree" model="ir.ui.view">
+        <field name="name">car.exterior.color.list</field>
+        <field name="model">car.exterior.color</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="car_exterior_color_view_form" model="ir.ui.view">
+        <field name="name">car.exterior.color.form</field>
+        <field name="model">car.exterior.color</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="color" widget="color_picker"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_car_exterior_color" model="ir.actions.act_window">
+        <field name="name">Exterior Colors</field>
+        <field name="res_model">car.exterior.color</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="car_interior_color_view_tree" model="ir.ui.view">
+        <field name="name">car.interior.color.list</field>
+        <field name="model">car.interior.color</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="car_interior_color_view_form" model="ir.ui.view">
+        <field name="name">car.interior.color.form</field>
+        <field name="model">car.interior.color</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="color" widget="color_picker"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_car_interior_color" model="ir.actions.act_window">
+        <field name="name">Interior Colors</field>
+        <field name="res_model">car.interior.color</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
