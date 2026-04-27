@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_pos_restricted_waiter_actions" model="ir.ui.view">
+        <field name="name">hr.employee.form.pos.restricted.waiter.actions</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//group" position="after">
+                <group string="POS Waiter Permissions">
+                    <field name="pos_allow_sent_line_decrease"/>
+                    <field name="pos_allow_sent_line_delete"/>
+                    <field name="pos_allow_order_delete"/>
+                    <field name="pos_allow_payment"/>
+                    <field name="pos_show_backspace"/>
+                    <field name="pos_manager_override"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
