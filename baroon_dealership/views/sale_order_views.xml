@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_form_baroon_dealership" model="ir.ui.view">
+        <field name="name">sale.order.form.car.lot.management</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='opportunity_id']" position="after">
+                <field name="selected_car_lot_id" readonly="1" options="{'no_open': False}"/>
+                <field name="selected_car_label" readonly="1" invisible="not selected_car_lot_id"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/list/field[@name='product_id']" position="after">
+                <field name="car_lot_id" string="Selected VIN" optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="after">
+                <field name="car_lot_id" string="Selected VIN"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
