@@ -1,5 +1,0 @@
-.pos-restricted-hide-backspace .input-button.mode-backspace,
-.pos-restricted-hide-backspace .numpad-backspace,
-.pos-restricted-hide-backspace .input-button[data-action="Backspace"] {
-    display: none !important;
-}
